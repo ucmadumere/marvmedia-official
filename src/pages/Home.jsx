@@ -1,15 +1,20 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import ProjectSlider from "../components/ProjectSlider";
 import TeamSlider from "../components/TeamSlider";
 import FAQAccordion from "../components/FAQAccordion";
 import VideoStatsSection from "../components/VideoStatsSection";
 import AutoSlider from "../components/AutoSlider";
-import usePageInit from "../hooks/usePageInIt";
+// import usePageInit from "../hooks/usePageInIt";
 
 export default function Home() {
-    usePageInit();
+    // usePageInit();
     return (
         <>
+            <Helmet>
+                <title>Home | MarvMedia</title>
+                <meta name="description" content="Welcome to MarvMedia's homepage." />
+            </Helmet>
             <div className="aximo-hero-section dark-bg">
                 <div className="container position-relative">
                     <div className="row">

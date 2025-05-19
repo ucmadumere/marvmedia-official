@@ -37,7 +37,7 @@ export default function Navbar() {
           <nav className="navbar site-navbar">
             <div className="brand-logo">
               <Link to="/">
-                <img src="/assets/images/logo/logo-white.svg" alt="logo" className="light-version-logo" />
+                <img src="/assets/images/logo/logo-marv.png" alt="logo" className="light-version-logo" />
               </Link>
             </div>
             <div className="menu-block-wrapper">
@@ -52,7 +52,7 @@ export default function Navbar() {
                   <li className="nav-item"><Link className="nav-link-item" to="/">Home</Link></li>
                   <li className="nav-item"><Link className="nav-link-item" to="/about-us">About Us</Link></li>
                   <li className="nav-item"><Link className="nav-link-item" to="/pricing">Pricing</Link></li>
-                  <li className="nav-item"><Link className="nav-link-item" to="/blog">Blog</Link></li>
+                  {/* <li className="nav-item"><Link className="nav-link-item" to="/blog">Blog</Link></li> */}
                   <li className="nav-item"><Link className="nav-link-item" to="/faq">FAQ</Link></li>
                   <li className="nav-item"><Link className="nav-link-item" to="/contact-us">Contact Us</Link></li>
                 </ul>

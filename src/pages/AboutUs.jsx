@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import AutoSlider from "../components/AutoSlider";
 import VideoStatsSection from "../components/VideoStatsSection";
 import React from 'react';
@@ -8,6 +9,11 @@ export default function AboutUs() {
     usePageInit();
     return (
         <>
+
+            <Helmet>
+                <title>About Us | MarvMedia</title>
+                <meta name="description" content="About us page" />
+            </Helmet>
             <div className="aximo-breadcrumb">
                 <div className="container">
                     <h1 className="post__title">About Us</h1>
@@ -77,7 +83,7 @@ export default function AboutUs() {
                 </div>
             </div>
 
-            <AutoSlider/>
+            <AutoSlider />
 
             <div className="section aximo-section-padding3">
                 <div className="container">
