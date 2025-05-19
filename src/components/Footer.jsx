@@ -90,7 +90,7 @@ export default function Footer() {
         <div className="aximo-footer-bottom">
           <div className="row">
             <div className="col-lg-6">
-              <div className="aximo-footer-logo">
+              <div className="aximo-footer-logo marv-footer">
                 <Link to="/">
                   <img src="/assets/images/logo/logo-marv.png" alt="Logo" />
                 </Link>
