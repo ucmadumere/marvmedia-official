@@ -506,12 +506,12 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
   }
 
   //AXIMO wow js
-  var wow = new WOW({
-    mobile: false,
-    // default
-    tablet: false
-  });
-  wow.init();
+  // var wow = new WOW({
+  //   mobile: false,
+  //   // default
+  //   tablet: false
+  // });
+  // wow.init();
 
   // AOS.init({
   //   duration: 1200,
