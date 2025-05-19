@@ -3,11 +3,14 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Footer from './components/Footer';
 import AboutUs from './pages/AboutUs';
+import Preloader from './components/Preloader';
 // import Aos from 'aos';
 
 function App() {
   return (
+    <>
     <Router>
+      <Preloader />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -15,6 +18,7 @@ function App() {
       </Routes>
       <Footer />
     </Router>
+    </>
   );
 }
 
