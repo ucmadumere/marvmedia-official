@@ -51,8 +51,8 @@ export default function Navbar() {
                 <ul className="site-menu-main">
                   <li className="nav-item"><Link className="nav-link-item" to="/">Home</Link></li>
                   <li className="nav-item"><Link className="nav-link-item" to="/about-us">About Us</Link></li>
-                  <li className="nav-item"><Link className="nav-link-item" to="/pricing">Pricing</Link></li>
-                  {/* <li className="nav-item"><Link className="nav-link-item" to="/blog">Blog</Link></li> */}
+                  <li className="nav-item"><Link className="nav-link-item" to="/services">Services</Link></li>
+                  <li className="nav-item"><Link className="nav-link-item" to="/blog">Commuinity</Link></li>
                   <li className="nav-item"><Link className="nav-link-item" to="/faq">FAQ</Link></li>
                   <li className="nav-item"><Link className="nav-link-item" to="/contact-us">Contact Us</Link></li>
                 </ul>

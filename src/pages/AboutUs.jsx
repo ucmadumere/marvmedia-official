@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
+import Breadcrumb from "../components/Breadcrumb";
 import AutoSlider from "../components/AutoSlider";
 import VideoStatsSection from "../components/VideoStatsSection";
 import React from 'react';
@@ -14,17 +15,8 @@ export default function AboutUs() {
                 <title>About Us | MarvMedia</title>
                 <meta name="description" content="About us page" />
             </Helmet>
-            <div className="aximo-breadcrumb">
-                <div className="container">
-                    <h1 className="post__title">About Us</h1>
-                    <nav className="breadcrumbs">
-                        <ul>
-                            <li><a href="/">Home</a></li>
-                            <li aria-current="page">About Us</li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+            
+            <Breadcrumb title="About Us" current="About Us" />
 
             <VideoStatsSection />
 
@@ -33,12 +25,12 @@ export default function AboutUs() {
                     <div className="aximo-section-title center title-description">
                         <h2>
                             <span className="aximo-title-animation">
-                                We think our story is
+                                Strategy, Simplicity 
                                 <span className="aximo-title-icon">
                                     <img src="assets/images/v1/star2.png" alt="" />
                                 </span>
                             </span>
-                            worth sharing with you
+                            & Substance
                         </h2>
                         <p>Established in 2008, we began as a small but ambitious team. We understood the importance of creative and tech-savvy solutions to help businesses succeed in the ever-changing digital landscape.</p>
                     </div>
