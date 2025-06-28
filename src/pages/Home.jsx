@@ -6,6 +6,7 @@ import FAQAccordion from "../components/FAQAccordion";
 import VideoStatsSection from "../components/VideoStatsSection";
 import AutoSlider from "../components/AutoSlider";
 import Testimonial from "../components/Testimonial";
+import CallToActionButton from "../components/CallToActionButton";
 // import usePageInit from "../hooks/usePageInIt";
 
 export default function Home() {
@@ -23,13 +24,13 @@ export default function Home() {
                             <div className="aximo-hero-content">
                                 <h1>
                                     <span className="aximo-title-animation">
-                                        Our Story <img src="/assets/images/v1/star.png" alt="" />
+                                        This is &nbsp;<img src="/assets/images/v1/star.png" alt="" />
                                     </span>{" "} <br />
-                                    Our Strategy
+                                    Marv Media
                                 </h1>
 
                                 <p>
-                                    We craft digital experiences that help African brands show up boldly, beautifully, and profitably.
+                                We are a creative agency helping African entrepreneurs, thought leaders, and creatives communicate with clarity, consistency, and confidence. 
                                 </p>
                                 {/* <div className="aximo-hero-user-wrap">
                                     <div className="aximo-hero-user-thumb">
@@ -47,9 +48,10 @@ export default function Home() {
                                         <p>Believed by more than a thousand people</p>
                                     </div>
                                 </div> */}
-                                <Link className="aximo-call-btn" to="/contact-us">
+                                {/* <Link className="aximo-call-btn" to="/contact-us">
                                     Book a discovery call<i className="icon-call"></i>
-                                </Link>
+                                </Link> */}
+                                <CallToActionButton />
                                 <div className="aximo-hero-shape">
                                     <img src="/assets/images/v1/shape1.png" alt="" />
                                 </div>
@@ -87,12 +89,11 @@ export default function Home() {
                                     <div className="aximo-iconbox-data">
                                         <h3>Social Media Management</h3>
                                         <p>
-                                            Focusing on user interface (UI) and user experience (UX) design to enhance the
-                                            usability and accessibility of digital products & apps.
+                                        We help you show up consistently with platform-tailored content, strategy, and community engagement that builds real connection.
                                         </p>
-                                        <Link className="aximo-icon" to="/service">
+                                        {/* <Link className="aximo-icon" to="/service">
                                             <img src="/assets/images/icon/arrow-right.svg" alt="" />
-                                        </Link>
+                                        </Link> */}
                                     </div>
                                 </div>
                             </div>
@@ -105,12 +106,11 @@ export default function Home() {
                                     <div className="aximo-iconbox-data">
                                         <h3> Creative Content Production</h3>
                                         <p>
-                                            Creating visual elements such as logos, branding materials, brochures, and
-                                            other marketing collateral.
+                                        From reels to campaigns and events, we produce scroll-stopping videos and visuals that tell your brand story.
                                         </p>
-                                        <Link className="aximo-icon" to="/service">
+                                        {/* <Link className="aximo-icon" to="/service">
                                             <img src="/assets/images/icon/arrow-right.svg" alt="" />
-                                        </Link>
+                                        </Link> */}
                                     </div>
                                 </div>
                             </div>
@@ -123,12 +123,11 @@ export default function Home() {
                                     <div className="aximo-iconbox-data">
                                         <h3>Branding & Strategy</h3>
                                         <p>
-                                            Designing and developing websites to ensure they are visually appealing,
-                                            user-friendly, and functional.
+                                        We craft creative brand identities and smart strategies that position you to stand out, sell more, and scale with purpose.
                                         </p>
-                                        <Link className="aximo-icon" to="/service">
+                                        {/* <Link className="aximo-icon" to="/service">
                                             <img src="/assets/images/icon/arrow-right.svg" alt="" />
-                                        </Link>
+                                        </Link> */}
                                     </div>
                                 </div>
                             </div>
@@ -141,30 +140,11 @@ export default function Home() {
                                     <div className="aximo-iconbox-data">
                                         <h3>Web & Tech Solutions</h3>
                                         <p>
-                                            Creating animated graphics and videos for various purposes including
-                                            marketing, branding, and entertainment.- Digital Marketing
+                                        We design sleek websites and automate systems to help your brand run smoother, faster, and smarter online.
                                         </p>
-                                        <Link className="aximo-icon" to="/service">
+                                        {/* <Link className="aximo-icon" to="/service">
                                             <img src="/assets/images/icon/arrow-right.svg" alt="" />
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="col-lg-6">
-                                <div className="aximo-iconbox-wrap wow fadeInUpX" data-wow-delay="0.4s">
-                                    <div className="aximo-iconbox-icon">
-                                        <i className="icon-design-thinking"></i>
-                                    </div>
-                                    <div className="aximo-iconbox-data">
-                                        <h3>Digital Marketing</h3>
-                                        <p>
-                                            Creating animated graphics and videos for various purposes including
-                                            marketing, branding, and entertainment.- 
-                                        </p>
-                                        <Link className="aximo-icon" to="/service">
-                                            <img src="/assets/images/icon/arrow-right.svg" alt="" />
-                                        </Link>
+                                        </Link> */}
                                     </div>
                                 </div>
                             </div>

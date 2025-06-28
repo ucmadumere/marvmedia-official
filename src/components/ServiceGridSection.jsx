@@ -73,6 +73,7 @@ export default function ServiceGridSection() {
               </span>
             </span>
           </h2>
+          <p>Whether you're a solo founder, startup, or scaling business. Our services are designed to meet you where you are and help you grow. </p>
         </div>
 
         <div className="row">

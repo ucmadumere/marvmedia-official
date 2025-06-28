@@ -8,24 +8,28 @@ import Services from './pages/Services';
 import FAQ from './pages/FAQ';
 import ServiceDetails from './pages/ServiceDetails';
 import ContactUs from './pages/ContactUs';
+import Blog from './pages/Blog';
+import BlogDetails from './pages/BlogDetails';
 // import Aos from 'aos';
 
 function App() {
   return (
     <>
-    <Router>
-      <Preloader />
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/faq" element={<FAQ />} />
-        <Route path="/contact-us" element={<ContactUs />} />
-        <Route path="/services/:slug" element={<ServiceDetails />} />
-      </Routes>
-      <Footer />
-    </Router>
+      <Router>
+        <Preloader />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogDetails />} />
+          <Route path="/services/:slug" element={<ServiceDetails />} />
+        </Routes>
+        <Footer />
+      </Router>
     </>
   );
 }

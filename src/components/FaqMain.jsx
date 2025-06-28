@@ -3,34 +3,34 @@ import { useEffect } from "react";
 export default function FaqMain() {
   const faqs = [
     {
-      question: "What services does your design agency offer?",
+      question: "What does Marv Media do?",
       answer:
-        "Clients often seek to understand the range of design services an agency provides, such as graphic design, web design, branding, and more. We offer a wide range of design services, including graphic design, web design, branding, UI/UX design, and more.",
+        "We're a full-service creative media agency offering social media management, content creation, branding,digital marketing, tech support, and business development services tailored for African businesses and creatives.",
     },
     {
-      question: "What industries or types of clients do you typically work with?",
+      question: "How can I work with Marv Media?",
       answer:
-        "This question helps potential clients determine if the agency has experience in their specific industry or with similar projects. Our agency stands out due to our creative expertise, attention to detail, and commitment to delivering designs that not only look great.",
+        "Start by booking a free 30-minute call via our contact page. We?ll learn about your needs and recommend the right service or package.",
     },
     {
-      question: "Can you provide examples of your previous work/portfolio?",
+      question: "Do you offer custom packages?",
       answer:
-        "Yes, we're proud to showcase a portfolio of our previous projects. You can find examples of our work on our website or request a tailored portfolio relevant to your needs. Clients often want to see examples of the agency's previous projects to assess the quality and style.",
+        "Yes! We understand every brand is unique. Beyond our core packages, we tailor custom strategies based on your goals and budget.",
     },
     {
-      question: "What is your design process like?",
+      question: "What's included in the content creation services?",
       answer:
-        "Explaining the design agency's process from initial concept to final delivery helps clients understand what to expect.",
+        "Everything from mobile and camera video shoots, reels, photography, to creative direction and scripting.",
     },
     {
-      question: "How do you handle revisions and feedback during a project?",
+      question: "How do I pay for services?",
       answer:
-        "Clients are interested in knowing how the agency manages feedback and makes revisions to ensure the final design meets their expectations. We value client feedback and work closely with you to make sure you're happy with the final design.",
+        "We accept payments via Paystack, Flutterwave, or direct bank transfer. Payment plans may be available depending on the project.",
     },
     {
-      question: "Do you offer ongoing support after project completion?",
+      question: "Do you work with clients outside Lagos or Nigeria?",
       answer:
-        "Yes, we offer ongoing support, maintenance, and updates as needed, ensuring that your design assets and projects remain up to date and functional. Some clients may have urgent projects, so it's important to communicate if the agency can accommodate rush orders.",
+        "Absolutely. We work with clients across Africa and the diaspora. Most of our processes are remote-friendly.",
     },
   ];
 

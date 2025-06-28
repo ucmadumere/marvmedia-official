@@ -25,14 +25,15 @@ export default function AboutUs() {
                     <div className="aximo-section-title center title-description">
                         <h2>
                             <span className="aximo-title-animation">
-                                Strategy, Simplicity 
+                                Our Story
                                 <span className="aximo-title-icon">
                                     <img src="assets/images/v1/star2.png" alt="" />
                                 </span>
                             </span>
-                            & Substance
                         </h2>
-                        <p>Established in 2008, we began as a small but ambitious team. We understood the importance of creative and tech-savvy solutions to help businesses succeed in the ever-changing digital landscape.</p>
+                        <p>What started as a solo freelance journey became a creative agency birthed from lived experience, growth, and grit. </p> 
+                        <p>Marv Media was founded by a creative who understands the trenches?from unpaid internships to working with top brands. We've helped individuals transition from freelancers to full-fledged agency owners, and businesses go from content chaos to clarity.</p> 
+                        <p>We believe content can transform a brand?s entire trajectory?and we?ve built systems that make that transformation possible.</p>
                     </div>
 
                     <div className="row">
@@ -62,13 +63,13 @@ export default function AboutUs() {
                         <div className="row">
                             <div className="col-lg-6">
                                 <h3>Our core vision</h3>
-                                <p>Empowering businesses to create impactful and visually stunning brand experiences that captivate audiences and drive success in the digital age.</p>
-                                <p>Our team consists of experienced designers, developers. We have a wide variety of skills and backgrounds, allowing us to tackle projects of all sizes and complexities. We believe in the power of imagination and innovation.</p>
+                                <p>Leading Africa's creative space with digital solutions that inspire impact.</p>
+                                {/* <p>Our team consists of experienced designers, developers. We have a wide variety of skills and backgrounds, allowing us to tackle projects of all sizes and complexities. We believe in the power of imagination and innovation.</p> */}
                             </div>
                             <div className="col-lg-6">
                                 <h3>Our main mission</h3>
-                                <p>Our mission is to collaborate with businesses of all sizes, from startups to established brands, to provide innovative and creative design solutions.</p>
-                                <p>We are committed to creating designs that inspire, connect & our clients in the marketplace. Our focus is on understanding our clients' unique needs and delivering designs that not only meet but exceed their expectations.</p>
+                                <p>Empowering brands to be seen, heard, and profitable with strategic content and creative marketing while nurturing a dynamic creative force.</p>
+                                {/* <p>We are committed to creating designs that inspire, connect & our clients in the marketplace. Our focus is on understanding our clients' unique needs and delivering designs that not only meet but exceed their expectations.</p> */}
                             </div>
                         </div>
                     </div>
@@ -81,14 +82,15 @@ export default function AboutUs() {
                 <div className="container">
                     <div className="aximo-section-title center">
                         <h2>
-                            We have a team of
+                            Meet the team
                             <span className="aximo-title-animation">
-                                creative people
+                                {/* creative people */}
                                 <span className="aximo-title-icon">
                                     <img src="assets/images/v1/star2.png" alt="" />
                                 </span>
                             </span>
                         </h2>
+                        <p className="mt-4">We’re a lean but powerful team of content creators, designers, strategists, and managers. We believe in collaborative creation, open communication, and excellence in execution. Each team member brings expertise and energy to every project, ensuring the Marv Effect is felt in every deliverable.</p>
                     </div>
                     <div className="row">
                         {/* Team members */}
