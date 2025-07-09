@@ -9,8 +9,8 @@ import "swiper/css/autoplay";
 export default function ProjectSlider() {
   const projects = [
     {
-      title: "Product Design",
-      desc: "Developing the look and feel of physical products, aesthetics, and functionality.",
+      title: "LUXÉ DENTAL",
+      desc: " Partnered with Colgate to showcase Luxé Dental at BBNaija, creating real-time, culture-aligned content.",
       img: "project1.png",
     },
     {
@@ -45,9 +45,9 @@ export default function ProjectSlider() {
       <div className="container">
         <div className="aximo-section-title center light">
           <h2>
-            Have a wide range of{" "}
+            Have a look at some{" "}
             <span className="aximo-title-animation">
-              creative projects
+              of our projects
               <span className="aximo-title-icon">
                 <img src="/assets/images/v1/star2.png" alt="decorative star" />
               </span>
@@ -71,7 +71,6 @@ export default function ProjectSlider() {
           1200: { slidesPerView: 3 },
         }}
       >
-
         {projects.map((item, i) => (
           <SwiperSlide key={i}>
             <div className="aximo-project-thumb">

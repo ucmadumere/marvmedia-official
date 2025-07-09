@@ -32,22 +32,28 @@ export default function Home() {
                                 <p>
                                 We are a creative agency helping African entrepreneurs, thought leaders, and creatives communicate with clarity, consistency, and confidence. 
                                 </p>
-                                {/* <div className="aximo-hero-user-wrap">
+                                <div className="aximo-hero-user-wrap">
                                     <div className="aximo-hero-user-thumb">
                                         <div className="aximo-hero-user-thumb-item wow fadeInUpX" data-wow-delay="0s">
-                                            <img src="/assets/images/v1/user1.png" alt="" />
+                                            <img src="/assets/images/v1/luxe.png" alt="" />
                                         </div>
                                         <div className="aximo-hero-user-thumb-item wow fadeInUpX" data-wow-delay="0.25s">
-                                            <img src="/assets/images/v1/user3.png" alt="" />
+                                            <img src="/assets/images/v1/gic.png" alt="" />
                                         </div>
                                         <div className="aximo-hero-user-thumb-item wow fadeInUpX" data-wow-delay="0.4s">
-                                            <img src="/assets/images/v1/user2.png" alt="" />
+                                            <img src="/assets/images/v1/yp.png" alt="" />
+                                        </div>
+                                        <div className="aximo-hero-user-thumb-item wow fadeInUpX" data-wow-delay="0.4s">
+                                            <img src="/assets/images/v1/life-logo.png" alt="" />
+                                        </div>
+                                        <div className="aximo-hero-user-thumb-item wow fadeInUpX" data-wow-delay="0.4s">
+                                            <img src="/assets/images/v1/smile-doctor.png" alt="" />
                                         </div>
                                     </div>
                                     <div className="aximo-hero-user-data">
                                         <p>Believed by more than a thousand people</p>
                                     </div>
-                                </div> */}
+                                </div>
                                 {/* <Link className="aximo-call-btn" to="/contact-us">
                                     Book a discovery call<i className="icon-call"></i>
                                 </Link> */}
@@ -87,7 +93,7 @@ export default function Home() {
                                         <i className="icon-design-tools"></i>
                                     </div>
                                     <div className="aximo-iconbox-data">
-                                        <h3>Social Media Management</h3>
+                                        <h3>Social Media Solutions</h3>
                                         <p>
                                         We help you show up consistently with platform-tailored content, strategy, and community engagement that builds real connection.
                                         </p>
@@ -104,7 +110,7 @@ export default function Home() {
                                         <i className="icon-branding"></i>
                                     </div>
                                     <div className="aximo-iconbox-data">
-                                        <h3> Creative Content Production</h3>
+                                        <h3> Creative Content Solution</h3>
                                         <p>
                                         From reels to campaigns and events, we produce scroll-stopping videos and visuals that tell your brand story.
                                         </p>
@@ -121,7 +127,7 @@ export default function Home() {
                                         <i className="icon-web"></i>
                                     </div>
                                     <div className="aximo-iconbox-data">
-                                        <h3>Branding & Strategy</h3>
+                                        <h3>Branding Solutions</h3>
                                         <p>
                                         We craft creative brand identities and smart strategies that position you to stand out, sell more, and scale with purpose.
                                         </p>
@@ -138,7 +144,7 @@ export default function Home() {
                                         <i className="icon-design-thinking"></i>
                                     </div>
                                     <div className="aximo-iconbox-data">
-                                        <h3>Web & Tech Solutions</h3>
+                                        <h3>Tech Solutions</h3>
                                         <p>
                                         We design sleek websites and automate systems to help your brand run smoother, faster, and smarter online.
                                         </p>
@@ -157,7 +163,7 @@ export default function Home() {
 
             <ProjectSlider />
 
-            <FAQAccordion />
+            {/* <FAQAccordion /> */}
 
             {/* Testimonials Section */}
             <Testimonial />

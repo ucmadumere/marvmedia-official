@@ -5,19 +5,19 @@ export default function FAQAccordion() {
 
   const items = [
     {
-      title: "01/ Project idea",
+      title: "Client-Centric",
       content:
-        "The process starts with a detailed discussion with the client to understand their idea & goals.",
+        "Transparent communication, unwavering quality, understanding unique needs, and delivering tailored solutions.",
     },
     {
-      title: "02/ Brainstorming",
+      title: "Team Of Experts",
       content:
-        "Brainstorming is a group creativity technique in which members attempt to find a conclusion.",
+        "Seasoned experts constantly innovating in social media management, content creation, and branding with a track record of delivering outstanding results.",
     },
     {
-      title: "03/ Launch",
+      title: "Proven Results",
       content:
-        "The completed design assets or final product are delivered with necessary documentation.",
+        "Consistently delivered outstanding results for businesses across various industries, emphasizing the importance of online presence in the digital age.",
     },
   ];
 
@@ -34,21 +34,20 @@ export default function FAQAccordion() {
               <div className="aximo-default-content">
                 <h2>
                   <span className="aximo-title-animation">
-                    Our high-quality
+                    Why choose us
                     <span className="aximo-title-icon">
                       <img src="/assets/images/v1/star2.png" alt="" />
                     </span>
                   </span>
-                  working processes
+                  {/* working processes */}
                 </h2>
                 <p>
-                  We focus at every stage on effective communication and collaboration between
-                  the client and ensuring that the final design meets the client's objectives
-                  and expectations.
-                </p>
-                <p>
-                  It is important to note that these are simplified steps, and the actual work
-                  process may vary depending on the complexity of the project.
+                  We combine transparent communication, unwavering quality, and
+                  a deep understanding of unique needs to deliver tailored
+                  solutions—driven by seasoned experts who consistently innovate
+                  in social media, content creation, and branding, with a proven
+                  track record of delivering exceptional results across
+                  industries in today’s digital landscape.
                 </p>
               </div>
             </div>
@@ -57,7 +56,9 @@ export default function FAQAccordion() {
                 {items.map((item, index) => (
                   <div
                     key={index}
-                    className={`aximo-accordion-item ${openIndex === index ? "open" : ""}`}
+                    className={`aximo-accordion-item ${
+                      openIndex === index ? "open" : ""
+                    }`}
                   >
                     <div
                       className="aximo-accordion-header"

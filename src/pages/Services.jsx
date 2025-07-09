@@ -17,7 +17,6 @@ export default function Service() {
             <ServiceGridSection />
             <AutoSlider />
             <FAQAccordion />
-            <FaqSample />
             
         </>
     );
