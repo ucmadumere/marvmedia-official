@@ -28,7 +28,7 @@ export default function Footer() {
                     <ul>
                       <li>Give us a call:</li>
                       <li>
-                        <a href="tel:+2349075115148">(+234) 90 7511 5148</a>
+                        <a href="tel:+2349075115148">+234 907 511 5148</a>
                       </li>
                     </ul>
                   </div>
@@ -98,9 +98,9 @@ export default function Footer() {
                   <div className="aximo-form-field">
                     <input type="email" placeholder="Your email address" />
                   </div>
-                  <div className="aximo-form-field">
-                    <input type="text" placeholder="+088-234-6849" />
-                  </div>
+                  {/* <div className="aximo-form-field">
+                    <input type="text" placeholder="+234 907 511 5148" />
+                  </div> */}
                   <div className="aximo-form-field">
                     <textarea
                       name="textarea"

@@ -21,6 +21,14 @@ export default function Portfolio() {
 
       <Breadcrumb title="Portfolio" current="Portfolio" />
       <div className="section aximo-project-page aximo-section-padding5">
+        <div className="aximo-section-title center pt-4">
+          <h3>A work that speaks for itself</h3>
+          <p>
+            We’ve helped over 50 brands transform their online presence. From
+            compelling content to impactful campaigns, here are some highlights
+            from our journey.
+          </p>
+        </div>
         <div className="container">
           <div className="row">
             {currentItems.map((item, i) => (

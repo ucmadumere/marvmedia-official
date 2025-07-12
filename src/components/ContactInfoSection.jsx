@@ -3,14 +3,14 @@ export default function ContactInfoSection() {
     {
       icon: "call2.svg",
       label: "Call us",
-      lines: ["+088-234-6532-789", "+088-456-3217-005"],
-      link: "tel:+0882346532789",
+      lines: ["+234 907 511 5148"],
+      link: "tel:+2349075115148",
     },
     {
       icon: "email.svg",
       label: "Email us",
-      lines: ["example@gmail.com", "example@gmail.com"],
-      link: "mailto:example@gmail.com",
+      lines: ["support@marvmedia.ng"],
+      link: "mailto:support@marvmedia.ng",
     },
     {
       icon: "map.svg",

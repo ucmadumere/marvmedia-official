@@ -11,8 +11,6 @@ export default function ContactUs() {
     <Breadcrumb title="Contact Us" current="Contact Us" />
     <ContactFormSection />
     <ContactInfoSection />
-    <ContactMap />
-    <FaqSample/>
     </>
   )
 }

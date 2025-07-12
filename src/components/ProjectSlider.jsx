@@ -2,44 +2,13 @@
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, Mousewheel } from "swiper/modules";
+import portfolioData from "../data/portfoliodata";
+
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 
 export default function ProjectSlider() {
-  const projects = [
-    {
-      title: "LUXÉ DENTAL",
-      desc: " Partnered with Colgate to showcase Luxé Dental at BBNaija, creating real-time, culture-aligned content.",
-      img: "project1.png",
-    },
-    {
-      title: "Logo and Branding",
-      desc: "Creating or refreshing a company's logo and developing a cohesive visual identity.",
-      img: "project2.png",
-    },
-    {
-      title: "App UI/UX Design",
-      desc: "Designing the UI/UX for mobile apps and web applications to ensure usability & engagement.",
-      img: "project3.png",
-    },
-    {
-      title: "Packaging Design",
-      desc: "Creating packaging solutions for products that not only protect but also attract customers.",
-      img: "project4.png",
-    },
-    {
-      title: "Product Design",
-      desc: "Developing the look and feel of physical products, aesthetics, and functionality.",
-      img: "project1.png",
-    },
-    {
-      title: "Logo and Branding",
-      desc: "Creating or refreshing a company's logo and developing a cohesive visual identity.",
-      img: "project2.png",
-    },
-  ];
-
   return (
     <div className="section dark-bg aximo-section-padding">
       <div className="container">
@@ -71,18 +40,22 @@ export default function ProjectSlider() {
           1200: { slidesPerView: 3 },
         }}
       >
-        {projects.map((item, i) => (
-          <SwiperSlide key={i}>
+        {portfolioData.map((item) => (
+          <SwiperSlide key={item.id}>
             <div className="aximo-project-thumb">
-              <img src={`/assets/images/v1/${item.img}`} alt={item.title} />
+              <img src={item.mainImage} alt={item.title} />
+
               <div className="aximo-project-wrap">
                 <div className="aximo-project-data">
-                  <Link to="/single-portfolio">
+                  <Link to={`/portfolio/${item.slug}`}>
                     <h3>{item.title}</h3>
                   </Link>
-                  <p>{item.desc}</p>
+                  <p>{item.summary}</p>
                 </div>
-                <Link className="aximo-project-icon" to="/single-portfolio">
+                <Link
+                  className="aximo-project-icon"
+                  to={`/portfolio/${item.slug}`}
+                >
                   <svg
                     width="34"
                     height="28"
