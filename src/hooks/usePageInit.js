@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import AOS from "aos";
 
-export default function usePageInit() {
+export default function usePageInIt() {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
     AOS.refresh();
