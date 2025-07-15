@@ -4,12 +4,12 @@ import Breadcrumb from "../components/Breadcrumb";
 import AutoSlider from "../components/AutoSlider";
 import VideoStatsSection from "../components/VideoStatsSection";
 import React from 'react';
-import usePageInit from "../hooks/usePageInIt";
+import usePageInIt from "../hooks/usePageInIt";
 import SeoSection from "../components/SeoSection";
 import CallToAction from "../components/callToAction";
 
 export default function AboutUs() {
-    usePageInit();
+    usePageInIt();
     return (
       <>
         <Helmet>
