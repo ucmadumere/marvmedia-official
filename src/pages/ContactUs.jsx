@@ -2,7 +2,7 @@ import React from 'react'
 import Breadcrumb from '../components/Breadcrumb';
 import FaqSample from '../components/FaqSample';
 import ContactInfoSection from '../components/ContactInfoSection'
-import ContactFormSection from '../components/contactFormSection';
+import ContactFormSection from '../components/ContactFormSection';
 import ContactMap from '../components/ContactMap';
 
 export default function ContactUs() {
