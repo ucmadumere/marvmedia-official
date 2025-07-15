@@ -76,134 +76,84 @@ const blogData = [
     ],
   },
   {
-    slug: "high-income-skills",
+    slug: "one-year-of-marv-media",
     title:
-      "Learn these five high-income skills to build your one-person business and get rich",
-    date: "June 18, 2024",
+      " One Year of Marv Media: Lessons, Wins & the Power of Starting Small",
+    // date: "June 18, 2024",
     image: "/assets/images/blog/blog3.png",
     content: [
+      { type: "p", text: "" },
       {
         type: "p",
-        text: "By definition, most high-value skill stacks can’t be taught in schools...",
+        text: "It started with an idea, a phone camera, and an unwavering dream to build something real.",
       },
-      { type: "h4", text: "#1: Learn to Tweet your way into a boardroom" },
       {
         type: "p",
-        text: "As a first-generation immigrant, money and networks weren’t given...",
+        text: "August 17th, 2024, Marv Media turned one and what a ride it’s been.",
       },
-      { type: "h4", text: "#2: Web Development and Design" },
       {
         type: "p",
-        text: "Proficiency in web development and design allows you to create...",
+        text: "From a dedicated one-woman content team to a dynamic creative agency serving over 50 brands, this past year has been a masterclass in resilience, growth, and grace. We’ve cried behind the scenes, pushed past imposter syndrome, celebrated monumental client wins, worked with different teams and, most importantly, we kept showing up, every single day.",
       },
       {
-        type: "blockquote",
-        text: "Mastering high-income skills can empower you...",
+        type: "h4",
+        text: "What we’ve learned:",
       },
-      { type: "h4", text: "#4: Digital Product Creation" },
+      {
+        type: "ul",
+        children: [
+          "Consistency will outlast fleeting motivation.",
+          "Small beginnings still make a big impact.",
+          "You don’t need perfect conditions to launch your dream; just START.",
+        ],
+      },
       {
         type: "p",
-        text: "Creating digital products like e-books, online courses...",
+        text: "We’ve launched campaigns, helped businesses grow their visibility and revenue, and now? We are set to build a community of creatives who believe in value, not just vibes.",
+      },
+      {
+        type: "p",
+        text: "Thank you for being part of our journey. We’re just getting started.",
+      },
+      {
+        type: "p",
+        text: "Cheers to year two. Let’s grow even bolder.",
       },
     ],
   },
-  {
-    slug: "high-income-skills",
-    title:
-      "Learn these five high-income skills to build your one-person business and get rich",
-    date: "June 18, 2024",
-    image: "/assets/images/blog/blog3.png",
-    content: [
-      {
-        type: "p",
-        text: "By definition, most high-value skill stacks can’t be taught in schools...",
-      },
-      { type: "h4", text: "#1: Learn to Tweet your way into a boardroom" },
-      {
-        type: "p",
-        text: "As a first-generation immigrant, money and networks weren’t given...",
-      },
-      { type: "h4", text: "#2: Web Development and Design" },
-      {
-        type: "p",
-        text: "Proficiency in web development and design allows you to create...",
-      },
-      {
-        type: "blockquote",
-        text: "Mastering high-income skills can empower you...",
-      },
-      { type: "h4", text: "#4: Digital Product Creation" },
-      {
-        type: "p",
-        text: "Creating digital products like e-books, online courses...",
-      },
-    ],
-  },
-  {
-    slug: "high-income-skills",
-    title:
-      "Learn these five high-income skills to build your one-person business and get rich",
-    date: "June 18, 2024",
-    image: "/assets/images/blog/blog3.png",
-    content: [
-      {
-        type: "p",
-        text: "By definition, most high-value skill stacks can’t be taught in schools...",
-      },
-      { type: "h4", text: "#1: Learn to Tweet your way into a boardroom" },
-      {
-        type: "p",
-        text: "As a first-generation immigrant, money and networks weren’t given...",
-      },
-      { type: "h4", text: "#2: Web Development and Design" },
-      {
-        type: "p",
-        text: "Proficiency in web development and design allows you to create...",
-      },
-      {
-        type: "blockquote",
-        text: "Mastering high-income skills can empower you...",
-      },
-      { type: "h4", text: "#4: Digital Product Creation" },
-      {
-        type: "p",
-        text: "Creating digital products like e-books, online courses...",
-      },
-    ],
-  },
-  {
-    slug: "high-income-skills",
-    title:
-      "Learn these five high-income skills to build your one-person business and get rich",
-    date: "June 18, 2024",
-    image: "/assets/images/blog/blog3.png",
-    content: [
-      {
-        type: "p",
-        text: "By definition, most high-value skill stacks can’t be taught in schools...",
-      },
-      { type: "h4", text: "#1: Learn to Tweet your way into a boardroom" },
-      {
-        type: "p",
-        text: "As a first-generation immigrant, money and networks weren’t given...",
-      },
-      { type: "h4", text: "#2: Web Development and Design" },
-      {
-        type: "p",
-        text: "Proficiency in web development and design allows you to create...",
-      },
-      {
-        type: "blockquote",
-        text: "Mastering high-income skills can empower you...",
-      },
-      { type: "h4", text: "#4: Digital Product Creation" },
-      {
-        type: "p",
-        text: "Creating digital products like e-books, online courses...",
-      },
-    ],
-  },
+
   // Add more blogs here
 ];
 
 export default blogData;
+
+
+
+
+// {
+  //   slug: "",
+  //   title:
+  //     "",
+  //   image: "/assets/images/blog/blog3.png",
+  //   content: [
+  //     {
+  //       type: "p",
+  //       text: "",
+  //     },
+
+  //     { type: "h4", text: "#2: Web Development and Design" },
+  //     {
+  //       type: "p",
+  //       text: "Proficiency in web development and design allows you to create...",
+  //     },
+  //     {
+  //       type: "blockquote",
+  //       text: "Mastering high-income skills can empower you...",
+  //     },
+  //     { type: "h4", text: "#4: Digital Product Creation" },
+  //     {
+  //       type: "p",
+  //       text: "Creating digital products like e-books, online courses...",
+  //     },
+  //   ],
+  // },

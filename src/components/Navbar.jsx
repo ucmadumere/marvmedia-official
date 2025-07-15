@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
+import Pricing from '../pages/Pricing';
 
 export default function Navbar() {
  useEffect(() => {
@@ -83,10 +84,10 @@ export default function Navbar() {
                     </ul>
                   </li>
                   <li className="nav-item nav-item-has-children">
-                    <Link className="nav-link-item">Services</Link>
+                    <Link className="nav-link-item" to="/services">Services</Link>
                     <ul class="sub-menu" id="submenu-2">
                       <li class="sub-menu--item">
-                        <Link>
+                        <Link to="pricing">
                           <span class="menu-item-text">Pricing</span>
                         </Link>
                       </li>

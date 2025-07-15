@@ -12,6 +12,8 @@ import Blog from './pages/Blog';
 import BlogDetails from './pages/BlogDetails';
 import Portfolio from './pages/Portfolio';
 import PortfolioDetails from './pages/PortfolioDetails';
+import NotFound from './pages/NotFound';
+import Pricing from './pages/Pricing';
 // import Aos from 'aos';
 
 function App() {
@@ -22,6 +24,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/services" element={<Services />} />
           <Route path="/faq" element={<FAQ />} />
@@ -31,6 +34,7 @@ function App() {
           <Route path="/services/:slug" element={<ServiceDetails />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/portfolio/:slug" element={<PortfolioDetails />} />
+          <Route path="/pricing" element={<Pricing />} />
         </Routes>
         <Footer />
       </Router>
