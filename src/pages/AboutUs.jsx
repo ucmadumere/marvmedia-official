@@ -6,7 +6,9 @@ import VideoStatsSection from "../components/VideoStatsSection";
 import React from 'react';
 import usePageInIt from "../hooks/usePageInit";
 import SeoSection from "../components/SeoSection";
-import CallToAction from "../components/callToAction";
+import CallToActionButton from "../components/CallToActionButton";
+import CallToAction from "../components/CallToAction";
+
 
 export default function AboutUs() {
     usePageInIt();
