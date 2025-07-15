@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import portfolioData from "../data/portfoliodata";
+import portfolioData from "../data/portfolioData";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Breadcrumb from "../components/Breadcrumb";

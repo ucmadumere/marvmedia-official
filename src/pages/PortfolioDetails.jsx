@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import portfolioData from "../data/portfoliodata";
+import portfolioData from "../data/portfolioData";
 import { Helmet } from "react-helmet-async";
 import Breadcrumb from "../components/Breadcrumb";
 

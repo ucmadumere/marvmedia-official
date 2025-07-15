@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, Mousewheel } from "swiper/modules";
-import portfolioData from "../data/portfoliodata";
+import portfolioData from "../data/portfolioData";
 
 import "swiper/css";
 import "swiper/css/pagination";
