@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import usePageInit from "../hooks/usePageInIt";
+import usePageInit from "../hooks/usePageInit";
 import CountUp from "react-countup";
 
 export default function VideoStatsSection() {

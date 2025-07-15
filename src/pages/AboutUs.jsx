@@ -4,7 +4,7 @@ import Breadcrumb from "../components/Breadcrumb";
 import AutoSlider from "../components/AutoSlider";
 import VideoStatsSection from "../components/VideoStatsSection";
 import React from 'react';
-import usePageInIt from "../hooks/usePageInIt";
+import usePageInIt from "../hooks/usePageInit";
 import SeoSection from "../components/SeoSection";
 import CallToAction from "../components/callToAction";
 

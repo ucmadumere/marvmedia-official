@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import usePageInit from "../hooks/usePageInIt";
+import usePageInit from "../hooks/usePageInit";
 
 export default function ContactFormSection() {
   usePageInit(); // Initialize AOS/WOW animations if you're using them
