@@ -71,7 +71,8 @@ export default function Testimonial() {
                     </div>
                     <div className="aximo-testimonial-author-data">
                       <p>
-                        {testimonial.name} <span>{testimonial.title}</span>
+                        {/* {testimonial.name}  */}
+                        <span>{testimonial.title}</span>
                       </p>
                     </div>
                   </div>
