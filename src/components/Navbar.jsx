@@ -1,40 +1,65 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 export default function Navbar() {
-  const [openDropdown, setOpenDropdown] = useState(null);
-
   useEffect(() => {
     const trigger = document.querySelector(".mobile-menu-trigger");
     const menu = document.querySelector(".menu-block");
     const overlay = document.querySelector(".menu-overlay");
     const closeBtn = document.querySelector(".mobile-menu-close");
+    const backBtn = document.querySelector(".go-back");
+    const submenuParents = document.querySelectorAll(".nav-item-has-children");
 
-    if (!trigger || !menu || !overlay || !closeBtn) return;
+    if (!trigger || !menu || !overlay || !closeBtn || !backBtn) return;
 
     const toggleMenu = () => {
       menu.classList.toggle("active");
       overlay.classList.toggle("active");
+      document.body.classList.toggle("menu-open");
+    };
+
+    const showSubMenu = (menuItem) => {
+      const subMenu = menuItem.querySelector(".sub-menu");
+      if (subMenu) {
+        subMenu.classList.add("active");
+        subMenu.style.display = "block";
+        menu.classList.add("sub-menu-open");
+      }
+    };
+
+    const hideSubMenu = () => {
+      const activeSubMenus = menu.querySelectorAll(".sub-menu.active");
+      activeSubMenus.forEach((submenu) => {
+        submenu.classList.remove("active");
+        submenu.style.display = "none";
+      });
+      menu.classList.remove("sub-menu-open");
     };
 
     trigger.addEventListener("click", toggleMenu);
     overlay.addEventListener("click", toggleMenu);
     closeBtn.addEventListener("click", toggleMenu);
+    backBtn.addEventListener("click", hideSubMenu);
+
+    submenuParents.forEach((item) => {
+      item.addEventListener("click", (e) => {
+        if (window.innerWidth <= 991) {
+          e.preventDefault();
+          showSubMenu(item);
+        }
+      });
+    });
 
     return () => {
       trigger.removeEventListener("click", toggleMenu);
       overlay.removeEventListener("click", toggleMenu);
       closeBtn.removeEventListener("click", toggleMenu);
+      backBtn.removeEventListener("click", hideSubMenu);
+      submenuParents.forEach((item) => {
+        item.removeEventListener("click", showSubMenu);
+      });
     };
   }, []);
-
-  const handleDropdownToggle = (key) => {
-    setOpenDropdown((prev) => (prev === key ? null : key));
-  };
-
-  const handleSubmenuClick = () => {
-    setOpenDropdown(null); // auto-close dropdown
-  };
 
   return (
     <header
@@ -52,115 +77,62 @@ export default function Navbar() {
               />
             </Link>
           </div>
-
           <div className="menu-block-wrapper">
-            <div className="menu-overlay"></div>
+            <div className="menu-overlay" style={{ cursor: "pointer" }}></div>
             <nav className="menu-block" id="append-menu-header">
               <div className="mobile-menu-head">
-                <div className="go-back">
-                  <i className="fa fa-angle-left"></i>
+                <div className="go-back" style={{ cursor: "pointer" }}>
+                  <i className="fa fa-angle-left"></i> Back
                 </div>
                 <div className="current-menu-title"></div>
-                <div className="mobile-menu-close">&times;</div>
+                <div
+                  className="mobile-menu-close"
+                  style={{ fontSize: "26px", cursor: "pointer" }}
+                >
+                  &times;
+                </div>
               </div>
-
               <ul className="site-menu-main">
                 <li className="nav-item">
-                  <Link
-                    className="nav-link-item"
-                    to="/"
-                    onClick={handleSubmenuClick}
-                  >
+                  <Link className="nav-link-item" to="/">
                     Home
                   </Link>
                 </li>
 
                 <li className="nav-item nav-item-has-children">
-                  <span
-                    className="nav-link-item"
-                    onClick={() => handleDropdownToggle("about")}
-                  >
-                    About Us
-                  </span>
-                  <ul
-                    className="sub-menu"
-                    style={{
-                      display: openDropdown === "about" ? "block" : "none",
-                    }}
-                  >
+                  <Link className="nav-link-item">About Us</Link>
+                  <ul className="sub-menu">
                     <li className="sub-menu--item">
-                      <Link to="/about-us" onClick={handleSubmenuClick}>
-                        <span className="menu-item-text">Our Founder</span>
-                      </Link>
-                      <Link to="/portfolio" onClick={handleSubmenuClick}>
-                        <span className="menu-item-text">Portfolio</span>
-                      </Link>
-                      <Link to="/about-us" onClick={handleSubmenuClick}>
-                        <span className="menu-item-text">About</span>
-                      </Link>
-                      <Link to="/faq" onClick={handleSubmenuClick}>
-                        <span className="menu-item-text">FAQ</span>
-                      </Link>
+                      <Link to="/about-us">Our Founder</Link>
+                      <Link to="/portfolio">Portfolio</Link>
+                      <Link to="/about-us">About</Link>
+                      <Link to="/faq">FAQ</Link>
                     </li>
                   </ul>
                 </li>
 
                 <li className="nav-item nav-item-has-children">
-                  <span
-                    className="nav-link-item"
-                    onClick={() => handleDropdownToggle("services")}
-                  >
-                    Services
-                  </span>
-                  <ul
-                    className="sub-menu"
-                    style={{
-                      display: openDropdown === "services" ? "block" : "none",
-                    }}
-                  >
+                  <Link className="nav-link-item">Services</Link>
+                  <ul className="sub-menu">
                     <li className="sub-menu--item">
-                      <Link to="/pricing" onClick={handleSubmenuClick}>
-                        <span className="menu-item-text">Pricing</span>
-                      </Link>
-                      <Link to="/services" onClick={handleSubmenuClick}>
-                        <span className="menu-item-text">Our Services</span>
-                      </Link>
+                      <Link to="/pricing">Pricing</Link>
+                      <Link to="/services">Our Services</Link>
                     </li>
                   </ul>
                 </li>
 
                 <li className="nav-item nav-item-has-children">
-                  <span
-                    className="nav-link-item"
-                    onClick={() => handleDropdownToggle("community")}
-                  >
-                    Community
-                  </span>
-                  <ul
-                    className="sub-menu"
-                    style={{
-                      display: openDropdown === "community" ? "block" : "none",
-                    }}
-                  >
+                  <Link className="nav-link-item">Community</Link>
+                  <ul className="sub-menu">
                     <li className="sub-menu--item">
-                      <Link to="/about-us" onClick={handleSubmenuClick}>
-                        <span className="menu-item-text">
-                          Marv Design Space
-                        </span>
-                      </Link>
-                      <Link to="/portfolio" onClick={handleSubmenuClick}>
-                        <span className="menu-item-text">Learn With Marv</span>
-                      </Link>
+                      <Link to="/about-us">Marv Design Space</Link>
+                      <Link to="/portfolio">Learn With Marv</Link>
                     </li>
                   </ul>
                 </li>
 
                 <li className="nav-item">
-                  <Link
-                    className="nav-link-item"
-                    to="/blog"
-                    onClick={handleSubmenuClick}
-                  >
+                  <Link className="nav-link-item" to="/blog">
                     Blog
                   </Link>
                 </li>
@@ -177,7 +149,10 @@ export default function Navbar() {
             </Link>
           </div>
 
-          <div className="mobile-menu-trigger light">
+          <div
+            className="mobile-menu-trigger light"
+            style={{ cursor: "pointer" }}
+          >
             <span></span>
           </div>
         </nav>
