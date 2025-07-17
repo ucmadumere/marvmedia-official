@@ -43,14 +43,17 @@ export default function ProjectSlider() {
         {portfolioData.map((item) => (
           <SwiperSlide key={item.id}>
             <div className="aximo-project-thumb">
-              <img src={item.mainImage} alt={item.title} />
+              <img
+                src={item.mainImage}
+                alt={item.title}
+              />
 
               <div className="aximo-project-wrap">
                 <div className="aximo-project-data">
                   <Link to={`/portfolio/${item.slug}`}>
                     <h3>{item.title}</h3>
                   </Link>
-                  <p>{item.summary}</p>
+                  {/* <p>{item.summary}</p> */}
                 </div>
                 <Link
                   className="aximo-project-icon"

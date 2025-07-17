@@ -16,6 +16,11 @@ export default function Navbar() {
       menu.classList.toggle("active");
       overlay.classList.toggle("active");
       document.body.classList.toggle("menu-open");
+      // Reset buttons when menu closes
+      if (!menu.classList.contains("active")) {
+        closeBtn.style.display = "block";
+        backBtn.style.display = "none";
+      }
     };
 
     const showSubMenu = (menuItem) => {
@@ -24,6 +29,10 @@ export default function Navbar() {
         subMenu.classList.add("active");
         subMenu.style.display = "block";
         menu.classList.add("sub-menu-open");
+
+        // Toggle button visibility
+        closeBtn.style.display = "none";
+        backBtn.style.display = "flex";
       }
     };
 
@@ -34,6 +43,10 @@ export default function Navbar() {
         submenu.style.display = "none";
       });
       menu.classList.remove("sub-menu-open");
+
+      // Toggle button visibility
+      closeBtn.style.display = "block";
+      backBtn.style.display = "none";
     };
 
     trigger.addEventListener("click", toggleMenu);
@@ -44,11 +57,15 @@ export default function Navbar() {
     submenuParents.forEach((item) => {
       item.addEventListener("click", (e) => {
         if (window.innerWidth <= 991) {
-          e.preventDefault();
-          showSubMenu(item);
+          const isSelfClick = e.target.classList.contains("nav-link-item");
+          if (isSelfClick) {
+            e.preventDefault();
+            showSubMenu(item);
+          }
         }
       });
     });
+    
 
     return () => {
       trigger.removeEventListener("click", toggleMenu);
@@ -80,9 +97,25 @@ export default function Navbar() {
           <div className="menu-block-wrapper">
             <div className="menu-overlay" style={{ cursor: "pointer" }}></div>
             <nav className="menu-block" id="append-menu-header">
-              <div className="mobile-menu-head">
-                <div className="go-back" style={{ cursor: "pointer" }}>
-                  <i className="fa fa-angle-left"></i> Back
+              <div
+                className="mobile-menu-head"
+                // style={{
+                //   display: "flex",
+                //   alignItems: "center",
+                //   justifyContent: "space-between",
+                // }}
+              >
+                <div
+                  className="go-back"
+                  style={{
+                    display: "none",
+                    cursor: "pointer",
+                    alignItems: "center",
+                    fontSize: "18px",
+                    gap: "4px",
+                  }}
+                >
+                  <i className="fa fa-angle-left ps-4"></i>
                 </div>
                 <div className="current-menu-title"></div>
                 <div
@@ -103,10 +136,18 @@ export default function Navbar() {
                   <Link className="nav-link-item">About Us</Link>
                   <ul className="sub-menu">
                     <li className="sub-menu--item">
-                      <Link to="/about-us">Our Founder</Link>
-                      <Link to="/portfolio">Portfolio</Link>
-                      <Link to="/about-us">About</Link>
-                      <Link to="/faq">FAQ</Link>
+                      <Link className="pb-3 pt-4" to="/about-us">
+                        Our Founder
+                      </Link>
+                      <Link className="pb-3" to="/portfolio">
+                        Portfolio
+                      </Link>
+                      <Link className="pb-3" to="/about-us">
+                        About
+                      </Link>
+                      <Link className="pb-3" to="/faq">
+                        FAQ
+                      </Link>
                     </li>
                   </ul>
                 </li>
@@ -115,8 +156,12 @@ export default function Navbar() {
                   <Link className="nav-link-item">Services</Link>
                   <ul className="sub-menu">
                     <li className="sub-menu--item">
-                      <Link to="/pricing">Pricing</Link>
-                      <Link to="/services">Our Services</Link>
+                      <Link className="pb-3 pt-4" to="/pricing">
+                        Pricing
+                      </Link>
+                      <Link className="pb-3" to="/services">
+                        Our Services
+                      </Link>
                     </li>
                   </ul>
                 </li>
@@ -125,8 +170,12 @@ export default function Navbar() {
                   <Link className="nav-link-item">Community</Link>
                   <ul className="sub-menu">
                     <li className="sub-menu--item">
-                      <Link to="/about-us">Marv Design Space</Link>
-                      <Link to="/portfolio">Learn With Marv</Link>
+                      <Link className="pb-3 pt-4" to="">
+                        Marv Design Space
+                      </Link>
+                      <Link className="pb-3" to="">
+                        Learn With Marv
+                      </Link>
                     </li>
                   </ul>
                 </li>

@@ -1,8 +1,8 @@
 const portfolioData = [
   {
     id: 1,
-    slug: "product-design",
-    title: "Product Design",
+    slug: "luxe-dental",
+    title: "Luxe Dental",
     client: "Luxe Dental",
     summary:
       "Developing the look and feel of physical products, aesthetics, and functionality.",
