@@ -29,24 +29,24 @@ const portfolioData = [
     title: "Iky-anderson",
     client: "Iky - Anderson ",
     summary:
-      "Developing the look and feel of physical products, aesthetics, and functionality.",
-    date: "23rd October, 2024",
+      "",
+    date: "",
     duration: "Two weeks",
     mainImage: "/assets/images/portfolio/p_single.png",
     sideImage: "/assets/images/portfolio/p_single2.png",
     intro:
-      "We partnered with Colgate to represent Luxé Dental during a Big Brother Naija house visit, capturing real-time content and aligning the brand with a major cultural moment.",
+      "",
     steps: [
       {
-        title: "Impact:",
-        desc: "The collaboration positioned Luxé Dental in front of millions, elevated brand credibility through association with Colgate and BBNaija, and generated meaningful engagement across social media.",
+        title: "",
+        desc: "",
       },
     ],
   },
   {
     id: 3,
     slug: "speed-meal-school",
-    title: "Speed Meal Culinary School",
+    title: "Speed Meals Culinary School",
     client: "Speed Meals Culinary School",
     summary:
       "Developing the look and feel of physical products, aesthetics, and functionality.",

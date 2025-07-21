@@ -82,7 +82,7 @@ export default function Pricing() {
                 </span>
               </span>
             </h2>
-            <p>
+            <p className="pt-4">
               Experience the Marv effect that blends your brand voice with your
               brand message and produces beautiful results that generate leads
               and significant engagement. At Marv Creative Media Management, we
@@ -93,7 +93,7 @@ export default function Pricing() {
           </div>
 
           {/* Toggle Billing Option */}
-          <div className="pricing-btn">
+          {/* <div className="pricing-btn">
             <label>Billed monthly</label>
             <div className="toggle-btn">
               <input
@@ -108,7 +108,7 @@ export default function Pricing() {
               />
             </div>
             <label>Billed annually</label>
-          </div>
+          </div> */}
 
           {/* Pricing Cards */}
           <div className="row" id="table-price-value">

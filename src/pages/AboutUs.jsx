@@ -35,19 +35,25 @@ export default function AboutUs() {
                 </span>
               </h2>
               <p>
-                What started as a solo freelance journey became a creative
-                agency birthed from lived experience, growth, and grit.{" "}
+                Our story started simply: just a person and an Android phone.
+                But then, that one person became two, two became four, then
+                eight, and we are still on that path of natural growth today.We
+                ran on pure passion and were thrilled to see our clients
+                succeed.{" "}
               </p>
               <p>
-                Marv Media was founded by a creative who understands the
-                trenches?from unpaid internships to working with top brands.
-                We've helped individuals transition from freelancers to
-                full-fledged agency owners, and businesses go from content chaos
-                to clarity.
+                We went from that one phone to a studio full of professional
+                gadgets, with each piece marking a new step in our journey.
+                Looking back, it's wild how that initial idea has grown into a
+                long line of happy clients and successful campaigns. It just
+                goes to show that something truly big can come from a very
+                modest, humble beginning.
               </p>
               <p>
-                We believe content can transform a brand's entire trajectory and
-                we've built systems that make that transformation possible.
+                Our journey is a testament to what you can build with pure hard
+                work and a true desire to connect. We truly believe that content
+                can redefine a brand's entire trajectory, and we've built the
+                systems to make that powerful transformation a reality.
               </p>
             </div>
 

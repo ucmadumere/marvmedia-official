@@ -44,19 +44,32 @@ export default function VideoStatsSection() {
               className="aximo-video-wrap animate__animated animate__fadeInUp"
               data-aos="zoom-in"
               data-wow-delay="0s"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                padding: "0 0",
+              }}
             >
-              <img
-                src="/assets/images/v1/video-bg.png"
-                alt="video background"
-              />
-              <a
-                className="aximo-video-popup play-btn1 video-init"
-                href="https://youtu.be/eve0c8Hv8Lw?si=VLed1bmEDohkQLBz"
-                target="_blank"
-                rel="noopener noreferrer"
+              <div
+                style={{
+                  width: "100%",
+                  maxWidth: "960px",
+                  aspectRatio: "16/9",
+                }}
               >
-                <img src="/assets/images/v1/play-btn.svg" alt="Play video" />
-              </a>
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/eve0c8Hv8Lw?si=HLHlyY7SN_Yib2IN"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  style={{ borderRadius: "12px" }}
+                ></iframe>
+              </div>
             </div>
           </div>
 

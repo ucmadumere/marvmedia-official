@@ -10,7 +10,7 @@ export default function FaqMain() {
     {
       question: "How can I work with Marv Media?",
       answer:
-        "Start by booking a free 30-minute call via our contact page. We?ll learn about your needs and recommend the right service or package.",
+        "Start by booking a free 30-minute call via our contact page. We'll learn about your needs and recommend the right service or package.",
     },
     {
       question: "Do you offer custom packages?",

@@ -136,7 +136,7 @@ export default function Navbar() {
                   <Link className="nav-link-item">About Us</Link>
                   <ul className="sub-menu">
                     <li className="sub-menu--item">
-                      <Link className="pb-3 pt-4" to="/about-us">
+                      <Link className="pb-3 pt-4" to="/our-founder">
                         Our Founder
                       </Link>
                       <Link className="pb-3" to="/portfolio">
@@ -170,10 +170,10 @@ export default function Navbar() {
                   <Link className="nav-link-item">Community</Link>
                   <ul className="sub-menu">
                     <li className="sub-menu--item">
-                      <Link className="pb-3 pt-4" to="">
+                      <Link className="pb-3 pt-4" to="/marv-design">
                         Marv Design Space
                       </Link>
-                      <Link className="pb-3" to="">
+                      <Link className="pb-3" to="/learn-with-marv">
                         Learn With Marv
                       </Link>
                     </li>

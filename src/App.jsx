@@ -14,6 +14,9 @@ import Portfolio from './pages/Portfolio';
 import PortfolioDetails from './pages/PortfolioDetails';
 import NotFound from './pages/NotFound';
 import Pricing from './pages/Pricing';
+import OurFounder from './pages/OurFounder';
+import LearnWithMarv from './pages/LearnWithMarv';
+import MarvDesign from './pages/MarvDesign';
 // import Aos from 'aos';
 
 function App() {
@@ -35,6 +38,9 @@ function App() {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/portfolio/:slug" element={<PortfolioDetails />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/our-founder" element={<OurFounder />} />
+          <Route path="/learn-with-marv" element={<LearnWithMarv />} />
+          <Route path="/marv-design" element={<MarvDesign />} />
         </Routes>
         <Footer />
       </Router>
