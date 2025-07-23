@@ -63,17 +63,17 @@ export default function Testimonial() {
                     <p>{testimonial.text}</p>
                   </div>
                   <div className="aximo-testimonial-author">
-                    <div className="aximo-testimonial-author-thumb">
+                    {/* <div className="aximo-testimonial-author-thumb">
                       <img
                         src={`/assets/images/v1/${testimonial.img}`}
                         alt={testimonial.name}
                       />
-                    </div>
+                    </div> */}
                     <div className="aximo-testimonial-author-data">
-                      <p>
+                      <h4>
                         {/* {testimonial.name}  */}
                         <span>{testimonial.title}</span>
-                      </p>
+                      </h4>
                     </div>
                   </div>
                 </div>

@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import ComingSoon from "../components/ComingSoon";
-import SeoSection from "../components/SeoSection";
 import { Helmet } from "react-helmet-async";
 import Breadcrumb from "../components/Breadcrumb";
+import CeoSection from "../components/CeoSection";
+import CeoHero from "../components/CeoHero";
+import CalltoActionDiv from "../components/CalltoActionDiv";
 
 export default function OurFounder() {
   return (
@@ -12,8 +14,10 @@ export default function OurFounder() {
         <meta name="description" content="Meet our founder" />
       </Helmet>
 
-      <Breadcrumb title="Our Founder " current="Our Founder " />
-      <SeoSection />
+      <Breadcrumb title="The Founder - Marvel Iwezue" current="Our Founder " />
+      {/* <CeoHero /> */}
+      <CalltoActionDiv />
+      <CeoSection />
     </>
   );
 }

@@ -63,7 +63,7 @@ export default function AboutUs() {
                   className="aximo-story-thumb wow fadeInUpX"
                   data-wow-delay="0.1s"
                 >
-                  <img src="assets/images/about/story1.png" alt="" />
+                  <img src="assets/images/about/team1(1).jpg" alt="" />
                 </div>
               </div>
               <div className="col-lg-4">
@@ -71,7 +71,13 @@ export default function AboutUs() {
                   className="aximo-story-thumb wow fadeInUpX"
                   data-wow-delay="0.2s"
                 >
-                  <img src="assets/images/about/story2.png" alt="" />
+                  <img src="assets/images/about/team2.jpg" alt="" />
+                </div>
+                <div
+                  className="aximo-story-thumb wow fadeInUpX"
+                  data-wow-delay="0.2s"
+                >
+                  <img src="assets/images/about/team6.jpg" alt="" />
                 </div>
               </div>
               <div className="col-lg-4">
@@ -79,7 +85,14 @@ export default function AboutUs() {
                   className="aximo-story-thumb wow fadeInUpX"
                   data-wow-delay="0.3s"
                 >
-                  <img src="assets/images/about/story3.png" alt="" />
+                  <img src="assets/images/about/team4.jpg" alt="" />
+                  {/* <img src="assets/images/about/team5.jpg" alt="" /> */}
+                </div>
+                <div
+                  className="aximo-story-thumb wow fadeInUpX"
+                  data-wow-delay="0.3s"
+                >
+                  <img src="assets/images/about/team5.jpg" alt="" />
                 </div>
               </div>
               <div className="col-lg-8">
@@ -87,7 +100,7 @@ export default function AboutUs() {
                   className="aximo-story-thumb wow fadeInUpX"
                   data-wow-delay="0.4s"
                 >
-                  <img src="assets/images/about/story4.png" alt="" />
+                  <img src="assets/images/about/team3.jpg" alt="" />
                 </div>
               </div>
             </div>

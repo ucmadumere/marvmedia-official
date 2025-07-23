@@ -67,7 +67,7 @@ const services = [
         monthly: "450,000 +",
       },
       {
-        tier: "Landing Design",
+        tier: "Landing Page Design",
         monthly: "100,000",
       },
     ],
