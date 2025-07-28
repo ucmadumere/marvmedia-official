@@ -17,6 +17,7 @@ import Pricing from './pages/Pricing';
 import OurFounder from './pages/OurFounder';
 import LearnWithMarv from './pages/LearnWithMarv';
 import MarvDesign from './pages/MarvDesign';
+import WhatsAppButton from './components/WhatsAppButton';
 // import Aos from 'aos';
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
           <Route path="/marv-design" element={<MarvDesign />} />
         </Routes>
         <Footer />
+        <WhatsAppButton />
       </Router>
     </>
   );
