@@ -2,10 +2,34 @@ import { Link } from "react-router-dom";
 
 export default function TeamSlider() {
     const teamMembers = [
-        { name: "Andrew Mark", title: "Creative Director", img: "team1.png" },
-        { name: "Jack Taylor", title: "Senior Designer", img: "team2.png" },
-        { name: "Martine Joy", title: "Project Manager", img: "team3.png" },
-        { name: "Adam Straw", title: "Web Developer", img: "team4.png" },
+      { name: "Marvel Iwezue ", title: "Founder", img: "team1.png" },
+      {
+        name: "Salome",
+        title: "Social Media Executive",
+        img: "sally.jpg",
+      },
+      {
+        name: "Abigail",
+        title: "Social Media Executive",
+        img: "abigail.jpg",
+      },
+      {
+        name: "Saviour",
+        title: "Partnership & Programs",
+        img: "saviour.png",
+      },
+      {
+        name: "Increase",
+        title: "Intern",
+        img: "increase.png",
+      },
+      {
+        name: "PSI",
+        title: "Recruitment Partner",
+        img: "psi.png",
+      },
+      { name: "Gabriel", title: "Legal Adviser", img: "gabriel.png" },
+      { name: "Ugochukwu", title: "Technical Partner", img: "team4.png" },
     ];
 
     return (
@@ -19,7 +43,7 @@ export default function TeamSlider() {
                             <span className="aximo-title-animation">
                                 creative people
                                 <span className="aximo-title-icon">
-                                    <img src="/assets/images/v1/star2.png" alt="star-icon" />
+                                    {/* <img src="/assets/images/v1/star2.png" alt="star-icon" /> */}
                                 </span>
                             </span>
                         </h2>
@@ -33,7 +57,7 @@ export default function TeamSlider() {
                                         <img src={`/assets/images/team/${member.img}`} alt={member.name} />
                                         <div className="aximo-social-icon team-social">
                                             <ul>
-                                                {["twitter", "facebook", "instagram", "linkedin"].map((platform, index) => (
+                                                {["linkedin"].map((platform, index) => (
                                                     <li key={index}>
                                                         <a href="#">
                                                             <i className={`icon-${platform}`}></i>

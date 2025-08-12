@@ -56,7 +56,7 @@ export default function BlogDetails() {
                     if (block.type === "h1")
                       return <h1 key={i}>{block.text}</h1>;
                     if (block.type === "blockquote")
-                      return <blockquote key={i}>{block.text}</blockquote>;
+                      return <blockquote key={i}>{block.text}</blockquote>
                     if (block.type === "ul") {
                       return (
                         <ul
@@ -65,7 +65,7 @@ export default function BlogDetails() {
                             listStyleType: "disc",
                             paddingLeft: "1.5rem",
                             marginBottom: "1rem",
-                            color: "#000", // optional if you want black text
+                            color: "#7e7e7e", // optional if you want black text
                           }}
                         >
                           {block.children.map((item, idx) => (

@@ -18,7 +18,7 @@ export default function ProjectSlider() {
             <span className="aximo-title-animation">
               of our projects
               <span className="aximo-title-icon">
-                <img src="/assets/images/v1/star2.png" alt="decorative star" />
+                {/* <img src="/assets/images/v1/star2.png" alt="decorative star" /> */}
               </span>
             </span>
           </h2>

@@ -22,9 +22,9 @@ export default function VideoStatsSection() {
               <h2 data-aos="fade-right">
                 <span className="aximo-title-animation">
                   We make your
-                  <span className="aximo-title-icon">
+                  {/* <span className="aximo-title-icon">
                     <img src="/assets/images/v1/star2.png" alt="star icon" />
-                  </span>
+                  </span> */}
                 </span>
                 business stand out
               </h2>

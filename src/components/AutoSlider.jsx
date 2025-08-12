@@ -24,7 +24,7 @@ export default function AutoSlider() {
           <SwiperSlide key={i} style={{ width: 'auto' }}>
             <div className="aximo-auto-slider-item">
               <h3>Let's create new experiences</h3>
-              <img src="/assets/images/v1/star3.png" alt="" />
+              {/* <img src="/assets/images/v1/star3.png" alt="" /> */}
             </div>
           </SwiperSlide>
         ))}

@@ -78,7 +78,7 @@ export default function Pricing() {
               <span className="aximo-title-animation">
                 ready packages
                 <span className="aximo-title-icon">
-                  <img src="/assets/images/v1/star2.png" alt="star" />
+                  {/* <img src="/assets/images/v1/star2.png" alt="star" /> */}
                 </span>
               </span>
             </h2>
@@ -137,9 +137,11 @@ export default function Pricing() {
                       {pkg.features.map((feature, i) => (
                         <li key={i}>
                           <img
-                            src="/assets/images/icon/check.svg"
+                            src="/assets/images/icon/check-circle-fill.svg"
                             alt="check"
                           />
+                          
+
                           <span
                             style={{
                               wordBreak: "break-word",

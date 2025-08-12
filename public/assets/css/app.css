@@ -7,8 +7,9 @@
 --heading-color4: #221F1A;
 --heading-color5: #2C2C2C;
 --heading-color6: #0B1040;
---body-color: #0C0C0C;
---accent-color: #BFF747;
+/* --body-color: #0C0C0C; */
+--body-color: #7e7e7e;
+--accent-color: #08FAA4;
 --white-smoke: #FDFDE1;
 --white-color: #ffffff;
 --orange-color: #FF4612;
@@ -28,7 +29,7 @@
 --white-bg: #ffffff;
 --orange-bg: #FF4612;
 --orange-bg2: #FF8064;
---accent-bg: #BFF747;
+--accent-bg: #08FAA4;
 --yellow-bg: #FFE757;
 --corn-bg: #F4B905;
 --blue-bg: #0000FF;
@@ -87,7 +88,7 @@ body
 {
 height: 100% !important;
 color: var(--body-color);
-font-family: "Poppins", sans-serif;;
+font-family: "Montserrat", sans-serif;;
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 vertical-align: baseline;
@@ -6753,7 +6754,7 @@ img.aximo-video-circle {
 }
 .aximo-pricing-body2 ul li {
   position: relative;
-  font-size: 21px;
+  font-size: 19px;
   font-weight: 600;
   padding-left: 40px;
   margin-bottom: 20px;
@@ -7030,6 +7031,7 @@ img.aximo-video-circle {
   border-radius: 20px;
   position: relative;
   border: 5px solid var(--white-smoke);
+  height: 300px !important;
 }
 .aximo-project-thumb img {
   transition: all 0.5s;
@@ -9463,6 +9465,7 @@ a.aximo-connect-login img {
 
 h3.entry-title {
   margin-bottom: 15px;
+  font-size: 20px !important;
 }
 
 a.post-read-more {
@@ -10140,7 +10143,7 @@ a.comment-reply {
 
 button#aximo-notified-btn {
   border-radius: 50px;
-  background: #BFF747;
+  background: #08FAA4;
   width: 150px;
   height: 50px;
   font-size: 16px;

@@ -12,9 +12,29 @@ const services = [
     ],
     sub: "With our full social media management, you get:",
     userInterface: [
-      "Graphic design refers to the visual elements and overall look of a product.",
-      "Graphic design designers create a visually appealing and consistent design.",
+      "Weekly content plan",
+      "Feed design + copy",
+      "Reels and video content",
+      "Engagement and reports",
+      "Monthly strategy call",
       "Key aspects: layout, colors, typography, icons.",
+    ],
+    subtitle2: "Social Media Page Management",
+    sub1: "Content Creation & Visual Production",
+    userExperience: [
+      "Monthly content shoots",
+      "Reels + short-form video",
+      "Carousel design",
+      "Caption writing",
+      "Personal brand consulting",
+    ],
+    sub2: "Content Creation & Visual Production",
+    contentStrategy: [
+      "Audit your current content",
+      "Identify your Target Audience",
+      "Refine your brand voice",
+      "Build out content pillars",
+      "Create a custom strategy that works for YOU",
     ],
 
     pricing: [
@@ -43,6 +63,43 @@ const services = [
         features: [],
       },
     ],
+    pricing1: [
+      {
+        monthly: "40 (monthly)",
+
+        features: [
+          "2 platforms (Instagram/Pinterest/TikTok/LinkedIn)",
+          "Brand MoodBoard",
+          "Content calendar",
+          "Copywriting (captions)",
+          "Graphics design",
+          "Trend research",
+          "Strategic call",
+          "Story engagement and management",
+          "Page monitoring and engagement",
+          "Content Curation",
+          "4 posts weekly",
+          "Reports & Analytics",
+        ],
+      },
+      {
+        monthly: "130",
+        features: [
+          "2 platforms (Instagram/Pinterest/TikTok/LinkedIn)",
+          "Brand MoodBoard",
+          "Content Calendar",
+          "Copywriting (captions)",
+          "Graphics design",
+          "Trend research",
+          "Strategic call",
+          "Story engagement and management",
+          "Page monitoring and engagement",
+          "Content Curation",
+          "4 posts weekly",
+          "Reports & Analytics",
+        ],
+      },
+    ],
   },
 
   {
@@ -52,15 +109,8 @@ const services = [
     desc: "We create user-centric websites that showcase your brand identity. Plus, we offer web maintenance & support to keep your site running smoothly and updated.",
     img: "service-single.png",
     img2: "service-single2.png",
-    content: [
-      "Graphic design, which stands for User Interface (UI) and User Experience (UX), are two critical components of software design and development.",
-      "They are often used interchangeably, but they refer to different aspects of the design and user interaction process.",
-    ],
-    userInterface: [
-      "Graphic design refers to the visual elements and overall look of a product.",
-      "Graphic design designers create a visually appealing and consistent design.",
-      "Key aspects: layout, colors, typography, icons.",
-    ],
+    content: [""],
+    userInterface: [""],
     pricing: [
       {
         tier: "Web Design and Development",
@@ -75,19 +125,12 @@ const services = [
   {
     slug: "content-creation-visual-production",
     title: "Content Creation & Visual Production",
-    subtitle: "Graphics for modern product development",
+    subtitle: "",
     desc: "We produce high-quality visuals that reveal your brand in HD. From scripts and mood boards to directing brand photoshoots, we handle it all.",
     img: "service-single.png",
     img2: "service-single2.png",
-    content: [
-      "Graphic design, which stands for User Interface (UI) and User Experience (UX), are two critical components of software design and development.",
-      "They are often used interchangeably, but they refer to different aspects of the design and user interaction process.",
-    ],
-    userInterface: [
-      "Graphic design refers to the visual elements and overall look of a product.",
-      "Graphic design designers create a visually appealing and consistent design.",
-      "Key aspects: layout, colors, typography, icons.",
-    ],
+    content: [""],
+    userInterface: [""],
     pricing: [
       {
         tier: "Thought Leaders Package",
@@ -121,25 +164,15 @@ const services = [
     ],
   },
   {
-    slug: "strategy-development",
+    slug: "",
     title: "Strategy Development",
-    subtitle: "Graphics for modern product development",
+    subtitle: "",
     desc: "Build a resilient digital marketing strategy with us. We help you stay relevant and excel in the digital space with tailored strategies for your projects.",
     img: "service-single.png",
     img2: "service-single2.png",
-    content: [
-      "Graphic design, which stands for User Interface (UI) and User Experience (UX), are two critical components of software design and development.",
-      "They are often used interchangeably, but they refer to different aspects of the design and user interaction process.",
-    ],
-    userInterface: [
-      "Graphic design refers to the visual elements and overall look of a product.",
-      "Graphic design designers create a visually appealing and consistent design.",
-      "Key aspects: layout, colors, typography, icons.",
-    ],
-    userExperience: [
-      "UX focuses on the user’s experience and how easy it is to achieve their goals.",
-      "UX designers use research and testing to improve user satisfaction.",
-    ],
+    content: [""],
+    userInterface: [""],
+    userExperience: [""],
     approach: {
       title: "Our Approach",
       header: "The working approach of graphic designing",
@@ -163,88 +196,33 @@ const services = [
     },
   },
   {
-    slug: "graphic-design",
+    slug: "",
     title: "Graphics Designing",
-    subtitle: "Graphics for modern product development",
+    subtitle: "",
     desc: "From logos to brand designs, we bring your innovative ideas to life. Our exceptional graphics effectively sell your brand to your audience.",
     img: "service-single.png",
     img2: "service-single2.png",
-    content: [
-      "Graphic design, which stands for User Interface (UI) and User Experience (UX), are two critical components of software design and development.",
-      "They are often used interchangeably, but they refer to different aspects of the design and user interaction process.",
-    ],
-    userInterface: [
-      "Graphic design refers to the visual elements and overall look of a product.",
-      "Graphic design designers create a visually appealing and consistent design.",
-      "Key aspects: layout, colors, typography, icons.",
-    ],
-    userExperience: [
-      "UX focuses on the user’s experience and how easy it is to achieve their goals.",
-      "UX designers use research and testing to improve user satisfaction.",
-    ],
-    approach: {
-      title: "Our Approach",
-      header: "The working approach of graphic designing",
-      steps: [
-        {
-          icon: "icon-search",
-          title: "Research and Competitor Analysis",
-          points: ["Understand target users and analyze competitors."],
-        },
-        {
-          icon: "icon-design-tools",
-          title: "User Interface Implementation",
-          points: ["Translate design into code or final assets."],
-        },
-        {
-          icon: "icon-start-up",
-          title: "Launch and Post-Launch",
-          points: ["Launch product and iterate from user feedback."],
-        },
-      ],
-    },
+    content: [""],
   },
   {
-    slug: "merchandising/",
+    slug: "",
     title: "Merchandising ",
-    subtitle: "Graphics for modern product development",
+    subtitle: "Merchandising",
     desc: "We design and produce custom merchandise and corporate gifts that align with your brand, perfect for promotional events or employee incentives.",
     img: "service-single.png",
     img2: "service-single2.png",
     content: [
-      "Graphic design, which stands for User Interface (UI) and User Experience (UX), are two critical components of software design and development.",
-      "They are often used interchangeably, but they refer to different aspects of the design and user interaction process.",
+      "We design and produce custom merchandise and corporate gifts that align with your brand, perfect for promotional events or employee incentives.",
     ],
-    userInterface: [
-      "Graphic design refers to the visual elements and overall look of a product.",
-      "Graphic design designers create a visually appealing and consistent design.",
-      "Key aspects: layout, colors, typography, icons.",
-    ],
-    userExperience: [
-      "UX focuses on the user’s experience and how easy it is to achieve their goals.",
-      "UX designers use research and testing to improve user satisfaction.",
-    ],
-    approach: {
-      title: "Our Approach",
-      header: "The working approach of graphic designing",
-      steps: [
-        {
-          icon: "icon-search",
-          title: "Research and Competitor Analysis",
-          points: ["Understand target users and analyze competitors."],
-        },
-        {
-          icon: "icon-design-tools",
-          title: "User Interface Implementation",
-          points: ["Translate design into code or final assets."],
-        },
-        {
-          icon: "icon-start-up",
-          title: "Launch and Post-Launch",
-          points: ["Launch product and iterate from user feedback."],
-        },
-      ],
-    },
+    // userInterface: [
+    //   "Graphic design refers to the visual elements and overall look of a product.",
+    //   "Graphic design designers create a visually appealing and consistent design.",
+    //   "Key aspects: layout, colors, typography, icons.",
+    // ],
+    // userExperience: [
+    //   "UX focuses on the user’s experience and how easy it is to achieve their goals.",
+    //   "UX designers use research and testing to improve user satisfaction.",
+    // ],
   },
   // Add more services here
 ];

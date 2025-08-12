@@ -1,6 +1,35 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export default function Footer() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      await fetch("/api/contactform", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      if (res.ok) {
+        alert("Message sent!");
+        setName("");
+        setEmail("");
+        setMessage("");
+      } else {
+        alert(data.msg || "Failed to send message");
+      }
+    } catch (err) {
+      alert("Server error. Please try again.");
+    }
+  };
+
   return (
     <footer className="aximo-footer-section dark-bg">
       <div className="container">
@@ -11,9 +40,7 @@ export default function Footer() {
                 <h2>
                   <span className="aximo-title-animation">
                     Ready to experience{" "}
-                    <span className="aximo-title-icon">
-                      {/* <img src="/assets/images/v1/star2.png" alt="" /> */}
-                    </span>
+                    <span className="aximo-title-icon"></span>
                   </span>
                   the Marv Effect?
                 </h2>
@@ -88,23 +115,36 @@ export default function Footer() {
                 </div>
               </div>
             </div>
+
             <div className="col-lg-5">
               <div className="aximo-form-wrap">
                 <h4>Send us a message</h4>
-                <form action="#">
+                <form onSubmit={handleSubmit}>
                   <div className="aximo-form-field">
-                    <input type="text" placeholder="Your name" />
+                    <input
+                      type="text"
+                      placeholder="Your name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      required
+                    />
                   </div>
                   <div className="aximo-form-field">
-                    <input type="email" placeholder="Your email address" />
+                    <input
+                      type="email"
+                      placeholder="Your email address"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                    />
                   </div>
-                  {/* <div className="aximo-form-field">
-                    <input type="text" placeholder="+234 907 511 5148" />
-                  </div> */}
                   <div className="aximo-form-field">
                     <textarea
                       name="textarea"
                       placeholder="Write your message here..."
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      required
                     />
                   </div>
                   <button id="aximo-submit-btn" type="submit">
@@ -118,6 +158,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
+
         <div className="aximo-footer-bottom">
           <div className="row">
             <div className="col-lg-6">

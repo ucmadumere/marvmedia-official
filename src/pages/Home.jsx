@@ -25,7 +25,7 @@ export default function Home() {
                   <h1>
                     <span className="aximo-title-animation">
                       This is &nbsp;
-                      <img src="/assets/images/v1/star.png" alt="" />
+                      {/* <img src="/assets/images/v1/star.png" alt="" /> */}
                     </span>{" "}
                     <br />
                     Marv Media
@@ -54,19 +54,19 @@ export default function Home() {
                         className="aximo-hero-user-thumb-item wow fadeInUpX"
                         data-wow-delay="0.4s"
                       >
-                        <img src="/assets/images/v1/yp.png" alt="" />
+                        <img src="/assets/images/v1/yandpure.jpeg" alt="" />
                       </div>
                       <div
                         className="aximo-hero-user-thumb-item wow fadeInUpX"
                         data-wow-delay="0.4s"
                       >
-                        <img src="/assets/images/v1/life-logo.png" alt="" />
+                        <img src="/assets/images/v1/famfac.jpeg" alt="" />
                       </div>
                       <div
                         className="aximo-hero-user-thumb-item wow fadeInUpX"
                         data-wow-delay="0.4s"
                       >
-                        <img src="/assets/images/v1/smile-doctor.png" alt="" />
+                        <img src="/assets/images/v1/adline.jpeg" alt="" />
                       </div>
                     </div>
                     <div className="aximo-hero-user-data">
@@ -78,7 +78,7 @@ export default function Home() {
                                 </Link> */}
                   <CallToActionButton />
                   <div className="aximo-hero-shape">
-                    <img src="/assets/images/v1/shape1.png" alt="" />
+                    {/* <img src="/assets/images/v1/shape1.png" alt="" /> */}
                   </div>
                 </div>
               </div>
@@ -88,7 +88,7 @@ export default function Home() {
                   data-aos="fade-left"
                   data-aos-delay="200"
                 >
-                  <img src="/assets/images/v1/hero-thumb.png" alt="" />
+                  <img src="/assets/images/v1/herothumb.jpg" alt="" />
                 </div>
               </div>
             </div>
@@ -103,7 +103,7 @@ export default function Home() {
                 <span className="aximo-title-animation">
                   {/* design solutions */}
                   <span className="aximo-title-icon">
-                    <img src="/assets/images/v1/star2.png" alt="" />
+                    {/* <img src="/assets/images/v1/star2.png" alt="" /> */}
                   </span>
                 </span>
               </h2>
@@ -212,7 +212,7 @@ export default function Home() {
 
         <AutoSlider />
 
-        <TeamSlider />
+        {/* <TeamSlider /> */}
       </>
     );
 }

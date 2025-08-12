@@ -36,7 +36,7 @@ export default function FAQAccordion() {
                   <span className="aximo-title-animation">
                     Why choose us
                     <span className="aximo-title-icon">
-                      <img src="/assets/images/v1/star2.png" alt="" />
+                      {/* <img src="/assets/images/v1/star2.png" alt="" /> */}
                     </span>
                   </span>
                   {/* working processes */}

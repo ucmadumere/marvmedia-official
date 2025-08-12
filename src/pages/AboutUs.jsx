@@ -30,7 +30,7 @@ export default function AboutUs() {
                 <span className="aximo-title-animation">
                   Our Story
                   <span className="aximo-title-icon">
-                    <img src="assets/images/v1/star2.png" alt="" />
+                    {/* <img src="assets/images/v1/star2.png" alt="" /> */}
                   </span>
                 </span>
               </h2>
@@ -140,7 +140,7 @@ export default function AboutUs() {
                 <span className="aximo-title-animation">
                   {/* creative people */}
                   <span className="aximo-title-icon">
-                    <img src="assets/images/v1/star2.png" alt="" />
+                    {/* <img src="assets/images/v1/star2.png" alt="" /> */}
                   </span>
                 </span>
               </h2>
@@ -156,33 +156,41 @@ export default function AboutUs() {
               {/* Team members */}
               {[
                 {
-                  name: "Andrew Mark",
-                  role: "CEO & Founder",
+                  name: "Marvel Iwezue",
+                  role: "Founder",
                   img: "team1.png",
                 },
                 {
-                  name: "Jack Taylor",
-                  role: "Senior Designer",
-                  img: "team2.png",
+                  name: "Salome",
+                  role: "Social Media Executive",
+                  img: "sally.jpg",
                 },
                 {
-                  name: "Martine Joy",
-                  role: "Project Manager",
+                  name: "Abigail",
+                  role: "Social Media Executive",
                   img: "team3.png",
                 },
-                { name: "Adam Straw", role: "Web Developer", img: "team4.png" },
                 {
-                  name: "William Jack",
-                  role: "Creative Director",
-                  img: "team5.png",
+                  name: "Saviour",
+                  role: "Partnership & Programs",
+                  img: "saviour.png",
                 },
-                { name: "Alex Tom", role: "UI/UX Designer", img: "team6.png" },
                 {
-                  name: "Robin Lesser",
-                  role: "Chief Executive Officer",
-                  img: "team7.png",
+                  name: "Increase",
+                  role: "Intern",
+                  img: "increase.png",
                 },
-                { name: "Sheikh David", role: "HR Director", img: "team8.png" },
+                { name: "PSI", role: "Recruitment Partner", img: "psi.png" },
+                {
+                  name: "Gabriel",
+                  role: "Legal Adviser",
+                  img: "gabriel.png",
+                },
+                {
+                  name: "Ugochukwu",
+                  role: "Technical Partner",
+                  img: "team8.png",
+                },
               ].map(({ name, role, img }, index) => (
                 <div className="col-xl-3 col-md-6" key={index}>
                   <div
@@ -193,7 +201,7 @@ export default function AboutUs() {
                       <img src={`assets/images/team/${img}`} alt={name} />
                       <div className="aximo-social-icon team-social">
                         <ul>
-                          <li>
+                          {/* <li>
                             <a
                               href="https://twitter.com/"
                               target="_blank"
@@ -201,8 +209,8 @@ export default function AboutUs() {
                             >
                               <i className="icon-twitter"></i>
                             </a>
-                          </li>
-                          <li>
+                          </li> */}
+                          {/* <li>
                             <a
                               href="https://facebook.com/"
                               target="_blank"
@@ -210,8 +218,8 @@ export default function AboutUs() {
                             >
                               <i className="icon-facebook"></i>
                             </a>
-                          </li>
-                          <li>
+                          </li> */}
+                          {/* <li>
                             <a
                               href="https://www.instagram.com/"
                               target="_blank"
@@ -219,8 +227,8 @@ export default function AboutUs() {
                             >
                               <i className="icon-instagram"></i>
                             </a>
-                          </li>
-                          <li>
+                          </li> */}
+                          {/* <li>
                             <a
                               href="https://www.linkedin.com/"
                               target="_blank"
@@ -228,7 +236,7 @@ export default function AboutUs() {
                             >
                               <i className="icon-linkedin"></i>
                             </a>
-                          </li>
+                          </li> */}
                         </ul>
                       </div>
                     </div>
@@ -241,7 +249,7 @@ export default function AboutUs() {
                   </div>
                 </div>
               ))}
-              <CallToAction />
+              {/* <CallToAction /> */}
             </div>
           </div>
         </div>

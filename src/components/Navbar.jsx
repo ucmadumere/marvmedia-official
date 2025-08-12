@@ -127,7 +127,10 @@ export default function Navbar() {
               </div>
               <ul className="site-menu-main">
                 <li className="nav-item">
-                  <Link className="nav-link-item" to="/">
+                  <Link
+                    className="nav-link-item"
+                    to="https://platform.marvmedia.ng/"
+                  >
                     Home
                   </Link>
                 </li>
@@ -136,11 +139,17 @@ export default function Navbar() {
                   <Link className="nav-link-item">About Us</Link>
                   <ul className="sub-menu">
                     <li className="sub-menu--item">
-                      <Link className="pb-3 pt-4" to="/our-founder">
+                      <Link
+                        className="pb-3 pt-4"
+                        to="http://founder.marvmedia.ng/"
+                      >
                         Our Founder
                       </Link>
                       <Link className="pb-3" to="/portfolio">
                         Portfolio
+                      </Link>
+                      <Link className="pb-3" to="/team">
+                        Our Team
                       </Link>
                       <Link className="pb-3" to="/about-us">
                         About
@@ -170,10 +179,13 @@ export default function Navbar() {
                   <Link className="nav-link-item">Community</Link>
                   <ul className="sub-menu">
                     <li className="sub-menu--item">
-                      <Link className="pb-3 pt-4" to="/marv-design">
+                      <Link
+                        className="pb-3 pt-4"
+                        to="http://event.marvmedia.ng"
+                      >
                         Marv Design Space
                       </Link>
-                      <Link className="pb-3" to="/learn-with-marv">
+                      <Link className="pb-3" to="http://learn.marvmedia.ng/">
                         Learn With Marv
                       </Link>
                     </li>

@@ -29,7 +29,7 @@ export default function ServiceDetail() {
                     <span className="aximo-title-animation">
                       packages
                       <span className="aximo-title-icon">
-                        <img src="/assets/images/v1/star2.png" alt="" />
+                        {/* <img src="/assets/images/v1/star2.png" alt="" /> */}
                       </span>
                     </span>
                   </h2>
@@ -81,7 +81,56 @@ export default function ServiceDetail() {
                             {pkg.features?.map((feature, i) => (
                               <li key={i}>
                                 <img
-                                  src="/assets/images/icon/check.svg"
+                                  src="/assets/images/icon/check-circle-fill.svg"
+                                  alt="check"
+                                />
+                                <span
+                                  style={{
+                                    wordBreak: "break-word",
+                                    whiteSpace: "normal",
+                                  }}
+                                >
+                                  {feature}
+                                </span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="row" id="table-price-value">
+                  <h3 className="aximo-title-animation p-4">
+                    {service.subtitle2}
+                  </h3>
+                  {service.pricing1?.map((pkg, index) => (
+                    <div className="col-xl-4 col-md-6" key={index}>
+                      <div
+                        className="aximo-pricing-wrap2 wow fadeInUpX"
+                        data-wow-delay={`0.${index + 1}s`}
+                      >
+                        <div className="aximo-pricing-header2">
+                          <h5>{pkg.tier}</h5>
+                        </div>
+                        <div className="aximo-pricing-price2">
+                          <h2>£</h2>
+                          <h3 className="aximo-price">
+                            {billingType === "monthly"
+                              ? pkg.monthly
+                              : pkg.yearly}
+                          </h3>
+                        </div>
+                        <div className="aximo-pricing-description">
+                          <p>{pkg.description}</p>
+                        </div>
+                        <div className="aximo-pricing-body2">
+                          <ul>
+                            {pkg.features?.map((feature, i) => (
+                              <li key={i}>
+                                <img
+                                  src="/assets/images/icon/check-circle-fill.svg"
                                   alt="check"
                                 />
                                 <span
@@ -110,7 +159,7 @@ export default function ServiceDetail() {
                   <h2 className="aximo-title-animation">
                     {service.subtitle.split(" ").slice(0, 3).join(" ")}{" "}
                     <span className="aximo-title-icon">
-                      <img src="/assets/images/v1/star2.png" alt="star" />
+                      {/* <img src="/assets/images/v1/star2.png" alt="star" /> */}
                     </span>
                     <br />
                     {service.subtitle.split(" ")[3]}
@@ -125,7 +174,7 @@ export default function ServiceDetail() {
 
             {/* UI/UX Section */}
             <div className="row">
-              <div className="col-lg-12 pb-4">
+              <div className="col-lg-12 pb-5">
                 <div className="aximo-user-interface">
                   <h3>{service.sub}</h3>
                   <ul>
@@ -135,16 +184,26 @@ export default function ServiceDetail() {
                   </ul>
                 </div>
               </div>
-              {/* <div className="col-lg-6">
+              <div className="col-lg-6 pb-5">
                 <div className="aximo-user-interface">
-                  <h3>2/ User Experience (UX):</h3>
+                  <h3>{service.sub1}</h3>
                   <ul>
                     {service.userExperience?.map((point, i) => (
                       <li key={i}>{point}</li>
                     ))}
                   </ul>
                 </div>
-              </div> */}
+              </div>
+              <div className="col-lg-6 pb-5">
+                <div className="aximo-user-interface">
+                  <h3>{service.sub2}</h3>
+                  <ul>
+                    {service.contentStrategy?.map((point, i) => (
+                      <li key={i}>{point}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>

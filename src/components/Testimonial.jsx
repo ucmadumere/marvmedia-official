@@ -12,7 +12,7 @@ export default function Testimonial() {
               <span className="aximo-title-animation">
                 satisfied with us
                 <span className="aximo-title-icon">
-                  <img src="/assets/images/v1/star2.png" alt="" />
+                  {/* <img src="/assets/images/v1/star2.png" alt="" /> */}
                 </span>
               </span>
             </h2>

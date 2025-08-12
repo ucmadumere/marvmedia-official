@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-
 import usePageInit from "../hooks/usePageInit";
 
 export default function ContactFormSection() {
-  usePageInit(); // Initialize AOS/WOW animations if you're using them
+  usePageInit(); // Initialize AOS/WOW animations if used
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -14,20 +14,50 @@ export default function ContactFormSection() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // TODO: handle real submission logic here
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-    // Optionally reset the form
-    // setFormData({ name: "", email: "", phone: "", business: "", message: "" });
+    setLoading(true);
+    setError("");
+    setSubmitted(false);
+
+    try {
+      const res = await fetch("/api/contactform", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setSubmitted(true);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          business: "",
+          service: "",
+          message: "",
+        });
+      } else {
+        setError(data.msg || "Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      console.error("Submission error:", err);
+      setError("Network error. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
+
 
   return (
     <div className="section aximo-section-padding">
@@ -125,8 +155,8 @@ export default function ContactFormSection() {
                       width: "100%",
                       outline: "none",
                       appearance: "none",
-                      WebkitAppearance: "none", 
-                      MozAppearance: "none", 
+                      WebkitAppearance: "none",
+                      MozAppearance: "none",
                     }}
                   >
                     <option value="">Select a service</option>
@@ -152,15 +182,16 @@ export default function ContactFormSection() {
                   ></textarea>
                 </div>
 
-                <button id="aximo-main-btn" type="submit">
-                  Send Message
+                <button id="aximo-main-btn" type="submit" disabled={loading}>
+                  {loading ? "Sending..." : "Send Message"}
                 </button>
 
                 {submitted && (
                   <p className="mt-3 text-success">
-                    Thank you! We'll be in touch soon.
+                    ✅ Thank you! We'll be in touch soon.
                   </p>
                 )}
+                {error && <p className="mt-3 text-danger">❌ {error}</p>}
               </form>
             </div>
           </div>

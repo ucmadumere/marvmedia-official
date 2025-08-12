@@ -25,15 +25,15 @@ const portfolioData = [
   },
   {
     id: 2,
-    slug: "iky-anderson",
+    slug: "",
     title: "Iky-anderson",
     client: "Iky - Anderson ",
     summary:
       "",
     date: "",
     duration: "Two weeks",
-    mainImage: "/assets/images/portfolio/p_single.png",
-    sideImage: "/assets/images/portfolio/p_single2.png",
+    mainImage: "/assets/images/portfolio/iky1.png",
+    sideImage: "/assets/images/portfolio/iky2.png",
     intro:
       "",
     steps: [
@@ -46,13 +46,13 @@ const portfolioData = [
   {
     id: 3,
     slug: "speed-meal-school",
-    title: "Speed Meals Culinary School",
-    client: "Speed Meals Culinary School",
+    title: "Speedmeals Culinary School",
+    client: "Speedmeals Culinary School",
     summary:
       "Developing the look and feel of physical products, aesthetics, and functionality.",
     date: "26th March, 2025",
     duration: "Two months",
-    mainImage: "/assets/images/portfolio/p_single.png",
+    mainImage: "/assets/images/portfolio/speedmeal.jpeg",
     sideImage: "/assets/images/portfolio/p_single2.png",
     intro:
       "We developed and executed a two-month content strategy that included event branding, speaker spotlights, community engagement, and live digital storytelling before, during, and after the Chef Conference 1.0.",
@@ -72,7 +72,7 @@ const portfolioData = [
       "Developing the look and feel of physical products, aesthetics, and functionality.",
     date: "December, 2025",
     duration: "Three months",
-    mainImage: "/assets/images/portfolio/p_single.png",
+    mainImage: "/assets/images/portfolio/okoti.JPG",
     sideImage: "/assets/images/portfolio/p_single2.png",
     intro:
       "We worked closely with the client to structure their service offerings, designed a user-friendly layout with clean visuals and concise copy, and ensured mobile responsiveness, SEO readiness, and performance optimization throughout.",

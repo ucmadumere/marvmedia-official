@@ -65,15 +65,15 @@ export default function ServiceGridSection() {
     <div className="section aximo-section-padding3">
       <div className="container">
         <div className="aximo-section-title center">
-          <h2>
+          <h3>
             Built for Brands{" "}
             <span className="aximo-title-animation">
               Seeking More Than Just <em>Content</em>
-              <span className="aximo-title-icon">
+              {/* <span className="aximo-title-icon">
                 <img src="/assets/images/v1/star2.png" alt="decorative star" />
-              </span>
+              </span> */}
             </span>
-          </h2>
+          </h3>
           <p className="pt-2">
             Whether you're a solo founder, startup, or scaling business. Our
             services are designed to meet you where you are and help you grow.{" "}

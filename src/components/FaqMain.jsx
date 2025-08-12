@@ -55,7 +55,7 @@ export default function FaqMain() {
             <span className="aximo-title-animation">
               These FAQs help
               <span className="aximo-title-icon">
-                <img src="/assets/images/v1/star2.png" alt="star icon" />
+                {/* <img src="/assets/images/v1/star2.png" alt="star icon" /> */}
               </span>
             </span>
             clients learn about us

@@ -49,18 +49,18 @@ export default function PortfolioDetails() {
 
           <div className="aximo-project-single-wrap">
             <div className="row">
-              <div className="col-lg-4 order-lg-2">
+              {/* <div className="col-lg-4 order-lg-2">
                 <div className="aximo-project-single-thumb2">
                   <img src={project.sideImage} alt={project.title} />
                 </div>
-              </div>
-              <div className="col-lg-8">
+              </div> */}
+              <div className="col-lg-12">
                 <div className="aximo-default-content m-right-gap">
                   <h2>
                     How we did it{" "}
                     <span className="aximo-title-animation">
                       <span className="aximo-title-icon">
-                        <img src="/assets/images/v1/star2.png" alt="star" />
+                        {/* <img src="/assets/images/v1/star2.png" alt="star" /> */}
                       </span>
                     </span>
                   </h2>
