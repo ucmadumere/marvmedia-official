@@ -115,7 +115,7 @@ export default function ServiceDetail() {
                           <h5>{pkg.tier}</h5>
                         </div>
                         <div className="aximo-pricing-price2">
-                          <h2>£</h2>
+                          <h2>{pkg.currency}</h2>
                           <h3 className="aximo-price">
                             {billingType === "monthly"
                               ? pkg.monthly

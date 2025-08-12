@@ -3,6 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 import CallToActionButton from "./CallToActionButton";
+import BookMarv from "./BookMarv";
 
 export default function SeoSection() {
   // Initialize AOS on mount and refresh on re-render
@@ -57,7 +58,7 @@ export default function SeoSection() {
               </p>
             </div>
 
-            <CallToActionButton />
+            <BookMarv />
           </div>
         </div>
       </div>

@@ -158,7 +158,7 @@ export default function AboutUs() {
                 {
                   name: "Marvel Iwezue",
                   role: "Founder",
-                  img: "team1.png",
+                  img: "marv2.jpg",
                 },
                 {
                   name: "Salome",
@@ -168,7 +168,7 @@ export default function AboutUs() {
                 {
                   name: "Abigail",
                   role: "Social Media Executive",
-                  img: "team3.png",
+                  img: "abigail.jpg",
                 },
                 {
                   name: "Saviour",

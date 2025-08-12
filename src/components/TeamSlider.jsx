@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function TeamSlider() {
     const teamMembers = [
-      { name: "Marvel Iwezue ", title: "Founder", img: "team1.png" },
+      { name: "Marvel Iwezue ", title: "Founder", img: "marv2.jpg" },
       {
         name: "Salome",
         title: "Social Media Executive",
@@ -57,7 +57,7 @@ export default function TeamSlider() {
                                         <img src={`/assets/images/team/${member.img}`} alt={member.name} />
                                         <div className="aximo-social-icon team-social">
                                             <ul>
-                                                {["linkedin"].map((platform, index) => (
+                                                {["linkedi"].map((platform, index) => (
                                                     <li key={index}>
                                                         <a href="#">
                                                             <i className={`icon-${platform}`}></i>

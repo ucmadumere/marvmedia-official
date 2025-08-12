@@ -65,7 +65,8 @@ const services = [
     ],
     pricing1: [
       {
-        monthly: "40 (monthly)",
+        monthly: "130 (monthly)",
+        currency: "£",
 
         features: [
           "2 platforms (Instagram/Pinterest/TikTok/LinkedIn)",
@@ -83,7 +84,8 @@ const services = [
         ],
       },
       {
-        monthly: "130",
+        monthly: "170",
+        currency: "$",
         features: [
           "2 platforms (Instagram/Pinterest/TikTok/LinkedIn)",
           "Brand MoodBoard",

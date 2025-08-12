@@ -145,16 +145,29 @@ export default function Navbar() {
                       >
                         Our Founder
                       </Link>
-                      <Link className="pb-3" to="/portfolio">
-                        Portfolio
-                      </Link>
-                      <Link className="pb-3" to="/team">
-                        Our Team
-                      </Link>
-                      <Link className="pb-3" to="/about-us">
+                      <Link
+                        className="pb-3"
+                        to="https://platform.marvmedia.ng/about-us"
+                      >
                         About
                       </Link>
-                      <Link className="pb-3" to="/faq">
+                      <Link
+                        className="pb-3"
+                        to="https://platform.marvmedia.ng/portfolio"
+                      >
+                        Portfolio
+                      </Link>
+                      <Link
+                        className="pb-3"
+                        to="https://platform.marvmedia.ng/team"
+                      >
+                        Our Team
+                      </Link>
+
+                      <Link
+                        className="pb-3"
+                        to="https://platform.marvmedia.ng/faq"
+                      >
                         FAQ
                       </Link>
                     </li>
@@ -165,10 +178,16 @@ export default function Navbar() {
                   <Link className="nav-link-item">Services</Link>
                   <ul className="sub-menu">
                     <li className="sub-menu--item">
-                      <Link className="pb-3 pt-4" to="/pricing">
+                      <Link
+                        className="pb-3 pt-4"
+                        to="https://platform.marvmedia.ng/pricing"
+                      >
                         Pricing
                       </Link>
-                      <Link className="pb-3" to="/services">
+                      <Link
+                        className="pb-3"
+                        to="https://platform.marvmedia.ng/services"
+                      >
                         Our Services
                       </Link>
                     </li>
@@ -193,7 +212,10 @@ export default function Navbar() {
                 </li>
 
                 <li className="nav-item">
-                  <Link className="nav-link-item" to="/blog">
+                  <Link
+                    className="nav-link-item"
+                    to="https://platform.marvmedia.ng/blog"
+                  >
                     Blog
                   </Link>
                 </li>
@@ -204,7 +226,7 @@ export default function Navbar() {
           <div className="header-btn header-btn-l1 ms-auto d-none d-xs-inline-flex">
             <Link
               className="aximo-default-btn pill aximo-header-btn"
-              to="/contact-us"
+              to="https://platform.marvmedia.ng/contact-us"
             >
               Contact Us
             </Link>

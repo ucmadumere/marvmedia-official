@@ -25,7 +25,7 @@ export default function FaqMain() {
     {
       question: "How do I pay for services?",
       answer:
-        "We accept payments via Paystack, Flutterwave, or direct bank transfer. Payment plans may be available depending on the project.",
+        "We accept payments via online payments channels and direct bank transfer. We can also receive payments in four major currencies.",
     },
     {
       question: "Do you work with clients outside Lagos or Nigeria?",
