@@ -12,12 +12,12 @@ export default function ContactInfoSection() {
       lines: ["support@marvmedia.ng"],
       link: "mailto:support@marvmedia.ng",
     },
-    {
-      icon: "map.svg",
-      label: "Office address",
-      lines: ["4132 Thornridge City, New York."],
-      link: null,
-    },
+    // {
+    //   icon: "map.svg",
+    //   label: "Office address",
+    //   lines: ["4132 Thornridge City, New York."],
+    //   link: null,
+    // },
   ];
 
   return (
@@ -27,9 +27,9 @@ export default function ContactInfoSection() {
           <h2>
             <span className="aximo-title-animation">
               Contact Information
-              <span className="aximo-title-icon">
+              {/* <span className="aximo-title-icon">
                 <img src="/assets/images/v1/star2.png" alt="star" />
-              </span>
+              </span> */}
             </span>
           </h2>
         </div>
@@ -51,7 +51,7 @@ export default function ContactInfoSection() {
             );
 
             return (
-              <div className="col-xl-4 col-md-6" key={index}>
+              <div className="col-xl-6 col-md-6" key={index}>
                 {item.link ? <a href={item.link}>{InfoBox}</a> : InfoBox}
               </div>
             );

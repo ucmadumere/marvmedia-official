@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import CallToActionButton from "./CallToActionButton";
+import BookMarv from "./BookMarv";
 
 export default function CalltoActionDiv() {
   return (
@@ -22,7 +23,7 @@ export default function CalltoActionDiv() {
                 >
                   Book a session
                 </Link> */}
-                <CallToActionButton />
+                <BookMarv />
               </div>
             </div>
           </div>

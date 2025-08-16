@@ -7,6 +7,7 @@ import VideoStatsSection from "../components/VideoStatsSection";
 import AutoSlider from "../components/AutoSlider";
 import Testimonial from "../components/Testimonial";
 import CallToActionButton from "../components/CallToActionButton";
+import BookMarv from "../components/BookMarv";
 // import usePageInit from "../hooks/usePageInIt";
 
 export default function Home() {
@@ -54,8 +55,15 @@ export default function Home() {
                         className="aximo-hero-user-thumb-item wow fadeInUpX"
                         data-wow-delay="0.4s"
                       >
-                        <img src="/assets/images/v1/yandpure.jpeg" alt="" />
+                        <img src="/assets/images/v1/food1.jpeg" alt="" />
                       </div>
+                      <div
+                        className="aximo-hero-user-thumb-item wow fadeInUpX"
+                        data-wow-delay="0.4s"
+                      >
+                        <img src="/assets/images/v1/adline.jpeg" alt="" />
+                      </div>
+
                       <div
                         className="aximo-hero-user-thumb-item wow fadeInUpX"
                         data-wow-delay="0.4s"
@@ -66,17 +74,20 @@ export default function Home() {
                         className="aximo-hero-user-thumb-item wow fadeInUpX"
                         data-wow-delay="0.4s"
                       >
-                        <img src="/assets/images/v1/adline.jpeg" alt="" />
+                        <img src="/assets/images/v1/yandpure.jpeg" alt="" />
                       </div>
                     </div>
                     <div className="aximo-hero-user-data">
-                      <p> Trusted by over 50 brands globally..</p>
+                      <p className="p-0 ms-2">
+                        {" "}
+                        Trusted by over 50 brands globally..
+                      </p>
                     </div>
                   </div>
                   {/* <Link className="aximo-call-btn" to="/contact-us">
                                     Book a discovery call<i className="icon-call"></i>
                                 </Link> */}
-                  <CallToActionButton />
+                  <BookMarv />
                   <div className="aximo-hero-shape">
                     {/* <img src="/assets/images/v1/shape1.png" alt="" /> */}
                   </div>
@@ -116,7 +127,7 @@ export default function Home() {
                     data-wow-delay="0.1s"
                   >
                     <div className="aximo-iconbox-icon">
-                      <i className="icon-design-tools"></i>
+                      <i className="icon-ui-design"></i>
                     </div>
                     <div className="aximo-iconbox-data">
                       <h3>Social Media Solutions</h3>
@@ -138,7 +149,7 @@ export default function Home() {
                     data-wow-delay="0.2s"
                   >
                     <div className="aximo-iconbox-icon">
-                      <i className="icon-branding"></i>
+                      <i className="icon-content-writing"></i>
                     </div>
                     <div className="aximo-iconbox-data">
                       <h3> Creative Content Solutions</h3>
@@ -160,7 +171,7 @@ export default function Home() {
                     data-wow-delay="0.3s"
                   >
                     <div className="aximo-iconbox-icon">
-                      <i className="icon-web"></i>
+                      <i className="icon-rating-stars-1"></i>
                     </div>
                     <div className="aximo-iconbox-data">
                       <h3>Branding Solutions</h3>
@@ -182,7 +193,7 @@ export default function Home() {
                     data-wow-delay="0.4s"
                   >
                     <div className="aximo-iconbox-icon">
-                      <i className="icon-design-thinking"></i>
+                      <i className="icon-web"></i>
                     </div>
                     <div className="aximo-iconbox-data">
                       <h3>Tech Solutions</h3>

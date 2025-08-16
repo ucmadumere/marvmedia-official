@@ -189,7 +189,7 @@ export default function AboutUs() {
                 {
                   name: "Ugochukwu",
                   role: "Technical Partner",
-                  img: "team8.png",
+                  img: "team7.png",
                 },
               ].map(({ name, role, img }, index) => (
                 <div className="col-xl-3 col-md-6" key={index}>

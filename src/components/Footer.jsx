@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { API_URL_FOOTER } from "../utils/footerapi";
 
 export default function Footer() {
   const [name, setName] = useState("");
@@ -9,14 +10,17 @@ export default function Footer() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const formData = { name, email, message };
+
     try {
-      await fetch("/api/contactform", {
+      const res = await fetch(API_URL_FOOTER, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
       const data = await res.json();
+
       if (res.ok) {
         alert("Message sent!");
         setName("");
@@ -26,6 +30,7 @@ export default function Footer() {
         alert(data.msg || "Failed to send message");
       }
     } catch (err) {
+      console.error("Footer form error:", err);
       alert("Server error. Please try again.");
     }
   };
@@ -140,7 +145,6 @@ export default function Footer() {
                   </div>
                   <div className="aximo-form-field">
                     <textarea
-                      name="textarea"
                       placeholder="Write your message here..."
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
@@ -163,7 +167,7 @@ export default function Footer() {
           <div className="row">
             <div className="col-lg-6">
               <div className="aximo-footer-logo marv-footer">
-                <Link to="/">
+                <Link to="https://marvmedia.ng/">
                   <img src="/assets/images/logo/logo-marv.png" alt="Logo" />
                 </Link>
               </div>

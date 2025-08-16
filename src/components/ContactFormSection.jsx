@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import usePageInit from "../hooks/usePageInit";
+import { API_URL } from "../utils/api";
 
 export default function ContactFormSection() {
   usePageInit(); // Initialize AOS/WOW animations if used
@@ -29,7 +30,7 @@ export default function ContactFormSection() {
     setSubmitted(false);
 
     try {
-      const res = await fetch("/api/contactform", {
+      const res = await fetch( API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
