@@ -8,7 +8,7 @@ const portfolioData = [
       "Developing the look and feel of physical products, aesthetics, and functionality.",
     date: "23rd October, 2024",
     duration: "One day",
-    mainImage: "/assets/images/portfolio/p_single.png",
+    mainImage: "/assets/images/portfolio/luxe.jpeg",
     sideImage: "/assets/images/portfolio/p_single2.png",
     intro:
       "We partnered with Colgate to represent Luxé Dental during a Big Brother Naija house visit, capturing real-time content and aligning the brand with a major cultural moment.",

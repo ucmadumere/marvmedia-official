@@ -39,9 +39,9 @@ export default function TeamSlider() {
                 <div className="container">
                     <div className="aximo-section-title center">
                         <h2>
-                            We have a team of
+                            We are a team of
                             <span className="aximo-title-animation">
-                                creative people
+                                creatives
                                 <span className="aximo-title-icon">
                                     {/* <img src="/assets/images/v1/star2.png" alt="star-icon" /> */}
                                 </span>
