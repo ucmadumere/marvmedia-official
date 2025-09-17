@@ -4,23 +4,34 @@ const portfolioData = [
     slug: "luxe-dental",
     title: "Luxe Dental",
     client: "Luxe Dental",
-    summary:
-      "Developing the look and feel of physical products, aesthetics, and functionality.",
+    summary: "Content creation and Social media community management ",
     date: "23rd October, 2024",
     duration: "One day",
     mainImage: "/assets/images/portfolio/luxe.jpeg",
     sideImage: "/assets/images/portfolio/p_single2.png",
     intro:
-      "We partnered with Colgate to represent Luxé Dental during a Big Brother Naija house visit, capturing real-time content and aligning the brand with a major cultural moment.",
+      "We partnered with <b>Luxé Dental</b> to execute a high-visibility collaboration with <b>Colgate</b> during the <b>Yanga With Your Smile</b> campaign for Big Brother Naija finalists.",
+    intro2:
+      "Our team documented and managed the entire content rollout — from capturing real-time moments to aligning Luxé Dental’s brand presence with one of Nigeria’s biggest cultural moments. We also facilitated over <b>2,000</b> community interactions, ensuring seamless engagement and amplifying campaign impact.",
+    intro3:
+      "As part of the activation, Luxé Dental provided finalists with consultations, scaling & polishing, and laser teeth whitening, all of which were captured in visually compelling content for social media distribution.",
     steps: [
       {
-        title: "Impact:",
+        title: "Impact",
         desc: "The collaboration positioned Luxé Dental in front of millions, elevated brand credibility through association with Colgate and BBNaija, and generated meaningful engagement across social media.",
       },
-      // {
-      //   title: "2. Manufacturing and Production:",
-      //   desc: "Once the design was finalized, the project transitioned to the manufacturing phase. Materials, suppliers, and production processes were carefully selected to ensure quality and cost-effectiveness.",
-      // },
+      {
+        title: " Visibility",
+        desc: "Reached an audience of over <b>46,000</b>, putting Luxé Dental in front of a much wider demographic.",
+      },
+      {
+        title: " Brand Credibility",
+        desc: "Strengthened association with household names like <strong>Colgate</strong> and <strong>BBNaija</strong>, adding prestige and trust.",
+      },
+      {
+        title: " Engagement",
+        desc: "Drove meaningful community conversations and interactions, reinforcing the brand’s relevance within pop culture.",
+      },
     ],
   },
   {
@@ -28,14 +39,12 @@ const portfolioData = [
     slug: "",
     title: "Iky-anderson",
     client: "Iky - Anderson ",
-    summary:
-      "",
+    summary: "Branding ",
     date: "",
     duration: "Two weeks",
     mainImage: "/assets/images/portfolio/iky1.png",
     sideImage: "/assets/images/portfolio/iky2.png",
-    intro:
-      "",
+    intro: "",
     steps: [
       {
         title: "",
@@ -49,7 +58,7 @@ const portfolioData = [
     title: "Speedmeals Culinary School",
     client: "Speedmeals Culinary School",
     summary:
-      "Developing the look and feel of physical products, aesthetics, and functionality.",
+      "Event Pr Social media Marketing , Social Media Real time Engagement ",
     date: "26th March, 2025",
     duration: "Two months",
     mainImage: "/assets/images/portfolio/speedmeal.jpeg",
@@ -68,8 +77,7 @@ const portfolioData = [
     slug: "okoti-enterprises",
     title: "Okoti Enterprises",
     client: "Okoti Enterprises",
-    summary:
-      "Developing the look and feel of physical products, aesthetics, and functionality.",
+    summary: "Website Development & Product Photography",
     date: "December, 2025",
     duration: "Three months",
     mainImage: "/assets/images/portfolio/okoti.JPG",

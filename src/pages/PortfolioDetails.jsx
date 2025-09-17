@@ -64,12 +64,15 @@ export default function PortfolioDetails() {
                       </span>
                     </span>
                   </h2>
-                  <p>{project.intro}</p>
+
+                  <p dangerouslySetInnerHTML={{ __html: project.intro }} />
+                  <p dangerouslySetInnerHTML={{ __html: project.intro2 }} />
+                  <p dangerouslySetInnerHTML={{ __html: project.intro3 }} />
                   <div className="aximo-resolve-project-wrap">
                     {project.steps.map((step, index) => (
                       <div className="aximo-resolve-project-item" key={index}>
                         <h3>{step.title}</h3>
-                        <p>{step.desc}</p>
+                        <p dangerouslySetInnerHTML={{ __html: step.desc }} />
                       </div>
                     ))}
                   </div>

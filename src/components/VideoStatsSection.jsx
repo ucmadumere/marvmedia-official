@@ -26,13 +26,13 @@ export default function VideoStatsSection() {
                     <img src="/assets/images/v1/star2.png" alt="star icon" />
                   </span> */}
                 </span>
-                business stand out
+                brand stand out
               </h2>
             </div>
             <div className="col-lg-4 offset-lg-1 d-flex align-items-center">
               <p data-aos="fade-left">
                 We work closely with our clients to know their objectives,
-                target audience, unique needs, and practical design solutions.
+                target audience, unique needs, and design practical solutions.
               </p>
             </div>
           </div>
