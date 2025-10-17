@@ -136,7 +136,7 @@ const services = [
     pricing: [
       {
         tier: "Thought Leaders Package",
-        monthly: "150,000",
+        monthly: "300,000",
 
         features: ["4 talking head videos", "3 reels", "2 B-rolls"],
       },

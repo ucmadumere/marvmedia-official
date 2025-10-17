@@ -58,7 +58,7 @@ export default function Portfolio() {
           </div>
 
           {/* Pagination */}
-          <div className="aximo-navigation">
+          {/* <div className="aximo-navigation">
             <nav className="navigation pagination">
               <div className="nav-links">
                 {[...Array(totalPages)].map((_, index) => (
@@ -74,7 +74,106 @@ export default function Portfolio() {
                 ))}
               </div>
             </nav>
+          </div> */}
+
+          {/* new */}
+          <div
+            className="aximo-navigation"
+            style={{ textAlign: "center", marginTop: "30px" }}
+          >
+            <nav
+              className="navigation pagination"
+              aria-label="Posts"
+              style={{ display: "inline-block" }}
+            >
+              <div
+                className="nav-links"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "10px",
+                }}
+              >
+                {/* Previous Button */}
+                {currentPage > 1 && (
+                  <button
+                    className="prev page-numbers"
+                    onClick={() => setCurrentPage(currentPage - 1)}
+                    aria-label="Previous Page"
+                    style={{
+                      background: "none",
+                      border: "none",
+                      cursor: "pointer",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <img
+                      src="/assets/images/icon/arrow-right8.svg"
+                      alt="Previous"
+                      style={{
+                        width: "18px",
+                        height: "18px",
+                        transform: "rotate(180deg)",
+                      }}
+                    />
+                  </button>
+                )}
+
+                {/* Page Numbers */}
+                {[...Array(totalPages)].map((_, index) => {
+                  const isCurrent = currentPage === index + 1;
+                  return (
+                    <button
+                      key={index}
+                      className={`page-numbers ${isCurrent ? "current" : ""}`}
+                      onClick={() => setCurrentPage(index + 1)}
+                      style={{
+                        background: "none",
+                        border: "none",
+                        cursor: "pointer",
+                        padding: "6px 10px",
+                        fontSize: "15px",
+                        color: isCurrent ? "#fff" : "#000",
+                        backgroundColor: isCurrent ? "#08FAA4" : "transparent",
+                        borderRadius: "6px",
+                        transition: "all 0.3s ease",
+                      }}
+                    >
+                      {index + 1}
+                    </button>
+                  );
+                })}
+
+                {/* Next Button */}
+                {currentPage < totalPages && (
+                  <button
+                    className="next page-numbers"
+                    onClick={() => setCurrentPage(currentPage + 1)}
+                    aria-label="Next Page"
+                    style={{
+                      background: "none",
+                      border: "none",
+                      cursor: "pointer",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <img
+                      src="/assets/images/icon/arrow-right8.svg"
+                      alt="Next"
+                      style={{ width: "18px", height: "18px" }}
+                    />
+                  </button>
+                )}
+              </div>
+            </nav>
           </div>
+
+          {/* new */}
         </div>
       </div>
     </>

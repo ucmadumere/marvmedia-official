@@ -42,7 +42,7 @@ export default function Blog() {
         <div className="container">
           <div className="row">
             {/* Main Blog Posts */}
-            <div className="col-lg-8">
+            <div className="col-lg-9">
               <div className="row">
                 {selectedPosts.map((post, i) => (
                   <div className="col-xl-6" key={i}>
@@ -51,11 +51,20 @@ export default function Blog() {
                       data-wow-delay={`0.${i + 1}s`}
                     >
                       <div className="post-thumbnail">
-                        <img src={post.image} alt={post.title} />
+                        <img
+                          src={post.image}
+                          alt={post.title}
+                          // style={{
+                          
+                          //   maxHeight: "400px",
+                          //   height: "100%",
+                          //   borderRadius: "10px",
+                          // }}
+                        />
                       </div>
                       <div className="post-content">
                         <div className="post-meta">
-                          <div className="post-date">{currentDate}</div>
+                          <div className="post-date">{post.date}</div>
                         </div>
                         <Link to={`/blog/${post.slug}`}>
                           <h3 className="entry-title">{post.title}</h3>
@@ -126,7 +135,7 @@ export default function Blog() {
             </div>
 
             {/* Sidebar (Recent Posts) */}
-            <div className="col-lg-4">
+            <div className="col-lg-3">
               <div className="right-sidebar">
                 <div className="widget aximo_recent_posts_Widget">
                   <h3 className="wp-block-heading">Recent Posts:</h3>

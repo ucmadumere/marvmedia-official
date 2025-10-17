@@ -47,7 +47,7 @@ export default function Pricing() {
     },
     {
       title: "Compact",
-      monthly: "₦100,000 ",
+      monthly: "₦150,000 ",
       yearly: "₦1,200,000 ",
       features: [
         "1 platform (Instagram/Pinterest/Tiktok/LinkedIn)",

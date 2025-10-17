@@ -29,7 +29,7 @@ export default function TeamSlider() {
         img: "psi.png",
       },
       { name: "Gabriel", title: "Legal Adviser", img: "gabriel.png" },
-      { name: "Ugochukwu", title: "Technical Partner", img: "team7.png" },
+      { name: "Ugochukwu", title: "Technical Partner", img: "ucai.png" },
     ];
 
     return (
