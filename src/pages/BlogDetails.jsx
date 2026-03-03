@@ -8,11 +8,6 @@ import { useEffect } from "react";
 export default function BlogDetails() {
   const { slug } = useParams();
   const post = blogData.find((item) => item.slug === slug);
-  const currentDate = new Date().toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
 
   useEffect(() => {
     if (!post) return;
@@ -32,9 +27,6 @@ export default function BlogDetails() {
       document.body.removeChild(script);
     };
   }, [post]);
-
-
-  
 
   if (!post) {
     return (

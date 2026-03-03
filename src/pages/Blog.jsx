@@ -24,11 +24,6 @@ export default function Blog() {
     setCurrentPage(pageNum);
     window.scrollTo(0, 0);
   };
-  const currentDate = new Date().toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
 
   return (
     <>

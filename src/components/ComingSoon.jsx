@@ -1,49 +1,6 @@
-import { useEffect, useState } from "react";
-import logoWhite from "/assets/images/logo/logo-white.svg";
 import starIcon from "/assets/images/v1/star2.png";
 
 export default function ComingSoon() {
-  const calculateTimeLeft = () => {
-    const targetDate = new Date("2025-12-31T23:59:59");
-    const now = new Date();
-    const difference = targetDate - now;
-
-    let timeLeft = {
-      days: "00",
-      hours: "00",
-      minutes: "00",
-      seconds: "00",
-    };
-
-    if (difference > 0) {
-      timeLeft = {
-        days: String(Math.floor(difference / (1000 * 60 * 60 * 24))).padStart(
-          2,
-          "0"
-        ),
-        hours: String(
-          Math.floor((difference / (1000 * 60 * 60)) % 24)
-        ).padStart(2, "0"),
-        minutes: String(Math.floor((difference / 1000 / 60) % 60)).padStart(
-          2,
-          "0"
-        ),
-        seconds: String(Math.floor((difference / 1000) % 60)).padStart(2, "0"),
-      };
-    }
-
-    return timeLeft;
-  };
-
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <>
       {/* Logo Section */}

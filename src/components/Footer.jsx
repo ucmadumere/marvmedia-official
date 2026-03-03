@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { API_URL_FOOTER } from "../utils/footerapi";
+import { API_URL_FOOTER } from "../utils/api";
 
 export default function Footer() {
   const [name, setName] = useState("");

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import usePageInit from "../hooks/usePageInit";
 import { API_URL } from "../utils/api";
 
@@ -30,7 +30,7 @@ export default function ContactFormSection() {
     setSubmitted(false);
 
     try {
-      const res = await fetch( API_URL, {
+      const res = await fetch(API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -49,7 +49,12 @@ export default function ContactFormSection() {
           message: "",
         });
       } else {
-        setError(data.msg || "Something went wrong. Please try again.");
+        setError(
+          data.msg ||
+            data.error ||
+            data.message ||
+            "Something went wrong. Please try again."
+        );
       }
     } catch (err) {
       console.error("Submission error:", err);
@@ -58,7 +63,6 @@ export default function ContactFormSection() {
       setLoading(false);
     }
   };
-
 
   return (
     <div className="section aximo-section-padding">

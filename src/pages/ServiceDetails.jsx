@@ -6,7 +6,7 @@ import { useState } from "react";
 export default function ServiceDetail() {
   const { slug } = useParams();
   const service = services.find((s) => s.slug === slug);
-  const [billingType, setBillingType] = useState("monthly");
+  const [billingType] = useState("monthly");
 
   if (!service) return <div>Service not found</div>;
 

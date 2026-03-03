@@ -6,10 +6,13 @@ const router = express.Router();
 router.post("/", async (req, res) => {
   const { name, email, phone, business, service, message } = req.body;
 
-  if (!name || !email || !phone || !business || !service || !message) {
+  if (!name || !email || !service || !message) {
     return res
       .status(400)
-      .json({ success: false, error: "All fields are required" });
+      .json({
+        success: false,
+        msg: "Name, email, service, and message are required",
+      });
   }
 
   try {
@@ -40,10 +43,10 @@ router.post("/", async (req, res) => {
       `,
     });
 
-    res.json({ success: true, message: "Message sent successfully" });
+    res.json({ success: true, msg: "Message sent successfully" });
   } catch (error) {
     await logError(error, req, 500); // save error to DB
-    res.status(500).json({ success: false, error: "Failed to send email" });
+    res.status(500).json({ success: false, msg: "Failed to send email" });
   }
 });
 

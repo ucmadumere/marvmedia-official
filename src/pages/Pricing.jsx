@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import Breadcrumb from "../components/Breadcrumb";
 
 export default function Pricing() {
-  const [billingType, setBillingType] = useState("monthly");
+  const [billingType] = useState("monthly");
 
   const pricingPackages = [
     {

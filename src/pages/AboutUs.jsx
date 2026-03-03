@@ -1,19 +1,14 @@
-import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Breadcrumb from "../components/Breadcrumb";
 import AutoSlider from "../components/AutoSlider";
 import VideoStatsSection from "../components/VideoStatsSection";
-import React from 'react';
 import usePageInIt from "../hooks/usePageInit";
 import SeoSection from "../components/SeoSection";
-import CallToActionButton from "../components/CallToActionButton";
-import CallToAction from "../components/CallToAction";
-
 
 export default function AboutUs() {
-    usePageInIt();
-    return (
-      <>
+  usePageInIt();
+  return (
+    <>
         <Helmet>
           <title>About Us | MarvMedia</title>
           <meta name="description" content="About us page" />
@@ -253,6 +248,6 @@ export default function AboutUs() {
             </div>
           </div>
         </div>
-      </>
-    );
+    </>
+  );
 }
