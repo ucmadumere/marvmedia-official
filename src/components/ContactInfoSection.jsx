@@ -28,7 +28,7 @@ export default function ContactInfoSection() {
             <span className="aximo-title-animation">
               Contact Information
               {/* <span className="aximo-title-icon">
-                <img src="/assets/images/v1/star2.png" alt="star" />
+                <img src="/assets/images/v1/star2.png" alt="" aria-hidden="true" />
               </span> */}
             </span>
           </h2>

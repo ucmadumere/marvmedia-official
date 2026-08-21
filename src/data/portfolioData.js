@@ -7,8 +7,10 @@ const portfolioData = [
     summary: "Content creation and Social media community management ",
     date: "23rd October, 2024",
     duration: "One day",
-    mainImage: "/assets/images/portfolio/luxe.jpeg",
-    sideImage: "/assets/images/portfolio/p_single2.png",
+    mainImage: "/assets/images/portfolio/luxe.webp",
+    mainImageWidth: 1600,
+    mainImageHeight: 2133,
+    sideImage: "/assets/images/portfolio/p_single2.webp",
     intro:
       "We partnered with <b>Luxé Dental</b> to execute a high-visibility collaboration with <b>Colgate</b> during the <b>Yanga With Your Smile</b> campaign for Big Brother Naija finalists.",
     intro2:
@@ -43,8 +45,10 @@ const portfolioData = [
     summary: "Branding ",
     date: "September, 2023",
     duration: "Two weeks",
-    mainImage: "/assets/images/portfolio/iky1.png",
-    sideImage: "/assets/images/portfolio/iky2.png",
+    mainImage: "/assets/images/portfolio/iky1.webp",
+    mainImageWidth: 1600,
+    mainImageHeight: 1600,
+    sideImage: "/assets/images/portfolio/iky2.webp",
     intro:
       "When Iky Anderson Consulting, a new consulting brand, approached us, their goal was clear — they wanted a visual identity that spoke with confidence, clarity, and simplicity.",
     intro2:
@@ -91,7 +95,7 @@ const portfolioData = [
     date: "26th March, 2025",
     duration: "Two months",
     mainImage: "/assets/images/portfolio/speedmeal.jpeg",
-    sideImage: "/assets/images/portfolio/p_single2.png",
+    sideImage: "/assets/images/portfolio/p_single2.webp",
     instagram: "https://www.instagram.com/reel/DHslsfxNCXM/",
     intro:
       "We developed and executed a two-month content strategy that included event branding, speaker spotlights, community engagement, and live digital storytelling before, during, and after the Chef Conference 1.0.",
@@ -110,8 +114,10 @@ const portfolioData = [
     summary: "Weddings ",
     date: "June, 2025",
     duration: "One month",
-    mainImage: "/assets/images/portfolio/pastorjerry.png",
-    sideImage: "/assets/images/portfolio/pastorjerry.png",
+    mainImage: "/assets/images/portfolio/pastorjerry.webp",
+    mainImageWidth: 1000,
+    mainImageHeight: 1000,
+    sideImage: "/assets/images/portfolio/pastorjerry.webp",
     embedVideo: `<iframe src="https://www.instagram.com/reel/XXXXXXXX/embed" width="400" height="480" frameborder="0"></iframe>`,
     introSum:
       "The wedding of “Alex and Pastor Jerry” tagged #AJetTOForever wasn’t just another event, it was a cultural phenomenon where South meets West!  As the official content and social media team, “Marv Media” was entrusted with capturing, managing, and amplifying every moment of this remarkable wedding.",
@@ -167,8 +173,10 @@ const portfolioData = [
     summary: "Website Development & Product Photography",
     date: "December, 2025",
     duration: "Three months",
-    mainImage: "/assets/images/portfolio/okoti.JPG",
-    sideImage: "/assets/images/portfolio/p_single2.png",
+    mainImage: "/assets/images/portfolio/okoti.webp",
+    mainImageWidth: 1520,
+    mainImageHeight: 1352,
+    sideImage: "/assets/images/portfolio/p_single2.webp",
     intro:
       "We worked closely with the client to structure their service offerings, designed a user-friendly layout with clean visuals and concise copy, and ensured mobile responsiveness, SEO readiness, and performance optimization throughout.",
     steps: [

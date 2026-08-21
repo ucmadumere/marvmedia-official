@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import Seo from "../components/Seo";
 import ProjectSlider from "../components/ProjectSlider";
 import TeamSlider from "../components/TeamSlider";
 import FAQAccordion from "../components/FAQAccordion";
@@ -14,10 +14,18 @@ export default function Home() {
     // usePageInit();
     return (
       <>
-        <Helmet>
-          <title>Home | Marvmedia</title>
-          <meta name="description" content="Welcome to MarvMedia's homepage." />
-        </Helmet>
+        <Seo
+          title="Creative Agency for African Brands | Marv Media"
+          description="Marv Media helps African entrepreneurs, thought leaders, and creatives grow through social media, branding, content production, and digital solutions."
+          path="/"
+          image="/assets/images/v1/herothumb.webp"
+          schema={{
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "Marv Media",
+            url: "https://marvmedia.ng",
+          }}
+        />
         <div className="aximo-hero-section dark-bg">
           <div className="container position-relative">
             <div className="row">
@@ -43,38 +51,38 @@ export default function Home() {
                         className="aximo-hero-user-thumb-item wow fadeInUpX"
                         data-wow-delay="0s"
                       >
-                        <img src="/assets/images/v1/luxe.png" alt="" />
+                        <img src="/assets/images/v1/luxe.webp" alt="Luxe Dental" />
                       </div>
                       <div
                         className="aximo-hero-user-thumb-item wow fadeInUpX"
                         data-wow-delay="0.25s"
                       >
-                        <img src="/assets/images/v1/gic.png" alt="" />
+                        <img src="/assets/images/v1/gic.webp" alt="GIC" />
                       </div>
                       <div
                         className="aximo-hero-user-thumb-item wow fadeInUpX"
                         data-wow-delay="0.4s"
                       >
-                        <img src="/assets/images/v1/food1.jpeg" alt="" />
+                        <img src="/assets/images/v1/food1.jpeg" alt="Food brand client" />
                       </div>
                       <div
                         className="aximo-hero-user-thumb-item wow fadeInUpX"
                         data-wow-delay="0.4s"
                       >
-                        <img src="/assets/images/v1/adline.jpeg" alt="" />
+                        <img src="/assets/images/v1/adline.jpeg" alt="Adline Clothing" />
                       </div>
 
                       <div
                         className="aximo-hero-user-thumb-item wow fadeInUpX"
                         data-wow-delay="0.4s"
                       >
-                        <img src="/assets/images/v1/famfac.jpeg" alt="" />
+                        <img src="/assets/images/v1/famfac.jpeg" alt="Family-focused brand client" />
                       </div>
                       <div
                         className="aximo-hero-user-thumb-item wow fadeInUpX"
                         data-wow-delay="0.4s"
                       >
-                        <img src="/assets/images/v1/yandpure.jpeg" alt="" />
+                        <img src="/assets/images/v1/yandpure.jpeg" alt="Young and Pure" />
                       </div>
                     </div>
                     <div className="aximo-hero-user-data">
@@ -99,7 +107,15 @@ export default function Home() {
                   data-aos="fade-left"
                   data-aos-delay="200"
                 >
-                  <img src="/assets/images/v1/herothumb.jpg" alt="" />
+                  <img
+                    src="/assets/images/v1/herothumb.webp"
+                    srcSet="/assets/images/v1/herothumb-800.webp 800w, /assets/images/v1/herothumb.webp 1600w"
+                    sizes="(max-width: 991px) 100vw, 33vw"
+                    width="1600"
+                    height="2400"
+                    fetchPriority="high"
+                    alt="Marv Media creative director"
+                  />
                 </div>
               </div>
             </div>

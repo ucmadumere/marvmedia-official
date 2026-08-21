@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import Seo from "../components/Seo";
 import Breadcrumb from "../components/Breadcrumb";
 import AutoSlider from "../components/AutoSlider";
 import VideoStatsSection from "../components/VideoStatsSection";
@@ -9,10 +9,13 @@ export default function AboutUs() {
   usePageInIt();
   return (
     <>
-        <Helmet>
-          <title>About Us | MarvMedia</title>
-          <meta name="description" content="About us page" />
-        </Helmet>
+        <Seo
+          title="About Marv Media"
+          description="Discover Marv Media's journey from a phone-led creative idea to an African agency helping brands become seen, heard, and profitable."
+          path="/about-us"
+          image="/assets/images/about/team1(1).webp"
+          breadcrumbs={[{ name: "Home", path: "/" }, { name: "About Us", path: "/about-us" }]}
+        />
 
         <Breadcrumb title="About Us" current="About Us" />
 
@@ -58,7 +61,15 @@ export default function AboutUs() {
                   className="aximo-story-thumb wow fadeInUpX"
                   data-wow-delay="0.1s"
                 >
-                  <img src="assets/images/about/team1(1).jpg" alt="" />
+                  <img
+                    src="/assets/images/about/team1(1).webp"
+                    srcSet="/assets/images/about/team1(1)-800.webp 800w, /assets/images/about/team1(1).webp 1067w"
+                    sizes="(max-width: 991px) 100vw, 66vw"
+                    width="1067"
+                    height="744"
+                    loading="lazy"
+                    alt="Marv Media team"
+                  />
                 </div>
               </div>
               <div className="col-lg-4">
@@ -66,13 +77,29 @@ export default function AboutUs() {
                   className="aximo-story-thumb wow fadeInUpX"
                   data-wow-delay="0.2s"
                 >
-                  <img src="assets/images/about/team2.jpg" alt="" />
+                  <img
+                    src="/assets/images/about/team2.webp"
+                    srcSet="/assets/images/about/team2-800.webp 800w, /assets/images/about/team2.webp 1200w"
+                    sizes="(max-width: 991px) 100vw, 33vw"
+                    width="1200"
+                    height="837"
+                    loading="lazy"
+                    alt="Marv Media team at work"
+                  />
                 </div>
                 <div
                   className="aximo-story-thumb wow fadeInUpX"
                   data-wow-delay="0.2s"
                 >
-                  <img src="assets/images/about/team6.jpg" alt="" />
+                  <img
+                    src="/assets/images/about/team6.webp"
+                    srcSet="/assets/images/about/team6-800.webp 800w, /assets/images/about/team6.webp 1200w"
+                    sizes="(max-width: 991px) 100vw, 33vw"
+                    width="1200"
+                    height="800"
+                    loading="lazy"
+                    alt="Marv Media studio session"
+                  />
                 </div>
               </div>
               <div className="col-lg-4">
@@ -80,14 +107,29 @@ export default function AboutUs() {
                   className="aximo-story-thumb wow fadeInUpX"
                   data-wow-delay="0.3s"
                 >
-                  <img src="assets/images/about/team4.jpg" alt="" />
-                  {/* <img src="assets/images/about/team5.jpg" alt="" /> */}
+                  <img
+                    src="/assets/images/about/team4.webp"
+                    srcSet="/assets/images/about/team4-800.webp 800w, /assets/images/about/team4.webp 1200w"
+                    sizes="(max-width: 991px) 100vw, 33vw"
+                    width="1200"
+                    height="800"
+                    loading="lazy"
+                    alt="Marv Media creative team"
+                  />
                 </div>
                 <div
                   className="aximo-story-thumb wow fadeInUpX"
                   data-wow-delay="0.3s"
                 >
-                  <img src="assets/images/about/team5.jpg" alt="" />
+                  <img
+                    src="/assets/images/about/team5.webp"
+                    srcSet="/assets/images/about/team5-800.webp 800w, /assets/images/about/team5.webp 1200w"
+                    sizes="(max-width: 991px) 100vw, 33vw"
+                    width="1200"
+                    height="800"
+                    loading="lazy"
+                    alt="Marv Media production team"
+                  />
                 </div>
               </div>
               <div className="col-lg-8">
@@ -95,7 +137,15 @@ export default function AboutUs() {
                   className="aximo-story-thumb wow fadeInUpX"
                   data-wow-delay="0.4s"
                 >
-                  <img src="assets/images/about/team3.jpg" alt="" />
+                  <img
+                    src="/assets/images/about/team3.webp"
+                    srcSet="/assets/images/about/team3-800.webp 800w, /assets/images/about/team3.webp 1600w"
+                    sizes="(max-width: 991px) 100vw, 66vw"
+                    width="1600"
+                    height="1067"
+                    loading="lazy"
+                    alt="Marv Media team gathering"
+                  />
                 </div>
               </div>
             </div>
@@ -153,47 +203,67 @@ export default function AboutUs() {
                 {
                   name: "Marvel Iwezue",
                   role: "Founder",
-                  img: "marv2.jpg",
+                  img: "marv2.webp",
+                  width: 800,
+                  height: 1200,
                 },
                 {
                   name: "Salome",
                   role: "Social Media Executive",
-                  img: "sally.jpg",
+                  img: "sally.webp",
+                  width: 800,
+                  height: 1200,
                 },
                 {
                   name: "Abigail",
                   role: "Social Media Executive",
-                  img: "abigail.jpg",
+                  img: "abigail.webp",
+                  width: 800,
+                  height: 1200,
                 },
                 {
                   name: "Saviour",
                   role: "Partnership & Programs",
-                  img: "saviour.png",
+                  img: "saviour.webp",
+                  width: 800,
+                  height: 1200,
                 },
                 {
                   name: "Increase",
                   role: "Intern",
-                  img: "increase.png",
+                  img: "increase.webp",
+                  width: 800,
+                  height: 827,
                 },
                 { name: "PSI", role: "Recruitment Partner", img: "psi.png" },
                 {
                   name: "Gabriel",
                   role: "Legal Adviser",
-                  img: "gabriel.png",
+                  img: "gabriel.webp",
+                  width: 800,
+                  height: 1067,
                 },
                 {
                   name: "Ugochukwu",
                   role: "Technical Partner",
-                  img: "team7.png",
+                  img: "team7.webp",
+                  width: 800,
+                  height: 800,
                 },
-              ].map(({ name, role, img }, index) => (
+              ].map(({ name, role, img, width, height }, index) => (
                 <div className="col-xl-3 col-md-6" key={index}>
                   <div
                     className="aximo-team-wrap wow fadeInUpX"
                     data-wow-delay={`${index * 0.1}s`}
                   >
                     <div className="aximo-team-thumb">
-                      <img src={`assets/images/team/${img}`} alt={name} />
+                      <img
+                        src={`/assets/images/team/${img}`}
+                        alt={name}
+                        width={width}
+                        height={height}
+                        loading="lazy"
+                      />
                       <div className="aximo-social-icon team-social">
                         <ul>
                           {/* <li>

@@ -1,243 +1,116 @@
-import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+
+const menuGroups = [
+  { id: "about", label: "About Us", links: [
+    { label: "Our Founder", href: "https://founder.marvmedia.ng/", external: true },
+    { label: "About", to: "/about-us" }, { label: "Portfolio", to: "/portfolio" },
+    { label: "Our Team", to: "/team" }, { label: "FAQ", to: "/faq" },
+  ] },
+  { id: "services", label: "Services", links: [
+    { label: "Pricing", to: "/pricing" }, { label: "Our Services", to: "/services" },
+  ] },
+  { id: "community", label: "Community", links: [
+    { label: "Marv Design Space", href: "https://event.marvmedia.ng", external: true },
+    { label: "Learn With Marv", href: "https://learn.marvmedia.ng/", external: true },
+  ] },
+];
 
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [openSubmenu, setOpenSubmenu] = useState(null);
+  const triggerRef = useRef(null);
+  const closeRef = useRef(null);
+  const menuRef = useRef(null);
+  const location = useLocation();
+
+  const closeMenu = (restoreFocus = false) => {
+    setMenuOpen(false);
+    setOpenSubmenu(null);
+    if (restoreFocus) requestAnimationFrame(() => triggerRef.current?.focus());
+  };
+
   useEffect(() => {
-    const trigger = document.querySelector(".mobile-menu-trigger");
-    const menu = document.querySelector(".menu-block");
-    const overlay = document.querySelector(".menu-overlay");
-    const closeBtn = document.querySelector(".mobile-menu-close");
-    const backBtn = document.querySelector(".go-back");
-    const submenuParents = document.querySelectorAll(".nav-item-has-children");
+    setMenuOpen(false);
+    setOpenSubmenu(null);
+  }, [location.pathname]);
 
-    if (!trigger || !menu || !overlay || !closeBtn || !backBtn) return;
-
-    const toggleMenu = () => {
-      menu.classList.toggle("active");
-      overlay.classList.toggle("active");
-      document.body.classList.toggle("menu-open");
-      // Reset buttons when menu closes
-      if (!menu.classList.contains("active")) {
-        closeBtn.style.display = "block";
-        backBtn.style.display = "none";
-      }
-    };
-
-    const showSubMenu = (menuItem) => {
-      const subMenu = menuItem.querySelector(".sub-menu");
-      if (subMenu) {
-        subMenu.classList.add("active");
-        subMenu.style.display = "block";
-        menu.classList.add("sub-menu-open");
-
-        // Toggle button visibility
-        closeBtn.style.display = "none";
-        backBtn.style.display = "flex";
-      }
-    };
-
-    const hideSubMenu = () => {
-      const activeSubMenus = menu.querySelectorAll(".sub-menu.active");
-      activeSubMenus.forEach((submenu) => {
-        submenu.classList.remove("active");
-        submenu.style.display = "none";
-      });
-      menu.classList.remove("sub-menu-open");
-
-      // Toggle button visibility
-      closeBtn.style.display = "block";
-      backBtn.style.display = "none";
-    };
-
-    trigger.addEventListener("click", toggleMenu);
-    overlay.addEventListener("click", toggleMenu);
-    closeBtn.addEventListener("click", toggleMenu);
-    backBtn.addEventListener("click", hideSubMenu);
-
-    submenuParents.forEach((item) => {
-      item.addEventListener("click", (e) => {
-        if (window.innerWidth <= 991) {
-          const isSelfClick = e.target.classList.contains("nav-link-item");
-          if (isSelfClick) {
-            e.preventDefault();
-            showSubMenu(item);
-          }
+  useEffect(() => {
+    document.body.classList.toggle("menu-open", menuOpen);
+    if (menuOpen) requestAnimationFrame(() => closeRef.current?.focus());
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape" && menuOpen) closeMenu(true);
+      if (event.key === "Tab" && menuOpen && window.innerWidth <= 991) {
+        const focusable = [...menuRef.current.querySelectorAll("a[href], button:not([disabled]), input:not([disabled])")]
+          .filter((element) => element.offsetParent !== null);
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last?.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first?.focus();
         }
-      });
-    });
-    
-
-    return () => {
-      trigger.removeEventListener("click", toggleMenu);
-      overlay.removeEventListener("click", toggleMenu);
-      closeBtn.removeEventListener("click", toggleMenu);
-      backBtn.removeEventListener("click", hideSubMenu);
-      submenuParents.forEach((item) => {
-        item.removeEventListener("click", showSubMenu);
-      });
+      }
     };
-  }, []);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.classList.remove("menu-open");
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [menuOpen]);
 
   return (
-    <header
-      className="site-header aximo-header-section aximo-header1 dark-bg"
-      id="sticky-menu"
-    >
+    <header className="site-header aximo-header-section aximo-header1 dark-bg" id="sticky-menu">
       <div className="container">
-        <nav className="navbar site-navbar">
+        <nav className="navbar site-navbar" aria-label="Primary navigation">
           <div className="brand-logo">
-            <Link to="/">
-              <img
-                src="/assets/images/logo/logo-marv.png"
-                alt="logo"
-                className="light-version-logo"
-              />
+            <Link to="/" aria-label="Marv Media home">
+              <img src="/assets/images/logo/logo-marv.png" alt="Marv Media" className="light-version-logo" />
             </Link>
           </div>
           <div className="menu-block-wrapper">
-            <div className="menu-overlay" style={{ cursor: "pointer" }}></div>
-            <nav className="menu-block" id="append-menu-header">
-              <div
-                className="mobile-menu-head"
-                // style={{
-                //   display: "flex",
-                //   alignItems: "center",
-                //   justifyContent: "space-between",
-                // }}
-              >
-                <div
-                  className="go-back"
-                  style={{
-                    display: "none",
-                    cursor: "pointer",
-                    alignItems: "center",
-                    fontSize: "18px",
-                    gap: "4px",
-                  }}
-                >
-                  <i className="fa fa-angle-left ps-4"></i>
-                </div>
-                <div className="current-menu-title"></div>
-                <div
-                  className="mobile-menu-close"
-                  style={{ fontSize: "26px", cursor: "pointer" }}
-                >
-                  &times;
-                </div>
+            <button type="button" className={`menu-overlay ${menuOpen ? "active" : ""}`} aria-label="Close navigation menu" onClick={() => closeMenu(true)} tabIndex={menuOpen ? 0 : -1} />
+            <div ref={menuRef} className={`menu-block ${menuOpen ? "active" : ""}`} id="primary-menu" role={menuOpen ? "dialog" : undefined} aria-modal={menuOpen ? "true" : undefined} aria-label={menuOpen ? "Site navigation" : undefined}>
+              <div className={`mobile-menu-head ${openSubmenu ? "active" : ""}`}>
+                <button type="button" className="go-back" aria-label="Return to the main menu" onClick={() => setOpenSubmenu(null)} style={{ display: openSubmenu ? "flex" : "none" }}>
+                  <i className="fa fa-angle-left ps-4" aria-hidden="true" />
+                </button>
+                <div className="current-menu-title" aria-live="polite">{openSubmenu ? menuGroups.find((group) => group.id === openSubmenu)?.label : ""}</div>
+                <button ref={closeRef} type="button" className="mobile-menu-close" aria-label="Close navigation menu" onClick={() => closeMenu(true)} style={{ display: openSubmenu ? "none" : "block" }}>
+                  <span aria-hidden="true">&times;</span>
+                </button>
               </div>
               <ul className="site-menu-main">
-                <li className="nav-item">
-                  <Link
-                    className="nav-link-item"
-                    to="https://marvmedia.ng/"
-                  >
-                    Home
-                  </Link>
-                </li>
-
-                <li className="nav-item nav-item-has-children">
-                  <Link className="nav-link-item">About Us</Link>
-                  <ul className="sub-menu">
-                    <li className="sub-menu--item">
-                      <Link
-                        className="pb-3 pt-4"
-                        to="http://founder.marvmedia.ng/"
-                      >
-                        Our Founder
-                      </Link>
-                      <Link
-                        className="pb-3"
-                        to="https://marvmedia.ng/about-us"
-                      >
-                        About
-                      </Link>
-                      <Link
-                        className="pb-3"
-                        to="https://marvmedia.ng/portfolio"
-                      >
-                        Portfolio
-                      </Link>
-                      <Link
-                        className="pb-3"
-                        to="https://marvmedia.ng/team"
-                      >
-                        Our Team
-                      </Link>
-
-                      <Link
-                        className="pb-3"
-                        to="https://marvmedia.ng/faq"
-                      >
-                        FAQ
-                      </Link>
+                <li className="nav-item"><Link className="nav-link-item" to="/">Home</Link></li>
+                {menuGroups.map((group) => {
+                  const expanded = openSubmenu === group.id;
+                  return (
+                    <li className="nav-item nav-item-has-children" key={group.id}>
+                      <button type="button" className="nav-link-item dropdown-toggle-button" aria-expanded={expanded} aria-controls={`${group.id}-submenu`} onClick={() => setOpenSubmenu(expanded ? null : group.id)}>{group.label}</button>
+                      <ul id={`${group.id}-submenu`} className={`sub-menu ${expanded ? "active" : ""}`}>
+                        <li className="sub-menu--item">
+                          {group.links.map((link, index) => link.external ? (
+                            <a className={index === 0 ? "pb-3 pt-4" : "pb-3"} href={link.href} key={link.label}>{link.label}</a>
+                          ) : (
+                            <Link className={index === 0 ? "pb-3 pt-4" : "pb-3"} to={link.to} key={link.label}>{link.label}</Link>
+                          ))}
+                        </li>
+                      </ul>
                     </li>
-                  </ul>
-                </li>
-
-                <li className="nav-item nav-item-has-children">
-                  <Link className="nav-link-item">Services</Link>
-                  <ul className="sub-menu">
-                    <li className="sub-menu--item">
-                      <Link
-                        className="pb-3 pt-4"
-                        to="https://marvmedia.ng/pricing"
-                      >
-                        Pricing
-                      </Link>
-                      <Link
-                        className="pb-3"
-                        to="https://marvmedia.ng/services"
-                      >
-                        Our Services
-                      </Link>
-                    </li>
-                  </ul>
-                </li>
-
-                <li className="nav-item nav-item-has-children">
-                  <Link className="nav-link-item">Community</Link>
-                  <ul className="sub-menu">
-                    <li className="sub-menu--item">
-                      <Link
-                        className="pb-3 pt-4"
-                        to="http://event.marvmedia.ng"
-                      >
-                        Marv Design Space
-                      </Link>
-                      <Link className="pb-3" to="http://learn.marvmedia.ng/">
-                        Learn With Marv
-                      </Link>
-                    </li>
-                  </ul>
-                </li>
-
-                <li className="nav-item">
-                  <Link
-                    className="nav-link-item"
-                    to="https://marvmedia.ng/blog"
-                  >
-                    Blog
-                  </Link>
-                </li>
+                  );
+                })}
+                <li className="nav-item"><Link className="nav-link-item" to="/blog">Blog</Link></li>
               </ul>
-            </nav>
+            </div>
           </div>
-
           <div className="header-btn header-btn-l1 ms-auto d-none d-xs-inline-flex">
-            <Link
-              className="aximo-default-btn pill aximo-header-btn"
-              to="https://marvmedia.ng/contact-us"
-            >
-              Contact Us
-            </Link>
+            <Link className="aximo-default-btn pill aximo-header-btn" to="/contact-us">Contact Us</Link>
           </div>
-
-          <div
-            className="mobile-menu-trigger light"
-            style={{ cursor: "pointer" }}
-          >
-            <span></span>
-          </div>
+          <button ref={triggerRef} type="button" className="mobile-menu-trigger light" aria-label="Open navigation menu" aria-expanded={menuOpen} aria-controls="primary-menu" onClick={() => setMenuOpen(true)}>
+            <span aria-hidden="true" />
+          </button>
         </nav>
       </div>
     </header>

@@ -1,158 +1,182 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import blogData from "../data/blogData";
-import { Helmet } from "react-helmet-async";
+import Seo from "../components/Seo";
 import Breadcrumb from "../components/Breadcrumb";
+import {
+  getPublishedPosts,
+  resolveBlogImageUrl,
+  sortPostsNewestFirst,
+} from "../utils/blogApi";
+
+const POSTS_PER_PAGE = 6;
 
 export default function Blog() {
-  const postsPerPage = 4;
+  const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState("");
 
-  // Sort blogData by date (newest first)
-  const sortedPosts = [...blogData].sort(
-    (a, b) => new Date(b.date) - new Date(a.date)
-  );
+  useEffect(() => {
+    const controller = new AbortController();
 
-  const totalPages = Math.ceil(sortedPosts.length / postsPerPage);
-  const startIndex = (currentPage - 1) * postsPerPage;
+    const loadPosts = async () => {
+      try {
+        setIsLoading(true);
+        setError("");
+        const data = await getPublishedPosts(controller.signal);
+        setPosts(Array.isArray(data) ? data : []);
+      } catch (requestError) {
+        if (requestError.name !== "AbortError") {
+          setError("We couldn't load the blog posts. Please try again later.");
+        }
+      } finally {
+        if (!controller.signal.aborted) setIsLoading(false);
+      }
+    };
+
+    loadPosts();
+    return () => controller.abort();
+  }, []);
+
+  const sortedPosts = useMemo(() => sortPostsNewestFirst(posts), [posts]);
+  const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
+  const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
   const selectedPosts = sortedPosts.slice(
     startIndex,
-    startIndex + postsPerPage
+    startIndex + POSTS_PER_PAGE
   );
 
-  const handlePageChange = (pageNum) => {
-    setCurrentPage(pageNum);
-    window.scrollTo(0, 0);
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
     <>
-      <Helmet>
-        <title>Blog | MarvMedia</title>
-        <meta name="description" content="Blog post" />
-      </Helmet>
+      <Seo
+        title="Creative Marketing Insights and Stories"
+        description="Read practical insights about social media, branding, content creation, entrepreneurship, and the creative industry from Marv Media."
+        path="/blog"
+        breadcrumbs={[{ name: "Home", path: "/" }, { name: "Blog", path: "/blog" }]}
+      />
 
-      <Breadcrumb title="Blog" current="Blog" />
-      <div className="section aximo-section-padding2">
+      <Breadcrumb title="Blog" current="Blog" className="blog-hero" />
+      <div className="section blog-index-section">
         <div className="container">
-          <div className="row">
-            {/* Main Blog Posts */}
-            <div className="col-lg-9">
-              <div className="row">
-                {selectedPosts.map((post, i) => (
-                  <div className="col-xl-6" key={i}>
-                    <div
-                      className="single-post-item wow fadeInUpX"
-                      data-wow-delay={`0.${i + 1}s`}
-                    >
-                      <div className="post-thumbnail">
-                        <img
-                          src={post.image}
-                          alt={post.title}
-                          // style={{
-                          
-                          //   maxHeight: "400px",
-                          //   height: "100%",
-                          //   borderRadius: "10px",
-                          // }}
-                        />
-                      </div>
-                      <div className="post-content">
-                        <div className="post-meta">
-                          <div className="post-date">{post.date}</div>
-                        </div>
-                        <Link to={`/blog/${post.slug}`}>
-                          <h3 className="entry-title">{post.title}</h3>
-                        </Link>
-                        <Link
-                          className="post-read-more"
-                          to={`/blog/${post.slug}`}
-                        >
-                          Read more{" "}
-                          <img
-                            src="/assets/images/icon/arrow-right.svg"
-                            alt="arrow"
-                          />
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Pagination */}
-              <div className="aximo-navigation">
-                <nav className="navigation pagination" aria-label="Posts">
-                  <div className="nav-links">
-                    {Array.from({ length: totalPages }, (_, i) => {
-                      const pageNum = i + 1;
-                      return currentPage === pageNum ? (
-                        <span
-                          key={i}
-                          aria-current="page"
-                          className="page-numbers current"
-                        >
-                          {pageNum}
-                        </span>
-                      ) : (
-                        <a
-                          key={i}
-                          className="page-numbers"
-                          href="#"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            handlePageChange(pageNum);
-                          }}
-                        >
-                          {pageNum}
-                        </a>
-                      );
-                    })}
-
-                    {currentPage < totalPages && (
-                      <a
-                        className="next page-numbers"
-                        href="#"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          handlePageChange(currentPage + 1);
-                        }}
-                      >
-                        <img
-                          src="/assets/images/icon/arrow-right8.svg"
-                          alt="next"
-                        />
-                      </a>
-                    )}
-                  </div>
-                </nav>
-              </div>
+          {isLoading && (
+            <div className="text-center" role="status">
+              <p>Loading posts…</p>
             </div>
+          )}
 
-            {/* Sidebar (Recent Posts) */}
-            <div className="col-lg-3">
-              <div className="right-sidebar">
-                <div className="widget aximo_recent_posts_Widget">
-                  <h3 className="wp-block-heading">Recent Posts:</h3>
-                  {sortedPosts.slice(0, 3).map((post, i) => (
-                    <div className="post-item" key={i}>
-                      <div className="post-thumb">
-                        <Link to={`/blog/${post.slug}`}>
-                          <img src={post.image} alt={post.title} />
-                        </Link>
-                      </div>
-                      <div className="post-text">
-                        <div className="post-date">{post.date}</div>
-                        <Link className="post-title" to={`/blog/${post.slug}`}>
-                          {post.title}
-                        </Link>
-                      </div>
-                    </div>
-                  ))}
+          {!isLoading && error && (
+            <div className="text-center" role="alert">
+              <h3>Unable to load posts</h3>
+              <p>{error}</p>
+            </div>
+          )}
+
+          {!isLoading && !error && sortedPosts.length === 0 && (
+            <div className="text-center">
+              <h3>No posts yet</h3>
+              <p>Published articles will appear here.</p>
+            </div>
+          )}
+
+          {!isLoading && !error && sortedPosts.length > 0 && (
+            <div className="row blog-index-layout">
+              <div className="col-lg-9">
+                <div className="blog-index-toolbar">
+                  <h3>Latest stories</h3>
                 </div>
+                <div className="row">
+                  {selectedPosts.map((post, index) => {
+                    return (
+                    <div className="col-lg-4 col-md-6" key={post.id || post.slug}>
+                      <article
+                        className="blog-card wow fadeInUpX"
+                        data-wow-delay={`0.${index + 1}s`}
+                      >
+                        {post.image && (
+                          <Link className="blog-card-image" to={`/blog/${post.slug}`} aria-label={`Read ${post.title}`}>
+                              <img
+                                src={resolveBlogImageUrl(post.image)}
+                                alt=""
+                                loading="lazy"
+                              />
+                          </Link>
+                        )}
+                        <div className="blog-card-content">
+                          <div className="blog-card-meta">
+                            <span>{post.date}</span>
+                          </div>
+                          <Link to={`/blog/${post.slug}`}>
+                            <h2>{post.title}</h2>
+                          </Link>
+                          <Link
+                            className="blog-card-link"
+                            to={`/blog/${post.slug}`}
+                          >
+                            <span>Read article</span>
+                            <span aria-hidden="true">↗</span>
+                          </Link>
+                        </div>
+                      </article>
+                    </div>
+                  )})}
+                </div>
+
+                {totalPages > 1 && (
+                  <div className="aximo-navigation blog-index-pagination">
+                    <nav className="navigation pagination" aria-label="Posts">
+                      <div className="nav-links">
+                        {Array.from({ length: totalPages }, (_, index) => {
+                          const pageNumber = index + 1;
+                          return currentPage === pageNumber ? (
+                            <span
+                              key={pageNumber}
+                              aria-current="page"
+                              className="page-numbers current"
+                            >
+                              {pageNumber}
+                            </span>
+                          ) : (
+                            <button
+                              key={pageNumber}
+                              className="page-numbers"
+                              onClick={() => handlePageChange(pageNumber)}
+                              type="button"
+                            >
+                              {pageNumber}
+                            </button>
+                          );
+                        })}
+
+                      </div>
+                    </nav>
+                  </div>
+                )}
               </div>
+
+              <aside className="col-lg-3">
+                <div className="blog-list-sidebar">
+                  <h3>Recent posts</h3>
+                  <div className="blog-list-recent">
+                    {sortedPosts.slice(0, 4).map((post) => (
+                      <article key={post.id || post.slug}>
+                        {post.image && (
+                          <Link className="blog-list-recent-image" to={`/blog/${post.slug}`} tabIndex="-1" aria-hidden="true">
+                            <img src={resolveBlogImageUrl(post.image)} alt="" loading="lazy" />
+                          </Link>
+                        )}
+                        <Link to={`/blog/${post.slug}`}>{post.title}</Link>
+                      </article>
+                    ))}
+                  </div>
+                </div>
+              </aside>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </>

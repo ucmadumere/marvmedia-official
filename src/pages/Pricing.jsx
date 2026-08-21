@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Helmet } from "react-helmet-async";
+import Seo from "../components/Seo";
 import Breadcrumb from "../components/Breadcrumb";
 
 export default function Pricing() {
@@ -65,10 +65,12 @@ export default function Pricing() {
 
   return (
     <>
-      <Helmet>
-        <title>Marvmedia | Pricing</title>
-        <meta name="description" content="Welcome to MarvMedia's homepage." />
-      </Helmet>
+      <Seo
+        title="Service Packages and Pricing"
+        description="Compare Marv Media's social media, content creation, branding, and digital service packages for businesses and personal brands."
+        path="/pricing"
+        breadcrumbs={[{ name: "Home", path: "/" }, { name: "Pricing", path: "/pricing" }]}
+      />
       <Breadcrumb title="Pricing" current="Pricing" />
       <div className="section aximo-section-padding3">
         <div className="container">

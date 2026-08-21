@@ -8,6 +8,14 @@
 
     <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon" />
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/images/v1/herothumb.webp"
+      imagesrcset="/assets/images/v1/herothumb-800.webp 800w, /assets/images/v1/herothumb.webp 1600w"
+      imagesizes="(max-width: 991px) 100vw, 33vw"
+      fetchpriority="high"
+    />
     <!-- End favicon -->
 
     <link
@@ -18,43 +26,17 @@
 
     <!-- End google font -->
 
-    <!-- Link CSS from public/assets/css folder -->
+    <!-- Core layout and project styles. Animation and slider styles are
+         bundled with the React application from their npm packages. -->
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/assets/css/magnific-popup.css" />
-    <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="/assets/css/animate.css" />
     <link rel="stylesheet" href="/assets/css/custom-font.css" />
     <link rel="stylesheet" href="/assets/css/fontawesome.css" />
-    <link rel="stylesheet" href="/assets/css/aos.css" />
     <link rel="stylesheet" href="/assets/css/icomoon.css" />
     <link rel="stylesheet" href="/assets/css/main.css" />
     <link rel="stylesheet" href="/assets/css/app.min.css" />
   </head>
   <body>
     <div id="root"></div>
-
-    <!-- JS files from public/assets/js -->
-    <script src="/assets/js/jquery-3.6.0.min.js"></script>
-    <script src="/assets/js/bootstrap.bundle.min.js"></script>
-    <!-- <script src="/assets/js/aos.js"></script> -->
-    <script src="/assets/js/menu/menu.js"></script>
-    <script src="/assets/js/gsap.min.js"></script>
-    <script src="/assets/js/isotope.pkgd.min.js"></script>
-    <script src="/assets/js/jquery.magnific-popup.min.js"></script>
-    <!-- <script src="/assets/js/swiper-bundle.min.js"></script> -->
-    <script src="/assets/js/countdown.js"></script>
-    <!-- <script src="/assets/js/wow.min.js"></script> -->
-    <script src="/assets/js/SplitText.min.js"></script>
-    <script src="/assets/js/ScrollTrigger.min.js"></script>
-    <script src="/assets/js/ScrollSmoother.min.js"></script>
-    <script src="/assets/js/skill-bar.js"></script>
-    <script src="/assets/js/infinite-slider.js"></script>
-    <script src="/assets/js/image-resizing.js"></script>
-    <!-- <script src="/assets/js/scrollsmooth.js"></script> -->
-    <script src="/assets/js/faq.js"></script>
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyArZVfNvjnLNwJZlLJKuOiWHZ6vtQzzb1Y"></script> -->
-
-    <script src="/assets/js/app.js"></script>
 
     <!-- Vite React app entry -->
     <script type="module" src="/src/main.jsx"></script>

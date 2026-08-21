@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Link } from "react-router-dom";
-import CallToActionButton from "./CallToActionButton";
 import CallToAction from "./CallToAction";
 
 export default function CeoSection() {
@@ -20,14 +18,21 @@ export default function CeoSection() {
           <div className="col-lg-5" data-aos="fade-right" data-aos-delay="100">
             <div className="aximo-content-thumb">
               <img
-                src="/assets/images/v3/marvel.jpg"
+                src="/assets/images/v3/marvel.webp"
+                srcSet="/assets/images/v3/marvel-600.webp 600w, /assets/images/v3/marvel.webp 1000w"
+                sizes="(max-width: 991px) 100vw, 42vw"
+                width="1000"
+                height="1500"
+                loading="lazy"
                 alt="Marvel Iwezue"
                 style={{ borderRadius: "30px" }} 
               />
               <div className="aximo-thumb-shape1">
                 <img
                   src="/assets/images/v3/shape2.png"
-                  alt="Decorative Shape"
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
                 />
               </div>
             </div>

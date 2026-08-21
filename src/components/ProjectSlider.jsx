@@ -1,14 +1,23 @@
 // src/components/ProjectSlider.jsx
 import { Link } from "react-router-dom";
+
+const getSrcSet = (image) =>
+  image.endsWith(".webp")
+    ? `${image.replace(/\.webp$/, "-800.webp")} 800w, ${image} 1600w`
+    : undefined;
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay, Mousewheel } from "swiper/modules";
+import { A11y, Autoplay, Keyboard, Mousewheel, Navigation, Pagination } from "swiper/modules";
 import portfolioData from "../data/portfolioData";
+import usePrefersReducedMotion from "../hooks/usePrefersReducedMotion";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
+import "swiper/css/navigation";
 
 export default function ProjectSlider() {
+  const prefersReducedMotion = usePrefersReducedMotion();
+
   return (
     <div className="section dark-bg aximo-section-padding">
       <div className="container">
@@ -27,8 +36,11 @@ export default function ProjectSlider() {
 
       <Swiper
         className="aximo-project-slider"
-        modules={[Pagination, Autoplay, Mousewheel]}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        modules={[A11y, Autoplay, Keyboard, Mousewheel, Navigation, Pagination]}
+        autoplay={prefersReducedMotion ? false : { delay: 5000, disableOnInteraction: true, pauseOnMouseEnter: true }}
+        a11y={{ containerMessage: "Featured projects", nextSlideMessage: "Next project", prevSlideMessage: "Previous project", paginationBulletMessage: "Go to project {{index}}" }}
+        keyboard={{ enabled: true }}
+        navigation
         pagination={{ clickable: true }}
         loop={false}
         spaceBetween={30}
@@ -45,6 +57,11 @@ export default function ProjectSlider() {
             <div className="aximo-project-thumb">
               <img
                 src={item.mainImage}
+                srcSet={getSrcSet(item.mainImage)}
+                sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 33vw"
+                width={item.mainImageWidth}
+                height={item.mainImageHeight}
+                loading="lazy"
                 alt={item.title}
               />
 
@@ -58,8 +75,10 @@ export default function ProjectSlider() {
                 <Link
                   className="aximo-project-icon"
                   to={`/portfolio/${item.slug}`}
+                  aria-label={`View ${item.title} project`}
                 >
                   <svg
+                    aria-hidden="true"
                     width="34"
                     height="28"
                     viewBox="0 0 34 28"

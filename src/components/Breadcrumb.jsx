@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-export default function Breadcrumb({ title = "Our Services", current = "Our Services" }) {
+export default function Breadcrumb({ title = "Our Services", current = "Our Services", className = "" }) {
   return (
-    <div className="aximo-breadcrumb">
+    <div className={`aximo-breadcrumb ${className}`.trim()}>
       <div className="container">
         <h1 className="post__title">{title}</h1>
         <nav className="breadcrumbs" aria-label="Breadcrumb">

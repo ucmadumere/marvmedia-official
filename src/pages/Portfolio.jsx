@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import portfolioData from "../data/portfolioData";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import Seo from "../components/Seo";
 import Breadcrumb from "../components/Breadcrumb";
 
 const ITEMS_PER_PAGE = 6;
+
+const getSrcSet = (image) =>
+  image.endsWith(".webp")
+    ? `${image.replace(/\.webp$/, "-800.webp")} 800w, ${image} 1600w`
+    : undefined;
 
 export default function Portfolio() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -14,10 +19,13 @@ export default function Portfolio() {
 
   return (
     <>
-      <Helmet>
-        <title>Marvmedia | FAQ</title>
-        <meta name="description" content="Faq" />
-      </Helmet>
+      <Seo
+        title="Creative Portfolio and Client Work"
+        description="Explore Marv Media's branding, content creation, social media, event marketing, and campaign work for ambitious brands."
+        path="/portfolio"
+        image={portfolioData[0]?.mainImage}
+        breadcrumbs={[{ name: "Home", path: "/" }, { name: "Portfolio", path: "/portfolio" }]}
+      />
 
       <Breadcrumb title="Portfolio" current="Portfolio" />
       <div className="section aximo-project-page aximo-section-padding5">
@@ -37,7 +45,15 @@ export default function Portfolio() {
                   className="aximo-project-thumb wow fadeInUpX"
                   data-wow-delay={`${0.1 * (i + 1)}s`}
                 >
-                  <img src={item.mainImage} alt={item.title} />
+                  <img
+                    src={item.mainImage}
+                    srcSet={getSrcSet(item.mainImage)}
+                    sizes="(max-width: 991px) 100vw, 50vw"
+                    width={item.mainImageWidth}
+                    height={item.mainImageHeight}
+                    loading="lazy"
+                    alt={item.title}
+                  />
                   <div className="aximo-project-wrap">
                     <div className="aximo-project-data">
                       <Link to={`/portfolio/${item.slug}`}>

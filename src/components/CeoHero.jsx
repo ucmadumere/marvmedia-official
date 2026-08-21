@@ -1,5 +1,4 @@
 import React from "react";
-import CallToActionButton from "./CallToActionButton";
 import CallToAction from "./CallToAction";
 
 export default function CeoHero() {
@@ -25,21 +24,27 @@ export default function CeoHero() {
             <div className="aximo-hero-thumb3-wrap">
               <div className="aximo-hero-thumb3">
                 <img
-                  src="/assets/images/v3/hero-thumb.png"
-                  alt="Hero Thumbnail"
+                  src="/assets/images/v3/hero-thumb.webp"
+                  srcSet="/assets/images/v3/hero-thumb-800.webp 800w, /assets/images/v3/hero-thumb.webp 1200w"
+                  sizes="(max-width: 991px) 100vw, 50vw"
+                  width="1200"
+                  height="1460"
+                  alt="Marvel Iwezue, founder of Marv Media"
                 />
 
                 <div className="aximo-hero-thumb-shape2">
                   <img
                     src="/assets/images/v3/shape-monitor.png"
-                    alt="Shape Monitor"
+                    alt=""
+                    aria-hidden="true"
                   />
                 </div>
 
                 <div className="aximo-hero-thumb-shape3">
                   <img
                     src="/assets/images/v3/shape-ayna.png"
-                    alt="Shape Ayna"
+                    alt=""
+                    aria-hidden="true"
                   />
                 </div>
               </div>
@@ -48,7 +53,7 @@ export default function CeoHero() {
                 className="aximo-hero-thumb-shape1 wow fadeInRight"
                 data-wow-delay="0s"
               >
-                <img src="/assets/images/v3/star-shape.png" alt="Star Shape" />
+                <img src="/assets/images/v3/star-shape.png" alt="" aria-hidden="true" />
               </div>
             </div>
           </div>

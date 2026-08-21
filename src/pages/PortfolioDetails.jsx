@@ -1,8 +1,14 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect } from "react";
 import portfolioData from "../data/portfolioData";
-import { Helmet } from "react-helmet-async";
+import Seo from "../components/Seo";
+import { absoluteUrl } from "../utils/seo";
 import Breadcrumb from "../components/Breadcrumb";
+
+const getSrcSet = (image) =>
+  image.endsWith(".webp")
+    ? `${image.replace(/\.webp$/, "-800.webp")} 800w, ${image} 1600w`
+    : undefined;
 
 export default function PortfolioDetails() {
   const { slug } = useParams();
@@ -40,16 +46,38 @@ export default function PortfolioDetails() {
 
   return (
     <>
-      <Helmet>
-        <title>Marvmedia | Portfolio Detail</title>
-        <meta name="description" content="Portfolio Detail" />
-      </Helmet>
+      <Seo
+        title={`${project.title} Case Study`}
+        description={(project.summary || project.intro.replace(/<[^>]*>/g, "")).slice(0, 160)}
+        path={`/portfolio/${project.slug}`}
+        image={project.mainImage}
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Portfolio", path: "/portfolio" },
+          { name: project.title, path: `/portfolio/${project.slug}` },
+        ]}
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "CreativeWork",
+          name: project.title,
+          description: project.summary || project.intro.replace(/<[^>]*>/g, ""),
+          image: absoluteUrl(project.mainImage),
+          creator: { "@id": "https://marvmedia.ng/#organization" },
+        }}
+      />
 
-      <Breadcrumb title="Portfolio Detail" current="Portfolio Detail" />
+      <Breadcrumb title={project.title} current={project.title} />
       <div className="aximo-project-single-section">
         <div className="container">
           <div className="aximo-project-single-thumb">
-            <img src={project.mainImage} alt={project.title} />
+            <img
+              src={project.mainImage}
+              srcSet={getSrcSet(project.mainImage)}
+              sizes="(max-width: 991px) 100vw, 1296px"
+              width={project.mainImageWidth}
+              height={project.mainImageHeight}
+              alt={project.title}
+            />
           </div>
 
           <div className="aximo-project-info-wrap">

@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import services from "../data/services";
 import Breadcrumb from "../components/Breadcrumb";
 import { useState } from "react";
+import Seo from "../components/Seo";
 
 export default function ServiceDetail() {
   const { slug } = useParams();
@@ -12,8 +13,28 @@ export default function ServiceDetail() {
 
   return (
     <>
+      <Seo
+        title={service.title}
+        description={service.desc}
+        path={`/services/${service.slug}`}
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services" },
+          { name: service.title, path: `/services/${service.slug}` },
+        ]}
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: service.title,
+          description: service.desc,
+          provider: { "@id": "https://marvmedia.ng/#organization" },
+          areaServed: "Worldwide",
+          url: `https://marvmedia.ng/services/${service.slug}`,
+        }}
+      />
       <Breadcrumb
-        title="Service Details"
+        title={service.title}
+        current={service.title}
         path={[{ name: "Home", link: "/" }, { name: service.title }]}
       />
 

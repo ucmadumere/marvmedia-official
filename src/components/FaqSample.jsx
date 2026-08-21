@@ -46,7 +46,7 @@ export default function FaqSample() {
             <span className="aximo-title-animation">
               clients learn about us
               <span className="aximo-title-icon">
-                <img src="/assets/images/v1/star2.png" alt="star" />
+                <img src="/assets/images/v1/star2.png" alt="" aria-hidden="true" />
               </span>
             </span>
           </h2>
@@ -58,7 +58,7 @@ export default function FaqSample() {
               {leftFaqs.map((faq, index) => (
                 <div className="aximo-accordion-normal-item" key={index}>
                   <div className="aximo-accordion-normal-icon">
-                    <img src="/assets/images/icon/question.svg" alt="icon" />
+                    <img src="/assets/images/icon/question.svg" alt="" aria-hidden="true" />
                   </div>
                   <div className="aximo-accordion-normal-data">
                     <h3>{faq.question}</h3>
@@ -74,7 +74,7 @@ export default function FaqSample() {
               {rightFaqs.map((faq, index) => (
                 <div className="aximo-accordion-normal-item" key={index}>
                   <div className="aximo-accordion-normal-icon">
-                    <img src="/assets/images/icon/question.svg" alt="icon" />
+                    <img src="/assets/images/icon/question.svg" alt="" aria-hidden="true" />
                   </div>
                   <div className="aximo-accordion-normal-data">
                     <h3>{faq.question}</h3>

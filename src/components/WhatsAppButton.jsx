@@ -7,6 +7,8 @@ export default function WhatsAppButton() {
       href="https://wa.me/2349075115148?text=Hi%20Marv%20Media!%20I%27m%20interested%20in%20your%20services."
       target="_blank"
       rel="noopener noreferrer"
+      aria-label="Chat with Marv Media on WhatsApp (opens in a new tab)"
+      className="whatsapp-button"
       style={{
         position: "fixed",
         bottom: "20px",
@@ -27,6 +29,8 @@ export default function WhatsAppButton() {
       }}
     >
       <svg
+        aria-hidden="true"
+        focusable="false"
         xmlns="http://www.w3.org/2000/svg"
         width="20"
         height="20"

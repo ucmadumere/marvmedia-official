@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
+import Seo from "../components/Seo";
 
 export default function NotFound() {
   return (
+    <>
+    <Seo
+      title="Page Not Found"
+      description="The requested page could not be found."
+      noindex
+    />
     <div className="section">
       <div className="container">
         <div className="aximo-errors-wrap">
@@ -10,15 +17,15 @@ export default function NotFound() {
           </div>
 
           <div className="aximo-errors-title">
-            <h2>
+            <h1 className="h2">
               We can’t find the page{" "}
               <span className="aximo-title-animation">
                 you are looking for
                 <span className="aximo-title-icon">
-                  <img src="/assets/images/v1/star2.png" alt="Star Icon" />
+                  <img src="/assets/images/v1/star2.png" alt="" aria-hidden="true" />
                 </span>
               </span>
-            </h2>
+            </h1>
           </div>
 
           <Link
@@ -28,11 +35,12 @@ export default function NotFound() {
           >
             Return to homepage{" "}
             <span>
-              <img src="/assets/images/icon/arrow-right.svg" alt="Arrow" />
+              <img src="/assets/images/icon/arrow-right.svg" alt="" aria-hidden="true" />
             </span>
           </Link>
         </div>
       </div>
     </div>
+    </>
   );
 }

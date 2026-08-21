@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Link } from "react-router-dom";
-import CallToActionButton from "./CallToActionButton";
 import BookMarv from "./BookMarv";
 
 export default function SeoSection() {
@@ -20,14 +18,19 @@ export default function SeoSection() {
           <div className="col-lg-5" data-aos="fade-right" data-aos-delay="100">
             <div className="aximo-content-thumb">
               <img
-                src="/assets/images/v3/marvel.jpg"
+                src="/assets/images/v3/founder.jpg"
+                width="2832"
+                height="4240"
+                loading="lazy"
                 alt="Marvel Iwezue"
                 style={{ borderRadius: "30px" }}
               />
               <div className="aximo-thumb-shape1">
                 <img
                   src="/assets/images/v3/shape2.png"
-                  alt="Decorative Shape"
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -39,7 +42,7 @@ export default function SeoSection() {
             data-aos="fade-left"
             data-aos-delay="300"
           >
-            <div className="aximo-default-content familjen-grotesk">
+            <div className="aximo-default-content familjen-grotesk founder-copy">
               <h2>Meet the founder</h2>
               <p>
                 Marvel Iwezue is a serial entrepreneur, a meticulous creative
@@ -58,7 +61,9 @@ export default function SeoSection() {
               </p>
             </div>
 
-            <BookMarv />
+            <div className="founder-call-action">
+              <BookMarv />
+            </div>
           </div>
         </div>
       </div>

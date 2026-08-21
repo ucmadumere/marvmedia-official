@@ -93,10 +93,11 @@ export default function ServiceGridSection() {
                 <div className="aximo-iconbox-data">
                   <h6>{service.title}</h6>
                   <p>{service.desc}</p>
-                  <Link className="aximo-icon" to={`/services/${service.slug}`}>
+                  <Link className="aximo-icon" to={`/services/${service.slug}`} aria-label={`Learn more about ${service.title}`}>
                     <img
                       src="/assets/images/icon/arrow-right.svg"
-                      alt="arrow"
+                      alt=""
+                      aria-hidden="true"
                     />
                   </Link>
                 </div>

@@ -60,15 +60,21 @@ export default function FAQAccordion() {
                       openIndex === index ? "open" : ""
                     }`}
                   >
-                    <div
-                      className="aximo-accordion-header"
-                      onClick={() => toggleItem(index)}
-                      style={{ cursor: "pointer" }}
-                    >
-                      <h3>{item.title}</h3>
+                    <div className="aximo-accordion-header">
+                      <h3>
+                        <button
+                          type="button"
+                          aria-expanded={openIndex === index}
+                          aria-controls={`why-us-panel-${index}`}
+                          id={`why-us-button-${index}`}
+                          onClick={() => toggleItem(index)}
+                        >
+                          {item.title}
+                        </button>
+                      </h3>
                     </div>
                     {openIndex === index && (
-                      <div className="aximo-accordion-body">
+                      <div className="aximo-accordion-body" id={`why-us-panel-${index}`} role="region" aria-labelledby={`why-us-button-${index}`}>
                         <p>{item.content}</p>
                       </div>
                     )}

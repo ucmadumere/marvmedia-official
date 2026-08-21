@@ -1,53 +1,48 @@
 const express = require("express");
-const nodemailer = require("nodemailer");
-const logError = require("../utils/logError");
+const verifyTurnstile = require("../middleware/verifyTurnstile");
+const { escapeHtml, validateContact } = require("../utils/contactValidation");
+const sendContactEmail = require("../utils/mailer");
+
 const router = express.Router();
 
-router.post("/", async (req, res) => {
-  const { name, email, phone, business, service, message } = req.body;
-
-  if (!name || !email || !service || !message) {
-    return res
-      .status(400)
-      .json({
-        success: false,
-        msg: "Name, email, service, and message are required",
-      });
+router.post("/", verifyTurnstile, async (req, res) => {
+  if (req.body.website) {
+    return res.json({ success: true, msg: "Message sent successfully" });
   }
 
-  try {
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: process.env.SMTP_PORT,
-      secure: process.env.SMTP_PORT == 465,
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
-
-    await transporter.sendMail({
-      from: `"${name}" <${process.env.EMAIL_USER}>`,
-      to: process.env.MAIL_RECEIVER,
-      replyTo: email,
-      subject: "New Contact Form Submission",
-      html: `
-        <h3>Contact Form Details</h3>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone || "N/A"}</p>
-        <p><strong>Business Name:</strong> ${business || "N/A"}</p>
-        <p><strong>Service Interested In:</strong> ${service || "N/A"}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message}</p>
-      `,
-    });
-
-    res.json({ success: true, msg: "Message sent successfully" });
-  } catch (error) {
-    await logError(error, req, 500); // save error to DB
-    res.status(500).json({ success: false, msg: "Failed to send email" });
+  const { fields, errors } = validateContact(req.body, { full: true });
+  if (errors.length) {
+    return res.status(400).json({ success: false, msg: errors[0] });
   }
+
+  const { name, email, phone, business, service, message } = fields;
+  await sendContactEmail({
+    from: `"Marv Media Website" <${process.env.EMAIL_USER}>`,
+    to: process.env.MAIL_RECEIVER,
+    replyTo: email,
+    subject: "New Contact Form Submission",
+    text: [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Phone: ${phone || "N/A"}`,
+      `Business: ${business || "N/A"}`,
+      `Service: ${service}`,
+      "",
+      message,
+    ].join("\n"),
+    html: `
+      <h3>Contact Form Details</h3>
+      <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+      <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+      <p><strong>Phone:</strong> ${escapeHtml(phone || "N/A")}</p>
+      <p><strong>Business Name:</strong> ${escapeHtml(business || "N/A")}</p>
+      <p><strong>Service Interested In:</strong> ${escapeHtml(service)}</p>
+      <p><strong>Message:</strong></p>
+      <p>${escapeHtml(message)}</p>
+    `,
+  });
+
+  return res.json({ success: true, msg: "Message sent successfully" });
 });
 
 module.exports = router;

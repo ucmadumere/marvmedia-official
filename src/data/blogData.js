@@ -152,7 +152,7 @@ const blogData = [
       },
       {
         type: "image",
-        src: "/assets/images/blog/marvel.jpg",
+        src: "/assets/images/blog/marvel.webp",
         alt: "Marv Media",
       },
       {
@@ -247,7 +247,7 @@ export default blogData;
   //   slug: "",
   //   title:
   //     "",
-  //   image: "/assets/images/blog/blog3.png",
+  //   image: "/assets/images/blog/blog3.webp",
   //   content: [
   //     {
   //       type: "p",

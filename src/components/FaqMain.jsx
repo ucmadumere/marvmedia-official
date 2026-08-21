@@ -1,6 +1,7 @@
-import { useEffect } from "react";
+import { useState } from "react";
 
 export default function FaqMain() {
+  const [openIndex, setOpenIndex] = useState(0);
   const faqs = [
     {
       question: "What does Marv Media do?",
@@ -34,19 +35,6 @@ export default function FaqMain() {
     },
   ];
 
-  useEffect(() => {
-    // Open/close logic using vanilla JS since no plugin specified
-    const items = document.querySelectorAll(".aximo-accordion-item");
-
-    items.forEach((item) => {
-      item.addEventListener("click", () => {
-        // Close others
-        items.forEach((el) => el.classList.remove("open"));
-        item.classList.add("open");
-      });
-    });
-  }, []);
-
   return (
     <div className="section aximo-section-padding3">
       <div className="container">
@@ -69,15 +57,21 @@ export default function FaqMain() {
         >
           {faqs.map((faq, i) => (
             <div
-              className={`aximo-accordion-item ${i === 0 ? "open" : ""}`}
+              className={`aximo-accordion-item ${openIndex === i ? "open" : ""}`}
               key={i}
             >
               <div className="aximo-accordion-header">
-                <h3>{faq.question}</h3>
+                <h3>
+                  <button type="button" id={`faq-button-${i}`} aria-expanded={openIndex === i} aria-controls={`faq-panel-${i}`} onClick={() => setOpenIndex(openIndex === i ? null : i)}>
+                    {faq.question}
+                  </button>
+                </h3>
               </div>
-              <div className="aximo-accordion-body">
-                <p>{faq.answer}</p>
-              </div>
+              {openIndex === i && (
+                <div className="aximo-accordion-body" id={`faq-panel-${i}`} role="region" aria-labelledby={`faq-button-${i}`}>
+                  <p>{faq.answer}</p>
+                </div>
+              )}
             </div>
           ))}
         </div>
