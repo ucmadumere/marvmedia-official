@@ -29,18 +29,18 @@ export default function TeamSlider() {
         height: 1200,
       },
       {
-        name: "Esther Adeyemi",
+        name: "Esther",
         title: "Social Media Associate",
         img: "Esther.jpg",
         width: 800,
         height: 1200,
       },
       {
-        name: "Sophia",
-        title: "Intern",
-        img: "SophiaIwezue.png",
+        name: "Ndubuisi",
+        role: "Social Media Associate",
+        img: "ND.jpg",
         width: 800,
-        height: 827,
+        height: 1200,
       },
       {
         name: "Increase",
@@ -52,7 +52,7 @@ export default function TeamSlider() {
       {
         name: "PSI",
         title: "Recruitment Partner",
-        img: "psi.png",
+        img: "SophiaIwezue.png",
         width: 800,
         height: 827,
       },

@@ -127,7 +127,7 @@ export default function Blog() {
                 </div>
 
                 {totalPages > 1 && (
-                  <div className="aximo-navigation blog-index-pagination">
+                  <div className="aximo-navigation site-pagination blog-index-pagination">
                     <nav className="navigation pagination" aria-label="Posts">
                       <div className="nav-links">
                         {Array.from({ length: totalPages }, (_, index) => {
