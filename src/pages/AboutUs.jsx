@@ -208,13 +208,6 @@ export default function AboutUs() {
                   height: 1200,
                 },
                 {
-                  name: "Salome",
-                  role: "Social Media Executive",
-                  img: "sally.webp",
-                  width: 800,
-                  height: 1200,
-                },
-                {
                   name: "Abigail",
                   role: "Social Media Executive",
                   img: "abigail.webp",
