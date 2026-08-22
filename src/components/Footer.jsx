@@ -44,10 +44,14 @@ export default function Footer() {
         setTurnstileResetKey((key) => key + 1);
       } else {
         setFeedback({ type: "error", message: data.msg || "Failed to send message" });
+        setTurnstileToken("");
+        setTurnstileResetKey((key) => key + 1);
       }
     } catch (err) {
       console.error("Footer form error:", err);
       setFeedback({ type: "error", message: "Server error. Please try again." });
+      setTurnstileToken("");
+      setTurnstileResetKey((key) => key + 1);
     } finally {
       setSubmitting(false);
     }

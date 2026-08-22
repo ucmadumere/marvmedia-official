@@ -15,7 +15,7 @@ export default function Home() {
     return (
       <>
         <Seo
-          title="Creative Agency for African Brands | Marv Media"
+          title="Creative Agency | Marv Media"
           description="Marv Media helps African entrepreneurs, thought leaders, and creatives grow through social media, branding, content production, and digital solutions."
           path="/"
           image="/assets/images/v1/herothumb.webp"

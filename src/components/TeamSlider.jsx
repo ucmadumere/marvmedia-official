@@ -1,76 +1,6 @@
+import teamMembers from "../data/teamMembers";
+
 export default function TeamSlider() {
-    const teamMembers = [
-      {
-        name: "Marvel Iwezue ",
-        title: "Founder",
-        img: "Marvel.jpg",
-        width: 800,
-        height: 1200,
-      },
-      {
-        name: "Abigail",
-        title: "Social Media Executive",
-        img: "abigail.jpg",
-        width: 800,
-        height: 1200,
-      },
-      {
-        name: "Saviour",
-        title: "Partnership & Programs",
-        img: "saviour.jpg",
-        width: 800,
-        height: 1200,
-      },
-      {
-        name: "Bukunmi",
-        title: "Content Production Executive",
-        img: "Bukunmi.jpg",
-        width: 800,
-        height: 1200,
-      },
-      {
-        name: "Esther",
-        title: "Social Media Associate",
-        img: "Esther.jpg",
-        width: 800,
-        height: 1200,
-      },
-      {
-        name: "Ndubuisi",
-        role: "Social Media Associate",
-        img: "ND.jpg",
-        width: 800,
-        height: 1200,
-      },
-      {
-        name: "Increase",
-        title: "Intern",
-        img: "Increase.jpg",
-        width: 800,
-        height: 827,
-      },
-      {
-        name: "PSI",
-        title: "Recruitment Partner",
-        img: "SophiaIwezue.png",
-        width: 800,
-        height: 827,
-      },
-      {
-        name: "Gabriel",
-        title: "Legal Adviser",
-        img: "gabriel.jpg",
-        width: 800,
-        height: 1067,
-      },
-      {
-        name: "Ugochukwu",
-        title: "Technical Partner",
-        img: "ucai.webp",
-        width: 800,
-        height: 1067,
-      },
-    ];
 
     return (
         <>
@@ -91,7 +21,7 @@ export default function TeamSlider() {
 
                     <div className="row">
                         {teamMembers.map((member, i) => (
-                            <div className="col-xl-3 col-md-6" key={i}>
+                            <div className="col-6 col-md-6 col-xl-3 team-member-column" key={member.name}>
                                 <div className="aximo-team-wrap wow fadeInUpX" data-wow-delay={`${0.1 * (i + 1)}s`}>
                                     <div className="aximo-team-thumb">
                                         <img
@@ -100,11 +30,12 @@ export default function TeamSlider() {
                                           width={member.width}
                                           height={member.height}
                                           loading="lazy"
+                                          style={{ objectPosition: member.focus }}
                                         />
                                     </div>
                                     <div className="aximo-team-data">
                                         <h3>{member.name}</h3>
-                                        <p>{member.title}</p>
+                                        <p>{member.role}</p>
                                     </div>
                                 </div>
                             </div>

@@ -35,6 +35,10 @@ const verifyTurnstile = async (req, res, next) => {
     const result = await response.json();
 
     if (!result.success) {
+      console.warn("Turnstile verification failed", {
+        errorCodes: result["error-codes"] || [],
+        hostname: result.hostname || null,
+      });
       return res.status(400).json({
         success: false,
         msg: "Spam protection verification failed. Please try again.",

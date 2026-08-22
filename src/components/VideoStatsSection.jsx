@@ -61,7 +61,7 @@ export default function VideoStatsSection() {
             <div className="aximo-counter-wrap" data-aos="fade-left">
               <div className="aximo-counter-data">
                 <h2 className="aximo-counter-number">
-                  <CountUp end={5} duration={2} enableScrollSpy scrollSpyOnce />+
+                  <CountUp end={6} duration={2} enableScrollSpy scrollSpyOnce />+
                 </h2>
                 <p>Years of experience</p>
               </div>
@@ -73,7 +73,7 @@ export default function VideoStatsSection() {
               </div>
               <div className="aximo-counter-data">
                 <h2 className="aximo-counter-number">
-                  <CountUp end={5} duration={2} enableScrollSpy scrollSpyOnce />+
+                  <CountUp end={6} duration={2} enableScrollSpy scrollSpyOnce />+
                 </h2>
                 <p>Countries</p>
               </div>

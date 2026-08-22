@@ -1,0 +1,13 @@
+Options -MultiViews
+DirectorySlash Off
+
+RewriteEngine On
+
+# Serve build-generated SEO entry files at clean URLs without adding a slash.
+RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+RewriteRule ^(.+?)/?$ $1/index.html [L]
+
+# Keep React Router working for routes that are not generated at build time.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]

@@ -68,10 +68,14 @@ export default function ContactFormSection() {
             data.message ||
             "Something went wrong. Please try again."
         );
+        setTurnstileToken("");
+        setTurnstileResetKey((key) => key + 1);
       }
     } catch (err) {
       console.error("Submission error:", err);
       setError("Network error. Please try again.");
+      setTurnstileToken("");
+      setTurnstileResetKey((key) => key + 1);
     } finally {
       setLoading(false);
     }

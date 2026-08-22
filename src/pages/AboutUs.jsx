@@ -4,6 +4,7 @@ import AutoSlider from "../components/AutoSlider";
 import VideoStatsSection from "../components/VideoStatsSection";
 import usePageInIt from "../hooks/usePageInit";
 import SeoSection from "../components/SeoSection";
+import teamMembers from "../data/teamMembers";
 
 export default function AboutUs() {
   usePageInIt();
@@ -292,7 +293,34 @@ export default function AboutUs() {
           </div>
           <div className="row">
             {/* Team members */}
-            {[
+            {/* Shared team data keeps both team grids visually and textually consistent. */}
+            {teamMembers.map(({ name, role, img, width, height, focus }, index) => (
+              <div className="col-6 col-md-6 col-xl-3 team-member-column" key={name}>
+                <div
+                  className="aximo-team-wrap wow fadeInUpX"
+                  data-wow-delay={`${index * 0.1}s`}
+                >
+                  <div className="aximo-team-thumb">
+                    <img
+                      src={`/assets/images/team/${img}`}
+                      alt={name}
+                      width={width}
+                      height={height}
+                      loading="lazy"
+                      style={{ objectPosition: focus }}
+                    />
+                    <div className="aximo-social-icon team-social">
+                      <ul />
+                    </div>
+                  </div>
+                  <div className="aximo-team-data">
+                    <h3>{name}</h3>
+                    <p>{role}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+            {false && [
               {
                 name: "Marvel Iwezue ",
                 role: "Founder",

@@ -56,6 +56,51 @@
   object-position: center top;
 }
 
+/* Shared portrait proportions for the About and Team grids. */
+.aximo-team-thumb {
+  width: 100%;
+  height: auto !important;
+  aspect-ratio: 4 / 5;
+}
+
+.team-member-column .aximo-team-wrap {
+  height: calc(100% - 30px);
+}
+
+.team-member-column .aximo-team-data h3 {
+  font-size: clamp(20px, 2vw, 26px);
+}
+
+.team-member-column .aximo-team-data p {
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+@media (max-width: 575px) {
+  .team-member-column {
+    padding-right: 7px;
+    padding-left: 7px;
+  }
+
+  .team-member-column .aximo-team-thumb {
+    border-width: 3px;
+    border-radius: 12px;
+  }
+
+  .team-member-column .aximo-team-data {
+    margin-top: 14px;
+  }
+
+  .team-member-column .aximo-team-data h3 {
+    font-size: 18px;
+  }
+
+  .team-member-column .aximo-team-data p {
+    font-size: 13px;
+    line-height: 1.35;
+  }
+}
+
 @media (max-width: 991px) {
   .aximo-hero-thumb,
   .aximo-content-thumb > img:first-child,
