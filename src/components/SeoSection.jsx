@@ -16,8 +16,9 @@ export default function SeoSection() {
         <div className="row">
           {/* Image Column */}
           <div className="col-lg-5" data-aos="fade-right" data-aos-delay="100">
-            <div className="aximo-content-thumb">
+            <div className="aximo-content-thumb founder-portrait-wrap">
               <img
+                className="founder-portrait"
                 src="/assets/images/v3/founder.jpg"
                 width="2832"
                 height="4240"

@@ -118,7 +118,11 @@ export default function Blog() {
                             to={`/blog/${post.slug}`}
                           >
                             <span>Read article</span>
-                            <span aria-hidden="true">↗</span>
+                            <span aria-hidden="true">
+                              <svg className="blog-link-arrow" viewBox="0 0 16 16" focusable="false">
+                                <path d="M4 12 12 4M6 4h6v6" />
+                              </svg>
+                            </span>
                           </Link>
                         </div>
                       </article>

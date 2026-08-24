@@ -25,6 +25,33 @@ export const getPublishedPosts = (signal) =>
 export const getPublishedPostBySlug = (slug, signal) =>
   request(`/api/public/posts/${encodeURIComponent(slug)}`, signal);
 
+export const getPublishedPostComments = (slug, signal) =>
+  request(`/api/public/posts/${encodeURIComponent(slug)}/comments`, signal);
+
+export const submitPostComment = async (slug, comment) => {
+  const response = await fetch(
+    `${PUBLIC_API_URL}/api/public/posts/${encodeURIComponent(slug)}/comments`,
+    {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(comment),
+    }
+  );
+
+  const payload = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    const error = new Error(
+      payload.message || payload.msg || "Your comment could not be submitted."
+    );
+    error.status = response.status;
+    throw error;
+  }
+  return payload;
+};
+
 export const resolveBlogImageUrl = (path) => {
   if (!path) return "";
   if (/^https?:\/\//i.test(path)) return path;

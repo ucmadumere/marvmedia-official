@@ -29,7 +29,7 @@ export default function Home() {
         <div className="aximo-hero-section dark-bg">
           <div className="container position-relative">
             <div className="row">
-              <div className="col-lg-8">
+              <div className="col-lg-7">
                 <div className="aximo-hero-content">
                   <h1>
                     <span className="aximo-title-animation">
@@ -51,7 +51,10 @@ export default function Home() {
                         className="aximo-hero-user-thumb-item wow fadeInUpX"
                         data-wow-delay="0s"
                       >
-                        <img src="/assets/images/v1/luxe.webp" alt="Luxe Dental" />
+                        <img
+                          src="/assets/images/v1/luxe.webp"
+                          alt="Luxe Dental"
+                        />
                       </div>
                       <div
                         className="aximo-hero-user-thumb-item wow fadeInUpX"
@@ -63,26 +66,38 @@ export default function Home() {
                         className="aximo-hero-user-thumb-item wow fadeInUpX"
                         data-wow-delay="0.4s"
                       >
-                        <img src="/assets/images/v1/food1.jpeg" alt="Food brand client" />
+                        <img
+                          src="/assets/images/v1/food1.jpeg"
+                          alt="Food brand client"
+                        />
                       </div>
                       <div
                         className="aximo-hero-user-thumb-item wow fadeInUpX"
                         data-wow-delay="0.4s"
                       >
-                        <img src="/assets/images/v1/adline.jpeg" alt="Adline Clothing" />
+                        <img
+                          src="/assets/images/v1/adline.jpeg"
+                          alt="Adline Clothing"
+                        />
                       </div>
 
                       <div
                         className="aximo-hero-user-thumb-item wow fadeInUpX"
                         data-wow-delay="0.4s"
                       >
-                        <img src="/assets/images/v1/famfac.jpeg" alt="Family-focused brand client" />
+                        <img
+                          src="/assets/images/v1/famfac.jpeg"
+                          alt="Family-focused brand client"
+                        />
                       </div>
                       <div
                         className="aximo-hero-user-thumb-item wow fadeInUpX"
                         data-wow-delay="0.4s"
                       >
-                        <img src="/assets/images/v1/yandpure.jpeg" alt="Young and Pure" />
+                        <img
+                          src="/assets/images/v1/yandpure.jpeg"
+                          alt="Young and Pure"
+                        />
                       </div>
                     </div>
                     <div className="aximo-hero-user-data">
@@ -101,13 +116,13 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="col-lg-4">
+              <div className="col-lg-5">
                 <div
-                  className="aximo-hero-thumb"
+                  className="aximo-hero-thumb home-hero-thumb"
                   data-aos="fade-left"
                   data-aos-delay="200"
                 >
-                  <img
+                  {/* <img
                     src="/assets/images/v1/herothumb.webp"
                     srcSet="/assets/images/v1/herothumb-800.webp 800w, /assets/images/v1/herothumb.webp 1600w"
                     sizes="(max-width: 991px) 100vw, 33vw"
@@ -115,6 +130,14 @@ export default function Home() {
                     height="2400"
                     fetchPriority="high"
                     alt="Marv Media creative director"
+                  /> */}
+                  <img
+                    className="home-hero-photo"
+                    src="/assets/images/team/group-photo/_MG_48522.jpg"
+                    alt="Marv Media creative team"
+                    width={4000}
+                    height={5000}
+                    sizes="(max-width: 991px) 100vw, 33vw"
                   />
                 </div>
               </div>

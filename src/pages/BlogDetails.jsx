@@ -4,6 +4,7 @@ import DOMPurify from "dompurify";
 import Seo from "../components/Seo";
 import { absoluteUrl } from "../utils/seo";
 import Breadcrumb from "../components/Breadcrumb";
+import BlogComments from "../components/BlogComments";
 import {
   getPublishedPostBySlug,
   getPublishedPosts,
@@ -295,6 +296,7 @@ export default function BlogDetails() {
                     </div>
                   )}
                 </footer>
+                <BlogComments slug={post.slug} />
               </article>
             </div>
 
@@ -303,7 +305,11 @@ export default function BlogDetails() {
                 <div className="blog-sidebar-card">
                   <div className="blog-sidebar-heading">
                     <h3>Recent posts</h3>
-                    <span aria-hidden="true">↗</span>
+                    <span aria-hidden="true">
+                      <svg className="blog-link-arrow" viewBox="0 0 16 16" focusable="false">
+                        <path d="M4 12 12 4M6 4h6v6" />
+                      </svg>
+                    </span>
                   </div>
                   {recentPosts.length > 0 ? (
                     <div className="blog-recent-list">
