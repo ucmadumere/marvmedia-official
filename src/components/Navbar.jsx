@@ -72,12 +72,12 @@ export default function Navbar() {
           </div>
           <div className="menu-block-wrapper">
             <button type="button" className={`menu-overlay ${menuOpen ? "active" : ""}`} aria-label="Close navigation menu" onClick={() => closeMenu(true)} tabIndex={menuOpen ? 0 : -1} />
-            <div ref={menuRef} className={`menu-block ${menuOpen ? "active" : ""}`} id="primary-menu" role={menuOpen ? "dialog" : undefined} aria-modal={menuOpen ? "true" : undefined} aria-label={menuOpen ? "Site navigation" : undefined}>
-              <div className={`mobile-menu-head ${openSubmenu ? "active" : ""}`}>
+            <div ref={menuRef} className={`menu-block ${menuOpen ? "active" : ""} ${openSubmenu ? "sub-menu-open" : ""}`} id="primary-menu" role={menuOpen ? "dialog" : undefined} aria-modal={menuOpen ? "true" : undefined} aria-label={menuOpen ? "Site navigation" : undefined}>
+              <div className="mobile-menu-head">
                 <button type="button" className="go-back" aria-label="Return to the main menu" onClick={() => setOpenSubmenu(null)} style={{ display: openSubmenu ? "flex" : "none" }}>
                   <i className="fa fa-angle-left ps-4" aria-hidden="true" />
                 </button>
-                <div className="current-menu-title" aria-live="polite">{openSubmenu ? menuGroups.find((group) => group.id === openSubmenu)?.label : ""}</div>
+                <div className="current-menu-title" />
                 <button ref={closeRef} type="button" className="mobile-menu-close" aria-label="Close navigation menu" onClick={() => closeMenu(true)} style={{ display: openSubmenu ? "none" : "block" }}>
                   <span aria-hidden="true">&times;</span>
                 </button>

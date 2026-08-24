@@ -296,7 +296,7 @@ export default function BlogDetails() {
                     </div>
                   )}
                 </footer>
-                <BlogComments slug={post.slug} />
+                <BlogComments postId={post.id || post._id} slug={post.slug} />
               </article>
             </div>
 

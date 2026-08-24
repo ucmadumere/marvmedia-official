@@ -1,6 +1,9 @@
 import { useEffect, useRef } from "react";
+import {
+  TURNSTILE_ENABLED,
+  TURNSTILE_SITE_KEY,
+} from "../utils/turnstile";
 
-const SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY;
 let scriptPromise;
 
 const loadTurnstile = () => {
@@ -33,7 +36,7 @@ export default function Turnstile({ onTokenChange, resetKey = 0 }) {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    if (!SITE_KEY || !containerRef.current) return undefined;
+    if (!TURNSTILE_ENABLED || !containerRef.current) return undefined;
     let widgetId;
     let cancelled = false;
 
@@ -41,7 +44,7 @@ export default function Turnstile({ onTokenChange, resetKey = 0 }) {
       .then(() => {
         if (cancelled || !containerRef.current) return;
         widgetId = window.turnstile.render(containerRef.current, {
-          sitekey: SITE_KEY,
+          sitekey: TURNSTILE_SITE_KEY,
           callback: onTokenChange,
           "expired-callback": () => onTokenChange(""),
           "error-callback": () => onTokenChange(""),
@@ -58,6 +61,6 @@ export default function Turnstile({ onTokenChange, resetKey = 0 }) {
     };
   }, [onTokenChange, resetKey]);
 
-  if (!SITE_KEY) return null;
+  if (!TURNSTILE_ENABLED) return null;
   return <div ref={containerRef} className="mb-3" />;
 }

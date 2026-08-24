@@ -25,12 +25,12 @@ export const getPublishedPosts = (signal) =>
 export const getPublishedPostBySlug = (slug, signal) =>
   request(`/api/public/posts/${encodeURIComponent(slug)}`, signal);
 
-export const getPublishedPostComments = (slug, signal) =>
-  request(`/api/public/posts/${encodeURIComponent(slug)}/comments`, signal);
+export const getPublishedPostComments = (postId, signal) =>
+  request(`/api/public/posts/id/${encodeURIComponent(postId)}/comments`, signal);
 
-export const submitPostComment = async (slug, comment) => {
+export const submitPostComment = async (postId, comment) => {
   const response = await fetch(
-    `${PUBLIC_API_URL}/api/public/posts/${encodeURIComponent(slug)}/comments`,
+    `${PUBLIC_API_URL}/api/public/posts/id/${encodeURIComponent(postId)}/comments`,
     {
       method: "POST",
       headers: {
@@ -44,7 +44,7 @@ export const submitPostComment = async (slug, comment) => {
   const payload = await response.json().catch(() => ({}));
   if (!response.ok) {
     const error = new Error(
-      payload.message || payload.msg || "Your comment could not be submitted."
+      payload.error || payload.message || payload.msg || "Your comment could not be submitted."
     );
     error.status = response.status;
     throw error;

@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import Turnstile from "./Turnstile";
+import { TURNSTILE_ENABLED } from "../utils/turnstile";
 import {
   getPublishedPostComments,
   submitPostComment,
@@ -18,13 +19,14 @@ const formatCommentDate = (value) => {
   }).format(date);
 };
 
-export default function BlogComments({ slug }) {
+export default function BlogComments({ postId, slug }) {
   const [comments, setComments] = useState([]);
   const [commentsLoading, setCommentsLoading] = useState(true);
   const [form, setForm] = useState(initialForm);
   const [submitting, setSubmitting] = useState(false);
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
+  const [replyTo, setReplyTo] = useState(null);
   const [turnstileToken, setTurnstileToken] = useState("");
   const [turnstileResetKey, setTurnstileResetKey] = useState(0);
   const handleTokenChange = useCallback((token) => setTurnstileToken(token), []);
@@ -32,7 +34,12 @@ export default function BlogComments({ slug }) {
   useEffect(() => {
     const controller = new AbortController();
     setCommentsLoading(true);
-    getPublishedPostComments(slug, controller.signal)
+    if (!postId) {
+      setComments([]);
+      setCommentsLoading(false);
+      return () => controller.abort();
+    }
+    getPublishedPostComments(postId, controller.signal)
       .then((payload) => {
         const items = Array.isArray(payload) ? payload : payload.comments;
         setComments(Array.isArray(items) ? items : []);
@@ -44,7 +51,7 @@ export default function BlogComments({ slug }) {
         if (!controller.signal.aborted) setCommentsLoading(false);
       });
     return () => controller.abort();
-  }, [slug]);
+  }, [postId]);
 
   const handleChange = ({ target: { name, value } }) => {
     setForm((current) => ({ ...current, [name]: value }));
@@ -55,24 +62,34 @@ export default function BlogComments({ slug }) {
     setError("");
     setMessage("");
 
-    if (import.meta.env.VITE_TURNSTILE_SITE_KEY && !turnstileToken) {
+    if (TURNSTILE_ENABLED && !turnstileToken) {
       setError("Please complete the spam protection check.");
       return;
     }
 
     try {
       setSubmitting(true);
-      await submitPostComment(slug, { ...form, turnstileToken });
+      const result = await submitPostComment(postId, {
+        name: form.name,
+        text: form.comment,
+        parentId: replyTo?.id || undefined,
+        website: form.website,
+        turnstileToken,
+      });
       setForm(initialForm);
       setTurnstileToken("");
+      setReplyTo(null);
       setTurnstileResetKey((key) => key + 1);
-      setMessage("Thank you. Your comment has been sent for review.");
-    } catch (requestError) {
-      setError(
-        requestError.status === 404
-          ? "Comment submission is being connected. Please check back shortly."
-          : requestError.message
+      setMessage(
+        result.message || "Thank you. Your comment has been sent for review."
       );
+      if (result.status === "approved") {
+        const payload = await getPublishedPostComments(postId);
+        const items = Array.isArray(payload) ? payload : payload.comments;
+        setComments(Array.isArray(items) ? items : []);
+      }
+    } catch (requestError) {
+      setError(requestError.message);
       setTurnstileToken("");
       setTurnstileResetKey((key) => key + 1);
     } finally {
@@ -80,11 +97,60 @@ export default function BlogComments({ slug }) {
     }
   };
 
+  const commentId = (item) => item.id || item._id;
+  const topLevelComments = comments.filter((item) => !item.parent);
+  const repliesByParent = comments.reduce((groups, item) => {
+    if (!item.parent) return groups;
+    const parentId = typeof item.parent === "object" ? commentId(item.parent) : item.parent;
+    groups[parentId] = [...(groups[parentId] || []), item];
+    return groups;
+  }, {});
+
+  const startReply = (item) => {
+    setReplyTo({ id: commentId(item), name: item.name || "Reader" });
+    setError("");
+    setMessage("");
+    requestAnimationFrame(() => {
+      document.getElementById(`comment-form-${slug}`)?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    });
+  };
+
+  const renderComment = (item, isReply = false) => {
+    const id = commentId(item);
+    return (
+      <article className={`blog-comment${isReply ? " blog-comment-reply" : ""}`} key={id}>
+        <div className="blog-comment-avatar" aria-hidden="true">
+          {(item.name || "R").trim().charAt(0).toUpperCase()}
+        </div>
+        <div className="blog-comment-content">
+          <div className="blog-comment-meta">
+            <h4>{item.name || "Reader"}</h4>
+            <time dateTime={item.createdAt}>{formatCommentDate(item.createdAt || item.date)}</time>
+          </div>
+          <p>{item.comment || item.content || item.text}</p>
+          {!isReply && (
+            <button className="blog-comment-reply-button" type="button" onClick={() => startReply(item)}>
+              Reply
+            </button>
+          )}
+          {!isReply && repliesByParent[id]?.length > 0 && (
+            <div className="blog-comment-replies">
+              {repliesByParent[id].map((reply) => renderComment(reply, true))}
+            </div>
+          )}
+        </div>
+      </article>
+    );
+  };
+
   return (
     <section className="blog-comments" aria-labelledby="blog-comments-title">
       <div className="blog-comments-heading">
         <div>
-          <span className="blog-comments-eyebrow">The conversation</span>
+          {/* <span className="blog-comments-eyebrow">The conversation</span> */}
           <h3 id="blog-comments-title">Comments</h3>
         </div>
         {!commentsLoading && comments.length > 0 && (
@@ -95,30 +161,22 @@ export default function BlogComments({ slug }) {
       <div className="blog-comments-list" aria-live="polite">
         {commentsLoading ? (
           <p className="blog-comments-empty">Loading comments…</p>
-        ) : comments.length ? (
-          comments.map((item) => (
-            <article className="blog-comment" key={item.id || item._id}>
-              <div className="blog-comment-avatar" aria-hidden="true">
-                {(item.name || "R").trim().charAt(0).toUpperCase()}
-              </div>
-              <div className="blog-comment-content">
-                <div className="blog-comment-meta">
-                  <h4>{item.name || "Reader"}</h4>
-                  <time dateTime={item.createdAt}>{formatCommentDate(item.createdAt || item.date)}</time>
-                </div>
-                <p>{item.comment || item.content || item.text}</p>
-              </div>
-            </article>
-          ))
+        ) : topLevelComments.length ? (
+          topLevelComments.map((item) => renderComment(item))
         ) : (
           <p className="blog-comments-empty">No comments yet. Start the conversation.</p>
         )}
       </div>
 
-      <div className="blog-comment-form-card">
+      <div className="blog-comment-form-card" id={`comment-form-${slug}`}>
         <div className="blog-comment-form-intro">
           {/* <span>Share your perspective</span> */}
-          <h4>Leave a comment</h4>
+          <h4>{replyTo ? `Reply to ${replyTo.name}` : "Leave a comment"}</h4>
+          {replyTo && (
+            <button className="blog-comment-cancel-reply" type="button" onClick={() => setReplyTo(null)}>
+              Cancel reply
+            </button>
+          )}
           {/* <p>Comments appear after review.</p> */}
         </div>
         <form className="blog-comment-form" onSubmit={handleSubmit}>

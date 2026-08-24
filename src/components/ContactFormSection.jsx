@@ -2,6 +2,7 @@ import { useState } from "react";
 import usePageInit from "../hooks/usePageInit";
 import { API_URL } from "../utils/api";
 import Turnstile from "./Turnstile";
+import { TURNSTILE_ENABLED } from "../utils/turnstile";
 
 export default function ContactFormSection() {
   usePageInit(); // Initialize AOS/WOW animations if used
@@ -33,7 +34,7 @@ export default function ContactFormSection() {
     setError("");
     setSubmitted(false);
 
-    if (import.meta.env.VITE_TURNSTILE_SITE_KEY && !turnstileToken) {
+    if (TURNSTILE_ENABLED && !turnstileToken) {
       setError("Please complete the spam protection check.");
       setLoading(false);
       return;

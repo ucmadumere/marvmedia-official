@@ -247,6 +247,39 @@
   overflow-wrap: anywhere;
 }
 
+.blog-comment-reply-button,
+.blog-comment-cancel-reply {
+  margin-top: 10px;
+  color: #087854;
+  background: transparent;
+  border: 0;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.blog-comment-replies {
+  margin-top: 18px;
+  padding-left: 18px;
+  border-left: 2px solid rgba(7, 61, 48, 0.16);
+}
+
+.blog-comment.blog-comment-reply {
+  grid-template-columns: 40px 1fr;
+  gap: 12px;
+  padding: 18px 0 4px;
+  border-bottom: 0;
+}
+
+.blog-comment-reply .blog-comment-avatar {
+  width: 40px;
+  height: 40px;
+  font-size: 14px;
+}
+
+.blog-comment-cancel-reply {
+  margin-top: 8px;
+}
+
 .blog-comments-empty {
   padding: 22px 0;
 }
@@ -2595,6 +2628,16 @@ html:root {
 }
 
 @media (max-width: 991px) {
+  .site-header .menu-block .mobile-menu-head .go-back {
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+
+  .site-header .menu-block .mobile-menu-head .go-back i {
+    line-height: 1;
+  }
+
   .site-menu-main > li > .dropdown-toggle-button {
     display: block;
     width: 100%;

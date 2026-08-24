@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { API_URL_FOOTER } from "../utils/api";
 import Turnstile from "./Turnstile";
+import { TURNSTILE_ENABLED } from "../utils/turnstile";
 
 export default function Footer() {
   const [name, setName] = useState("");
@@ -16,7 +17,7 @@ export default function Footer() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (import.meta.env.VITE_TURNSTILE_SITE_KEY && !turnstileToken) {
+    if (TURNSTILE_ENABLED && !turnstileToken) {
       setFeedback({ type: "error", message: "Please complete the spam protection check." });
       return;
     }
