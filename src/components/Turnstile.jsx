@@ -32,7 +32,7 @@ const loadTurnstile = () => {
   return scriptPromise;
 };
 
-export default function Turnstile({ onTokenChange, resetKey = 0 }) {
+export default function Turnstile({ onTokenChange, resetKey = 0, action }) {
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -45,6 +45,7 @@ export default function Turnstile({ onTokenChange, resetKey = 0 }) {
         if (cancelled || !containerRef.current) return;
         widgetId = window.turnstile.render(containerRef.current, {
           sitekey: TURNSTILE_SITE_KEY,
+          ...(action ? { action } : {}),
           callback: onTokenChange,
           "expired-callback": () => onTokenChange(""),
           "error-callback": () => onTokenChange(""),
@@ -59,7 +60,7 @@ export default function Turnstile({ onTokenChange, resetKey = 0 }) {
         window.turnstile.remove(widgetId);
       }
     };
-  }, [onTokenChange, resetKey]);
+  }, [action, onTokenChange, resetKey]);
 
   if (!TURNSTILE_ENABLED) return null;
   return <div ref={containerRef} className="mb-3" />;

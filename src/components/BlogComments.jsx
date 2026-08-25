@@ -192,7 +192,7 @@ export default function BlogComments({ postId, slug }) {
             <label htmlFor={`comment-body-${slug}`}>Comment</label>
             <textarea id={`comment-body-${slug}`} name="comment" value={form.comment} onChange={handleChange} minLength="3" maxLength="2000" rows="5" required />
           </div>
-          <Turnstile onTokenChange={handleTokenChange} resetKey={turnstileResetKey} />
+          <Turnstile action="comments" onTokenChange={handleTokenChange} resetKey={turnstileResetKey} />
           {error && <p className="blog-comment-notice is-error" role="alert">{error}</p>}
           {message && <p className="blog-comment-notice is-success" role="status">{message}</p>}
           <button className="blog-comment-submit" type="submit" disabled={submitting}>
